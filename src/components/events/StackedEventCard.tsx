@@ -29,7 +29,7 @@ export function StackedEventCard({
 }: StackedEventCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // 📌 Close when clicking outside
+  // Close when clicking outside
   useEffect(() => {
     if (!isExpanded) return;
     const handleClickOutside = (e: MouseEvent) => {
@@ -41,7 +41,7 @@ export function StackedEventCard({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isExpanded, onCollapse]);
 
-  // 🃏 Card stacking style
+  // Card stacking style
   const getCardStyle = () => {
     const baseOffset = index * 50;
     const zIndex = totalCards - index;
@@ -64,7 +64,7 @@ export function StackedEventCard({
       ref={cardRef}
       className="absolute w-full transition-all duration-500 ease-out cursor-pointer"
       style={getCardStyle()}
-      onClick={isExpanded ? onCollapse : onExpand} // ✅ click interaction only
+      onClick={isExpanded ? onCollapse : onExpand} 
     >
       <Card
         className={`w-full max-w-sm mx-auto bg-white shadow-lg transition-all duration-500 ${
