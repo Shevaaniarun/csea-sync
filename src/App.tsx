@@ -1,4 +1,4 @@
-import { EventsSection } from "./components/EventsSection";
+import { EventsSection } from "./components/events/EventsSection";
 
 export default function App() {
   return (

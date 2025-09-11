@@ -4,8 +4,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./ui/card.tsx";
-import { Badge } from "./ui/badge";
+} from "../ui/card.tsx";
+import { Badge } from "../ui/badge.tsx";
 import { Calendar, MapPin, Users, Gift } from "lucide-react";
 
 export interface Event {
