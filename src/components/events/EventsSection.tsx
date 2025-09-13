@@ -301,12 +301,14 @@ export function EventsSection() {
     <section className="py-16 px-4 bg-gradient-to-b from-gray-950 to-black">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
+        {/*
         <div className="text-center mb-12">
           <h2 className="mb-4 text-cyan-300 font-bold text-4xl tracking-wider">SYNC 2025</h2>
           <p className="text-cyan-200/80 max-w-2xl mx-auto">
             Two amazing days of learning, networking, and innovation.
           </p>
         </div>
+        */}
 
         {/* Filters */}
         <EventFilters filters={filters} onFiltersChange={handleFiltersChange} />

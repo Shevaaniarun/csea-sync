@@ -1,0 +1,14 @@
+.about-container {
+  background-color: black;
+  padding: 2rem;
+  border-radius: 8px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.about-container p {
+  color: #7de2fc;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

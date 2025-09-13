@@ -10,7 +10,7 @@ import {
   Users, 
   Award,
   Heart,
-  ArrowUp
+  ArrowUp, 
 } from "lucide-react";
 
 interface ContactPerson {
@@ -111,7 +111,7 @@ export function Footer() {
       {/* Scroll to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 z-50 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300"
+        className="fixed bottom-8 right-8 z-50 bg-white hover:bg-gray-900 text-gray-950 hover:text-white p-3 rounded-full shadow-lg transition-all duration-300"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, scale: 0 }}
@@ -304,7 +304,7 @@ export function Footer() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-2xl">📌</span>
+            <MapPin className="w-5 h-5 text-cyan-300" />
             <span className="text-xl font-medium">Department of CSE, CEG, Anna University, Chennai</span>
           </motion.a>
         </motion.div>
@@ -316,7 +316,7 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-2">
             <div className="flex items-center gap-2 text-cyan-200 text-base font-medium">
-              <Heart className="w-5 h-5 text-red-400" />
+              <Heart className="w-5 h-5 text-cyan-300" />
               <span>Made with passion by CSEA Team</span>
             </div>
             
