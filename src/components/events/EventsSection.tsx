@@ -275,15 +275,11 @@ const day2Events: Event[] = [
 
 export function EventsSection() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
-  const [filters, setFilters] = useState<FilterOptions>({
-    categoryFilter: [],
-  });
+  const [filters, setFilters] = useState<FilterOptions>({ categoryFilter: [] });
 
   const filterEvents = (events: Event[]) => {
     if (filters.categoryFilter.length === 0) return events;
-    return events.filter(event =>
-      filters.categoryFilter.includes(event.category)
-    );
+    return events.filter(event => filters.categoryFilter.includes(event.category));
   };
 
   const filteredDay1 = useMemo(() => filterEvents(day1Events), [filters]);
@@ -298,28 +294,38 @@ export function EventsSection() {
   const handleCollapse = () => setExpandedCard(null);
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-gray-950 to-black">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-16 px-4 bg-gradient-to-b from-gray-950 via-black to-gray-900">
+      <div className="max-w-7xl mx-auto">
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="mb-4 text-cyan-300 font-bold text-4xl tracking-wider">SYNC 2025</h2>
-          <p className="text-cyan-200/80 max-w-2xl mx-auto">
+          <h2 className="mb-4 text-5xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">
+            SYNC 2025
+          </h2>
+          <p className="text-cyan-200/70 max-w-3xl mx-auto text-lg">
             Two amazing days of learning, networking, and innovation.
           </p>
         </div>
 
         {/* Filters */}
-        <EventFilters filters={filters} onFiltersChange={handleFiltersChange} />
+        <div className="mb-12">
+          <EventFilters
+            filters={filters}
+            onFiltersChange={handleFiltersChange}
+          />
+        </div>
 
-        {/* Two stacks side by side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+        {/* Event Stacks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Day 1 */}
           <div>
-            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
-              <Calendar className="w-4 h-4" />
-              Day 1 - March 15
+            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">
+              <Calendar className="w-5 h-5 text-purple-500" />
+              Day 1 - September 28
             </h3>
-            <div className="relative w-full max-w-sm mx-auto" style={{ height: expandedCard ? '600px' : '700px' }}>
+            <div
+              className="relative w-full max-w-sm mx-auto"
+              style={{ height: expandedCard ? "600px" : "700px" }}
+            >
               {filteredDay1.map((event, index) => (
                 <StackedEventCard
                   key={event.id}
@@ -333,19 +339,20 @@ export function EventsSection() {
               ))}
             </div>
             {filteredDay1.length === 0 && (
-              <p className="text-center text-cyan-400/70 mt-8">
-                No events found for Day 1.
-              </p>
+              <p className="text-center text-cyan-400/70 mt-8">No events found for Day 1.</p>
             )}
           </div>
 
           {/* Day 2 */}
           <div>
-            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
-              <Calendar className="w-4 h-4" />
-              Day 2 - March 16
+            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">
+              <Calendar className="w-5 h-5 text-purple-500" />
+              Day 2 - September 29
             </h3>
-            <div className="relative w-full max-w-sm mx-auto" style={{ height: expandedCard ? '600px' : '700px' }}>
+            <div
+              className="relative w-full max-w-sm mx-auto"
+              style={{ height: expandedCard ? "600px" : "700px" }}
+            >
               {filteredDay2.map((event, index) => (
                 <StackedEventCard
                   key={event.id}
@@ -359,9 +366,7 @@ export function EventsSection() {
               ))}
             </div>
             {filteredDay2.length === 0 && (
-              <p className="text-center text-cyan-400/70 mt-8">
-                No events found for Day 2.
-              </p>
+              <p className="text-center text-cyan-400/70 mt-8">No events found for Day 2.</p>
             )}
           </div>
         </div>
@@ -369,3 +374,4 @@ export function EventsSection() {
     </section>
   );
 }
+
