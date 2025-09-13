@@ -298,12 +298,12 @@ export function EventsSection() {
   const handleCollapse = () => setExpandedCard(null);
 
   return (
-    <section className="py-16 px-4 bg-background">
+    <section className="py-16 px-4 bg-gradient-to-b from-gray-950 to-black">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="mb-4">Sync 2025</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="mb-4 text-cyan-300 font-bold text-4xl tracking-wider">SYNC 2025</h2>
+          <p className="text-cyan-200/80 max-w-2xl mx-auto">
             Two amazing days of learning, networking, and innovation.
           </p>
         </div>
@@ -315,7 +315,7 @@ export function EventsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
           {/* Day 1 */}
           <div>
-            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6">
+            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
               <Calendar className="w-4 h-4" />
               Day 1 - March 15
             </h3>
@@ -333,7 +333,7 @@ export function EventsSection() {
               ))}
             </div>
             {filteredDay1.length === 0 && (
-              <p className="text-center text-muted-foreground mt-8">
+              <p className="text-center text-cyan-400/70 mt-8">
                 No events found for Day 1.
               </p>
             )}
@@ -341,7 +341,7 @@ export function EventsSection() {
 
           {/* Day 2 */}
           <div>
-            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6">
+            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
               <Calendar className="w-4 h-4" />
               Day 2 - March 16
             </h3>
@@ -359,7 +359,7 @@ export function EventsSection() {
               ))}
             </div>
             {filteredDay2.length === 0 && (
-              <p className="text-center text-muted-foreground mt-8">
+              <p className="text-center text-cyan-400/70 mt-8">
                 No events found for Day 2.
               </p>
             )}

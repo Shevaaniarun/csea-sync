@@ -34,10 +34,10 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
   return (
     <div className="mb-8">
       {/* Filter bar */}
-      <div className="flex items-center justify-between bg-muted rounded-xl px-4 py-3 h-16 shadow-sm">
+      <div className="flex items-center justify-between bg-cyan-900/20 rounded-xl px-4 py-3 h-16 shadow-sm border border-cyan-400/30">
         {/* Left: Icon */}
         <div className="flex items-center gap-2">
-          <Filter className="w-5 h-5 text-muted-foreground" />
+          <Filter className="w-5 h-5 text-cyan-300" />
         </div>
 
         {/* Middle: Category buttons */}
@@ -48,10 +48,10 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
               <Badge
                 key={category}
                 variant={isSelected ? "default" : "secondary"}
-                className={`cursor-pointer px-3 py-1 text-sm transition-colors ${
+                className={`cursor-pointer px-3 py-1 text-sm transition-colors border ${
                   isSelected
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "hover:bg-secondary/80"
+                    ? "bg-cyan-500/30 text-cyan-200 border-cyan-400/50 hover:bg-cyan-500/40"
+                    : "bg-cyan-900/30 text-cyan-300 border-cyan-600/40 hover:bg-cyan-800/40"
                 }`}
                 onClick={() => handleCategoryToggle(category)}
               >
@@ -67,7 +67,7 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
           {hasActiveFilters && (
             <button
               onClick={clearAllFilters}
-              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-1 text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
             >
               <X className="w-3 h-3" />
               Clear all
@@ -78,7 +78,7 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
 
       {/* Active filters summary */}
       {hasActiveFilters && (
-        <div className="mt-2 text-sm text-muted-foreground text-center">
+        <div className="mt-2 text-sm text-cyan-400 text-center">
           Showing {filters.categoryFilter.join(", ")} events
         </div>
       )}
