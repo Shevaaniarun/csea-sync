@@ -42,13 +42,14 @@ export function StackedEventCard({
   }, [isExpanded, onCollapse]);
 
   // Card stacking style
+  // Card stacking style
   const getCardStyle = () => {
     const baseOffset = index * 50;
     const zIndex = totalCards - index;
 
     if (isExpanded) {
       return {
-        transform: "translateY(0px) scale(1)",
+        transform: `translateY(${baseOffset}px) scale(1)`, // keep original position
         zIndex: 1000,
       };
     }
@@ -58,6 +59,7 @@ export function StackedEventCard({
       zIndex,
     };
   };
+
 
   // Handle animation state
   const handleTransitionStart = () => setIsAnimating(true);
