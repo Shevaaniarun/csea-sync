@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "../ui/card.tsx";
 import { Badge } from "../ui/badge.tsx";
-import { Calendar, MapPin, Users, Gift } from "lucide-react";
+import { Calendar, MapPin, Users, Gift, X } from "lucide-react";
 import { Event } from "./EventCard";
 import { useRef, useEffect } from "react";
 
@@ -64,26 +64,22 @@ export function StackedEventCard({
       ref={cardRef}
       className="absolute w-full transition-all duration-500 ease-out cursor-pointer"
       style={getCardStyle()}
-      onClick={isExpanded ? onCollapse : onExpand} 
+      onClick={!isExpanded ? onExpand : undefined} // only expand on click, collapse handled by button or outside
     >
       <Card
-        className={`w-full max-w-sm mx-auto bg-white shadow-lg transition-all duration-500 ${
+        className={`relative w-full max-w-sm mx-auto bg-white shadow-lg transition-all duration-500 ${
           isExpanded ? "shadow-2xl scale-105" : "hover:shadow-xl"
         }`}
       >
-        {/* Top Image (optional, uncomment if needed) */}
-        {/*
-        <div className="relative h-32 overflow-hidden rounded-t-lg">
-          <img
-            src={event.imageUrl}
-            alt={event.title}
-            className="w-full h-full object-cover"
-          />
-          <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
-            {event.category}
-          </Badge>
-        </div>
-        */}
+        {/* Close button */}
+        {isExpanded && (
+          <button
+            onClick={onCollapse}
+            className="absolute top-3 right-3 p-1 rounded-full bg-gray-100 hover:bg-gray-200 transition"
+          >
+            <X className="w-3 h-3 text-gray-600" />
+          </button>
+        )}
 
         {/* Content */}
         <div
