@@ -96,7 +96,7 @@ export function StackedEventCard({
             }}
             className="absolute top-3 right-3 z-10 p-1 rounded-full bg-cyan-900/50 hover:bg-cyan-700/60 transition border border-cyan-400/40"
           >
-            <X className="w-4 h-4 text-cyan-300" />
+            <X className="w-3 h-3 text-cyan-300" />
           </button>
         )}
 
