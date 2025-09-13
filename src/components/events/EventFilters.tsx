@@ -34,14 +34,17 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
   return (
     <div className="mb-8">
       {/* Filter bar */}
-      <div className="flex items-center justify-between bg-cyan-900/20 rounded-xl px-4 py-3 h-16 shadow-sm border border-cyan-400/30">
-        {/* Left: Icon */}
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-gray-950 rounded-xl px-4 py-3 shadow-sm border border-cyan-400/30 gap-3">
+        {/* Top/Left: Icon */}
+        <div className="flex items-center gap-2 justify-center sm:justify-start">
           <Filter className="w-5 h-5 text-cyan-300" />
+          <span className="text-cyan-300 text-sm font-medium sm:inline">
+            Filters
+          </span>
         </div>
 
-        {/* Middle: Category buttons */}
-        <div className="flex items-center gap-3">
+        {/* Middle: Category buttons (wrap on small screens) */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
           {availableCategories.map((category) => {
             const isSelected = filters.categoryFilter.includes(category);
             return (
@@ -62,8 +65,8 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
           })}
         </div>
 
-        {/* Right: Clear button */}
-        <div>
+        {/* Bottom/Right: Clear button */}
+        <div className="flex justify-center sm:justify-end">
           {hasActiveFilters && (
             <button
               onClick={clearAllFilters}
