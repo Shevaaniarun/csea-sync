@@ -32,18 +32,18 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
   const hasActiveFilters = filters.categoryFilter.length > 0;
 
   return (
-    <div className="mb-8">
+    <div className="mb-8 font-sans tracking-wide">
       {/* Filter bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-gray-950 rounded-xl px-4 py-3 shadow-sm border border-cyan-400/30 gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-gradient-to-r from-blue-950 to-cyan-950 rounded-xl px-4 py-3 shadow-sm border border-cyan-400/40 gap-3">
         {/* Top/Left: Icon */}
         <div className="flex items-center gap-2 justify-center sm:justify-start">
           <Filter className="w-5 h-5 text-cyan-300" />
-          <span className="text-cyan-300 text-sm font-medium sm:inline">
+          <span className="text-cyan-200 text-sm font-medium sm:inline">
             Filters
           </span>
         </div>
 
-        {/* Middle: Category buttons (wrap on small screens) */}
+        {/* Middle: Category buttons */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
           {availableCategories.map((category) => {
             const isSelected = filters.categoryFilter.includes(category);
@@ -53,8 +53,8 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
                 variant={isSelected ? "default" : "secondary"}
                 className={`cursor-pointer px-3 py-1 text-sm transition-colors border ${
                   isSelected
-                    ? "bg-cyan-500/30 text-cyan-200 border-cyan-400/50 hover:bg-cyan-500/40"
-                    : "bg-cyan-900/30 text-cyan-300 border-cyan-600/40 hover:bg-cyan-800/40"
+                    ? "bg-cyan-600/30 text-cyan-200 border-cyan-400/50 hover:bg-cyan-500/40"
+                    : "bg-cyan-900/30 text-cyan-300 border-cyan-700/40 hover:bg-cyan-800/40"
                 }`}
                 onClick={() => handleCategoryToggle(category)}
               >

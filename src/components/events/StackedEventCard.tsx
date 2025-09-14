@@ -42,14 +42,13 @@ export function StackedEventCard({
   }, [isExpanded, onCollapse]);
 
   // Card stacking style
-  // Card stacking style
   const getCardStyle = () => {
     const baseOffset = index * 50;
     const zIndex = totalCards - index;
 
     if (isExpanded) {
       return {
-        transform: `translateY(${baseOffset}px) scale(1)`, // keep original position
+        transform: `translateY(${baseOffset}px) scale(1)`,
         zIndex: 1000,
       };
     }
@@ -60,7 +59,6 @@ export function StackedEventCard({
     };
   };
 
-
   // Handle animation state
   const handleTransitionStart = () => setIsAnimating(true);
   const handleTransitionEnd = () => setIsAnimating(false);
@@ -68,15 +66,15 @@ export function StackedEventCard({
   return (
     <div
       ref={cardRef}
-      className="absolute w-full transition-all duration-500 ease-out cursor-pointer"
+      className="absolute w-full transition-all duration-500 ease-out cursor-pointer font-[Poppins]"
       style={getCardStyle()}
       onTransitionStart={handleTransitionStart}
       onTransitionEnd={handleTransitionEnd}
       onClick={isExpanded ? onCollapse : onExpand}
     >
       <Card
-        className={`w-full max-w-sm mx-auto bg-black border border-cyan-400/50 shadow-[0_0_15px_rgba(173,216,230,0.2)] transition-all duration-500 rounded-xl overflow-hidden ${
-          isExpanded ? "shadow-[0_0_30px_rgba(173,216,230,0.4)] scale-105" : ""
+        className={`w-full max-w-sm mx-auto bg-gradient-to-tr from-blue-950 via-black to-blue-950 border border-cyan-400/40 shadow-[0_0_20px_rgba(0,255,255,0.15)] transition-all duration-500 rounded-xl overflow-hidden ${
+          isExpanded ? "shadow-[0_0_35px_rgba(0,255,255,0.4)] scale-105" : ""
         }`}
       >
         {/* Neon animated border - only visible when expanded */}
@@ -110,12 +108,12 @@ export function StackedEventCard({
         >
           <CardHeader className="pb-3">
             <CardTitle
-              className="line-clamp-2 text-lg font-semibold text-cyan-300 bg-black/40 p-1 rounded-md glowing-title"
+              className="line-clamp-2 text-lg font-semibold text-cyan-200 bg-blue-40 p-1 rounded-md glowing-title"
             >
               {event.title}
             </CardTitle>
             {isExpanded && (
-              <CardDescription className="text-cyan-200/70 mt-2">
+              <CardDescription className="text-cyan-100/70 mt-2">
                 {event.description}
               </CardDescription>
             )}
@@ -156,6 +154,9 @@ export function StackedEventCard({
 
       {/* Neon border + glowing title CSS */}
       <style>{`
+        /* Import smooth Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
         /* Neon Border Animation */
         @keyframes neonMoveHorizontal {
           0% { transform: translateX(-100%); }
@@ -169,37 +170,37 @@ export function StackedEventCard({
           content: '';
           position: absolute;
           top: 0; left: 0; right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, transparent, #7de2fc, #7de2fc, transparent);
+          height: 3px;
+          background: linear-gradient(90deg, transparent, #00eaff, #00eaff, transparent);
           animation: neonMoveHorizontal 4s linear infinite;
         }
         .neon-border-animation::after {
           content: '';
           position: absolute;
           bottom: 0; left: 0; right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, transparent, #7de2fc, #7de2fc, transparent);
+          height: 3px;
+          background: linear-gradient(90deg, transparent, #00eaff, #00eaff, transparent);
           animation: neonMoveHorizontal 4s linear infinite reverse;
         }
         .neon-border-animation .vertical-left {
           position: absolute;
           top: 0; bottom: 0; left: 0;
-          width: 4px;
-          background: linear-gradient(180deg, transparent, #7de2fc, #7de2fc, transparent);
+          width: 3px;
+          background: linear-gradient(180deg, transparent, #00eaff, #00eaff, transparent);
           animation: neonMoveVertical 4s linear infinite reverse;
         }
         .neon-border-animation .vertical-right {
           position: absolute;
           top: 0; bottom: 0; right: 0;
-          width: 4px;
-          background: linear-gradient(180deg, transparent, #7de2fc, #7de2fc, transparent);
+          width: 3px;
+          background: linear-gradient(180deg, transparent, #00eaff, #00eaff, transparent);
           animation: neonMoveVertical 4s linear infinite;
         }
 
-        /* Subtle glowing title */
+        /* Glowing title effect */
         .glowing-title {
-          text-shadow: 0 0 6px rgba(125, 226, 252, 0.6), 
-                       0 0 12px rgba(125, 226, 252, 0.4);
+          text-shadow: 0 0 6px rgba(0, 234, 255, 0.7), 
+                       0 0 14px rgba(0, 234, 255, 0.5);
         }
       `}</style>
     </div>

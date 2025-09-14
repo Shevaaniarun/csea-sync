@@ -273,6 +273,7 @@ const day2Events: Event[] = [
   }
 ];
 
+
 export function EventsSection() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const [filters, setFilters] = useState<FilterOptions>({
@@ -281,7 +282,7 @@ export function EventsSection() {
 
   const filterEvents = (events: Event[]) => {
     if (filters.categoryFilter.length === 0) return events;
-    return events.filter(event =>
+    return events.filter((event) =>
       filters.categoryFilter.includes(event.category)
     );
   };
@@ -298,11 +299,13 @@ export function EventsSection() {
   const handleCollapse = () => setExpandedCard(null);
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-gray-950 to-black">
+    <section className="py-16 px-4 bg-gradient-to-b from-blue-950 via-black to-blue-950 font-sans tracking-wide">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="mb-4 text-cyan-300 font-bold text-4xl tracking-wider">SYNC 2025</h2>
+          <h2 className="mb-4 text-cyan-300 font-bold text-4xl tracking-wider">
+            SYNC 2025
+          </h2>
           <p className="text-cyan-200/80 max-w-2xl mx-auto">
             Two amazing days of learning, networking, and innovation.
           </p>
@@ -311,7 +314,7 @@ export function EventsSection() {
         {/* Filters */}
         <EventFilters filters={filters} onFiltersChange={handleFiltersChange} />
 
-        {/* Two stacks side by side */}
+        {/* Two stacks */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
           {/* Day 1 */}
           <div>
@@ -319,7 +322,10 @@ export function EventsSection() {
               <Calendar className="w-4 h-4" />
               Day 1 - March 15
             </h3>
-            <div className="relative w-full max-w-sm mx-auto" style={{ height: expandedCard ? '600px' : '700px' }}>
+            <div
+              className="relative w-full max-w-sm mx-auto"
+              style={{ height: expandedCard ? "600px" : "700px" }}
+            >
               {filteredDay1.map((event, index) => (
                 <StackedEventCard
                   key={event.id}
@@ -345,7 +351,10 @@ export function EventsSection() {
               <Calendar className="w-4 h-4" />
               Day 2 - March 16
             </h3>
-            <div className="relative w-full max-w-sm mx-auto" style={{ height: expandedCard ? '600px' : '700px' }}>
+            <div
+              className="relative w-full max-w-sm mx-auto"
+              style={{ height: expandedCard ? "600px" : "700px" }}
+            >
               {filteredDay2.map((event, index) => (
                 <StackedEventCard
                   key={event.id}
@@ -369,4 +378,3 @@ export function EventsSection() {
     </section>
   );
 }
-

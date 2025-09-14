@@ -28,22 +28,19 @@ interface EventCardProps {
 
 export function EventCard({ event }: EventCardProps) {
   return (
-    <Card className="w-full max-w-sm mx-auto bg-black border border-cyan-300/40 shadow-[0_0_15px_rgba(173,216,230,0.2)] hover:shadow-[0_0_20px_rgba(173,216,230,0.3)] transition-all duration-300 rounded-xl">
+    <Card className="w-full max-w-sm mx-auto bg-gradient-to-br from-blue-950 to-black border border-cyan-400/40 shadow-[0_0_20px_rgba(0,255,255,0.15)] hover:shadow-[0_0_25px_rgba(0,255,255,0.3)] transition-all duration-300 rounded-xl font-sans tracking-wide">
       {/* Top Image */}
       <div className="relative h-40 overflow-hidden rounded-t-lg">
-        {/*<img
-          src={event.imageUrl}
-          alt={event.title}
-          className="w-full h-full object-cover"
-        />*/}
-        <Badge className="absolute top-3 left-3 bg-cyan-500/20 text-cyan-300 border-cyan-400/40">
+        <Badge className="absolute top-3 left-3 bg-cyan-600/20 text-cyan-300 border-cyan-400/40">
           {event.category}
         </Badge>
       </div>
 
       {/* Content */}
       <CardHeader className="pb-3">
-        <CardTitle className="line-clamp-2 font:bold text-cyan-200">{event.title}</CardTitle>
+        <CardTitle className="line-clamp-2 font-bold text-cyan-200">
+          {event.title}
+        </CardTitle>
         <CardDescription className="line-clamp-3 text-cyan-100/70">
           {event.description}
         </CardDescription>
