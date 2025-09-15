@@ -3,8 +3,6 @@ import { Calendar } from "lucide-react";
 import { Event } from "./EventCard";
 import { StackedEventCard } from "./StackedEventCard";
 import { EventFilters, FilterOptions } from "./EventFilters";
-import LightRays from "../../LightRays";
-import ParticlesBackground from "../../ParticlesBackground";
 
 const day1Events: Event[] = [
   {
@@ -275,16 +273,19 @@ const day2Events: Event[] = [
   }
 ];
 
+
 export function EventsSection() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
-  const [filters, setFilters] = useState<FilterOptions>({ categoryFilter: [] });
+  const [filters, setFilters] = useState<FilterOptions>({
+    categoryFilter: [],
+  });
 
-  const filterEvents = (events: Event[]) =>
-    filters.categoryFilter.length === 0
-      ? events
-      : events.filter((event) =>
-          filters.categoryFilter.includes(event.category)
-        );
+  const filterEvents = (events: Event[]) => {
+    if (filters.categoryFilter.length === 0) return events;
+    return events.filter((event) =>
+      filters.categoryFilter.includes(event.category)
+    );
+  };
 
   const filteredDay1 = useMemo(() => filterEvents(day1Events), [filters]);
   const filteredDay2 = useMemo(() => filterEvents(day2Events), [filters]);
@@ -294,114 +295,86 @@ export function EventsSection() {
     setExpandedCard(null);
   };
 
+  const handleExpand = (eventId: string) => setExpandedCard(eventId);
+  const handleCollapse = () => setExpandedCard(null);
+
   return (
-    <div className="relative w-full">
-      {/* Solid background */}
-      <div className="absolute inset-0 bg-gray-950 -z-50" />
+    <section className="py-16 px-4 bg-gray-950 font-sans tracking-wide">
+      <div className="max-w-6xl mx-auto">
+        {/* Title */}
+        <div className="text-center mb-12">
+          <h2 className="mb-4 text-cyan-300 font-bold text-4xl tracking-wider">
+            SYNC 2025
+          </h2>
+          <p className="text-cyan-200/80 max-w-2xl mx-auto">
+            Two amazing days of learning, networking, and innovation.
+          </p>
+        </div>
 
-      {/* Particles + Light Rays Layer */}
-      <div className="absolute inset-0 -z-40 pointer-events-none">
-        <ParticlesBackground />
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#00b7ff"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="w-full h-full"
-        />
-      </div>
+        {/* Filters */}
+        <EventFilters filters={filters} onFiltersChange={handleFiltersChange} />
 
-      {/* Content Section (always on top, interactive) */}
-      <section className="py-16 px-4 font-sans tracking-wide relative z-20">
-        <div className="max-w-6xl mx-auto">
-          {/* Title */}
-          <div className="h-[2.5cm]" />
-          <div className="text-center mb-12">
-            <h2 className="mb-4 text-cyan-300 font-bold text-4xl tracking-wider">
-              SYNC 2025
-            </h2>
-            <p className="text-cyan-200/80 max-w-2xl mx-auto">
-              Two amazing days of learning, networking, and innovation.
-            </p>
+        {/* Two stacks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+          {/* Day 1 */}
+          <div>
+            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
+              <Calendar className="w-4 h-4" />
+              Day 1 - March 15
+            </h3>
+            <div
+              className="relative w-full max-w-sm mx-auto"
+              style={{ height: expandedCard ? "600px" : "700px" }}
+            >
+              {filteredDay1.map((event, index) => (
+                <StackedEventCard
+                  key={event.id}
+                  event={event}
+                  index={index}
+                  totalCards={filteredDay1.length}
+                  isExpanded={expandedCard === event.id}
+                  onExpand={() => handleExpand(event.id)}
+                  onCollapse={handleCollapse}
+                />
+              ))}
+            </div>
+            {filteredDay1.length === 0 && (
+              <p className="text-center text-cyan-400/70 mt-8">
+                No events found for Day 1.
+              </p>
+            )}
           </div>
 
-          <div className="h-[2.5cm]" />
-
-          {/* Filters */}
-          <EventFilters
-            filters={filters}
-            onFiltersChange={handleFiltersChange}
-          />
-
-          {/* Two stacks */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-            {/* Day 1 */}
-            <div>
-              <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
-                <Calendar className="w-4 h-4" />
-                Day 1 - March 15
-              </h3>
-              <div
-                className="relative w-full max-w-sm mx-auto"
-                style={{ height: expandedCard ? "600px" : "700px" }}
-              >
-                {filteredDay1.map((event, index) => (
-                  <StackedEventCard
-                    key={event.id}
-                    event={event}
-                    index={index}
-                    totalCards={filteredDay1.length}
-                    isExpanded={expandedCard === event.id}
-                    onExpand={() => setExpandedCard(event.id)}
-                    onCollapse={() => setExpandedCard(null)}
-                  />
-                ))}
-              </div>
-              {filteredDay1.length === 0 && (
-                <p className="text-center text-cyan-400/70 mt-8">
-                  No events found for Day 1.
-                </p>
-              )}
+          {/* Day 2 */}
+          <div>
+            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
+              <Calendar className="w-4 h-4" />
+              Day 2 - March 16
+            </h3>
+            <div
+              className="relative w-full max-w-sm mx-auto"
+              style={{ height: expandedCard ? "600px" : "700px" }}
+            >
+              {filteredDay2.map((event, index) => (
+                <StackedEventCard
+                  key={event.id}
+                  event={event}
+                  index={index}
+                  totalCards={filteredDay2.length}
+                  isExpanded={expandedCard === event.id}
+                  onExpand={() => handleExpand(event.id)}
+                  onCollapse={handleCollapse}
+                />
+              ))}
             </div>
-
-            {/* Day 2 */}
-            <div>
-              <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
-                <Calendar className="w-4 h-4" />
-                Day 2 - March 16
-              </h3>
-              <div
-                className="relative w-full max-w-sm mx-auto"
-                style={{ height: expandedCard ? "600px" : "700px" }}
-              >
-                {filteredDay2.map((event, index) => (
-                  <StackedEventCard
-                    key={event.id}
-                    event={event}
-                    index={index}
-                    totalCards={filteredDay2.length}
-                    isExpanded={expandedCard === event.id}
-                    onExpand={() => setExpandedCard(event.id)}
-                    onCollapse={() => setExpandedCard(null)}
-                  />
-                ))}
-              </div>
-              {filteredDay2.length === 0 && (
-                <p className="text-center text-cyan-400/70 mt-8">
-                  No events found for Day 2.
-                </p>
-              )}
-            </div>
+            {filteredDay2.length === 0 && (
+              <p className="text-center text-cyan-400/70 mt-8">
+                No events found for Day 2.
+              </p>
+            )}
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
-
-

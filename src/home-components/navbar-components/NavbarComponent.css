@@ -1,0 +1,69 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* ensures vertical centering */
+
+  padding: 0 20px; /* reduced for better fit on small screens */
+  box-sizing: border-box;
+
+  background-color: #030712;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.animation-section {
+  display: flex;
+  align-items: center;  /* vertical alignment */
+  gap: 12px;            /* spacing between image + text */
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;  /* same as logo height */
+  width: auto;
+}
+
+.text-container {
+  display: flex;
+  align-items: center;
+}
+
+
+@media (max-width: 800px) {
+  .navbar-container {
+    padding: 0 15px;
+    height: 60px;  /* slightly smaller */
+  }
+
+  .animation-section {
+    gap: 8px;
+  }
+
+  .image-container img {
+    height: 35px;   /* scale down */
+    width: auto;
+  }
+
+  .text-display {
+    transform: scale(0.9); /* scale text down slightly */
+  }
+
+  .mobile-nav a {
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+}
+
