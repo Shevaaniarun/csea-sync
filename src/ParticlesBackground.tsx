@@ -17,7 +17,13 @@ const ParticlesBackground: React.FC = () => {
     if (!ctx) return;
 
     let animationFrameId: number;
-    const numParticles = 80;
+
+    // Detect mobile
+    const isMobile = window.innerWidth <= 768;
+
+    const numParticles = isMobile ? 40 : 80; // fewer particles on mobile
+    const speedFactor = isMobile ? 0.3 : 0.8; // slower on mobile
+
     let particles: Particle[] = [];
 
     const resizeCanvas = () => {
@@ -28,8 +34,8 @@ const ParticlesBackground: React.FC = () => {
       particles = Array.from({ length: numParticles }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: (Math.random() - 0.5) * 0.8,
+        vx: (Math.random() - 0.5) * speedFactor,
+        vy: (Math.random() - 0.5) * speedFactor,
       }));
     };
 
@@ -39,31 +45,29 @@ const ParticlesBackground: React.FC = () => {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const maxDist = 150; // shorter lines
-      const maxConnections = 3; // max lines per particle
+      const maxDist = isMobile ? 120 : 150; // shorter lines on mobile
+      const maxConnections = 3;
 
       for (let i = 0; i < particles.length; i++) {
         const p1 = particles[i];
 
-        // find distances to all other particles
         const distances = particles
           .map((p2, idx) => ({ idx, dist: Math.hypot(p1.x - p2.x, p1.y - p2.y) }))
           .filter(d => d.idx !== i && d.dist < maxDist)
-          .sort((a, b) => a.dist - b.dist) // nearest first
-          .slice(0, maxConnections); // limit connections
+          .sort((a, b) => a.dist - b.dist)
+          .slice(0, maxConnections);
 
         distances.forEach(d => {
           const p2 = particles[d.idx];
           ctx.beginPath();
           ctx.strokeStyle = `rgba(0,183,255,${1 - d.dist / maxDist})`;
-          ctx.lineWidth = 0.3; // very thin lines
+          ctx.lineWidth = 0.3;
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.stroke();
         });
       }
 
-      // Draw particles
       for (const p of particles) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
