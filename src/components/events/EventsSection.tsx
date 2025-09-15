@@ -299,7 +299,7 @@ export function EventsSection() {
   const handleCollapse = () => setExpandedCard(null);
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-blue-950 via-black to-blue-950 font-sans tracking-wide">
+    <section className="py-16 px-4 bg-gray-950 font-sans tracking-wide">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <div className="text-center mb-12">

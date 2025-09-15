@@ -18,15 +18,11 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
       ? filters.categoryFilter.filter((c) => c !== category)
       : [...filters.categoryFilter, category];
 
-    onFiltersChange({
-      categoryFilter: updatedCategories,
-    });
+    onFiltersChange({ categoryFilter: updatedCategories });
   };
 
   const clearAllFilters = () => {
-    onFiltersChange({
-      categoryFilter: [],
-    });
+    onFiltersChange({ categoryFilter: [] });
   };
 
   const hasActiveFilters = filters.categoryFilter.length > 0;
@@ -34,27 +30,25 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
   return (
     <div className="mb-8 font-sans tracking-wide">
       {/* Filter bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-gradient-to-r from-blue-950 to-cyan-950 rounded-xl px-4 py-3 shadow-sm border border-cyan-400/40 gap-3">
-        {/* Top/Left: Icon */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-gradient-to-r from-blue-950 via-cyan-950 via-gray-950 via-cyan-950 to-blue-950 rounded-xl px-4 py-3 shadow-sm border border-cyan-400/40 gap-3">
+        {/* Top/Left: Icon + label */}
         <div className="flex items-center gap-2 justify-center sm:justify-start">
           <Filter className="w-5 h-5 text-cyan-300" />
-          <span className="text-cyan-200 text-sm font-medium sm:inline">
-            Filters
-          </span>
+          <span className="text-cyan-200 text-sm font-medium">Filters</span>
         </div>
 
-        {/* Middle: Category buttons */}
+        {/* Middle: Category badges */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
           {availableCategories.map((category) => {
             const isSelected = filters.categoryFilter.includes(category);
             return (
               <Badge
                 key={category}
-                variant={isSelected ? "default" : "secondary"}
-                className={`cursor-pointer px-3 py-1 text-sm transition-colors border ${
+                variant="outline"
+                className={`cursor-pointer px-3 py-1 text-sm transition-all duration-200 border rounded-md ${
                   isSelected
-                    ? "bg-cyan-600/30 text-cyan-200 border-cyan-400/50 hover:bg-cyan-500/40"
-                    : "bg-cyan-900/30 text-cyan-300 border-cyan-700/40 hover:bg-cyan-800/40"
+                    ? "bg-cyan-600/30 text-cyan-100 border-cyan-400/60 shadow-[0_0_8px_rgba(34,211,238,0.4)] hover:bg-cyan-500/40"
+                    : "bg-cyan-950/30 text-cyan-300 border-cyan-800/50 hover:bg-cyan-800/40"
                 }`}
                 onClick={() => handleCategoryToggle(category)}
               >
@@ -70,7 +64,7 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
           {hasActiveFilters && (
             <button
               onClick={clearAllFilters}
-              className="flex items-center gap-1 text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
+              className="flex items-center gap-1 text-sm font-medium text-cyan-400 hover:text-cyan-200 transition-colors hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
             >
               <X className="w-3 h-3" />
               Clear all
@@ -81,8 +75,8 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
 
       {/* Active filters summary */}
       {hasActiveFilters && (
-        <div className="mt-2 text-sm text-cyan-400 text-center">
-          Showing {filters.categoryFilter.join(", ")} events
+        <div className="mt-2 text-sm text-cyan-300 text-center italic">
+          Showing <span className="font-medium">{filters.categoryFilter.join(", ")}</span> events
         </div>
       )}
     </div>
