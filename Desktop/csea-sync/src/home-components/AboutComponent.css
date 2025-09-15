@@ -1,0 +1,68 @@
+.about-container {
+  padding: 4rem; /* Keep padding as it defines the overall space */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start (left) */
+}
+
+.about-container h1 {
+  font-size: 3rem;
+  color: #24d4e8; /* Keep the blue color for the heading */
+  font-weight: 600;
+}
+
+.about-container p {
+  color: #fffcfc; /* Changed to a lighter grey for the date, as in the image */
+  margin: 0; /* Reset margin for date paragraph */
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.about-container p:nth-of-type(1) {
+  /* Targeting the first <p> (the date) */
+  margin-bottom: 2rem; /* Specific spacing after the date paragraph, matches image */
+}
+
+.animated-slogan {
+  color: #888888; /* Color for the slogan */
+  animation: float 3s ease-in-out infinite; /* Apply the animation */
+  display: inline-block; /* Needed for transform on inline elements */
+  font-size: 1.5rem; /* Ensure slogan has correct font size */
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  } /* Moves up 10px */
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+/* --- RESPONSIVE STYLES FOR ABOUT SECTION --- */
+@media (max-width: 900px) {
+  /*
+   * FIX: Reduce the large padding on mobile that causes text to wrap.
+   * Also center-align the text for a better mobile layout.
+   */
+  .about-container {
+    padding: 2rem 0; /* Reduces side padding to zero */
+    align-items: center; /* Centers the content horizontally */
+    text-align: center;
+  }
+
+  /* Reduce font sizes to better fit smaller screens */
+  .about-container h1 {
+    font-size: 2.5rem; /* Reduced from 3rem */
+  }
+
+  .about-container p,
+  .animated-slogan {
+    font-size: 1.2rem; /* Reduced from 1.5rem */
+  }
+}

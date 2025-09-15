@@ -1,0 +1,91 @@
+.home-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  background-color: black; /* Fallback for transparency */
+
+  /* ✨ ADDED: Background image for desktop */
+  background-image: url(''); /* <-- UPDATE THIS PATH */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/bg.png'); 
+}
+
+/*Main container*/
+.home-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  gap: 3rem;
+}
+
+/* Left Column*/
+.about-section {
+  flex: 1;
+}
+
+/* Right Column*/
+.animation-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.image-container {
+  max-width: 250px;
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/*Responsive Layout*/
+@media (max-width: 900px) {
+  .home-body{
+    margin-top:10px;
+  }
+  .home-container {
+    flex-direction: column;
+    margin-top:0px;
+    margin-bottom: 0px;
+  }
+
+  .about-section {
+    order: 2;
+    width: 100%;
+  }
+
+  /*Grid for Responsiveness*/
+  .animation-section {
+    order: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* ✨ ADDED: Remove background image for mobile layout */
+  .home-body {
+    background-image: none; /* No background image on mobile */
+  }
+}
