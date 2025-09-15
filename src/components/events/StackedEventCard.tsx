@@ -43,7 +43,7 @@ export function StackedEventCard({
 
   // Card stacking style
   const getCardStyle = () => {
-    const baseOffset = index * 50;
+    const baseOffset = index * 60;
     const zIndex = totalCards - index;
 
     if (isExpanded) {
@@ -53,8 +53,9 @@ export function StackedEventCard({
       };
     }
 
+    // 🔹 FIXED: Remove scaling, keep all cards same width
     return {
-      transform: `translateY(${baseOffset}px) scale(${1 - index * 0.02})`,
+      transform: `translateY(${baseOffset}px)`,
       zIndex,
     };
   };
