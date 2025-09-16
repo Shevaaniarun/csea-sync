@@ -408,7 +408,7 @@ export function EventsSection() {
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.3 }}
+                transition={{ duration: 0.8, delay: 1.5}}
                 className="flex-1 min-w-0"
               >
                 <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
@@ -418,7 +418,7 @@ export function EventsSection() {
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.9 }}
+                  transition={{ duration: 0.8, delay: 2 }}
                   className="relative w-full max-w-sm mx-auto"
                   style={{ height: getContainerHeight(filteredDay2), minHeight: filteredDay2.length === 0 ? "100px" : "auto" }}
                 >

@@ -73,7 +73,7 @@ export function StackedEventCard({
           : {}
       }
       transition={{
-        duration: 0.2,
+        duration: 0.3,
         delay: index * 0.15,
         ease: [0.25, 0.8, 0.25, 1], 
       }}
