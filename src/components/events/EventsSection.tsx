@@ -5,7 +5,6 @@ import { StackedEventCard } from "./StackedEventCard";
 import { EventFilters, FilterOptions } from "./EventFilters";
 import LightRays from "../../LightRays";
 import ParticlesBackground from "../../ParticlesBackground";
-
 import { motion } from "framer-motion";
 import SplitText from "../../SplitText";
 
@@ -296,7 +295,18 @@ export function EventsSection() {
     setFilters(newFilters);
     setExpandedCard(null);
   };
-  
+
+  // Calculate dynamic container height
+  const getContainerHeight = (events: Event[]) => {
+    if (events.length === 0) return "auto";
+    if (expandedCard) {
+      // If a card is expanded, make container tall enough for expanded card
+      const expandedCardIndex = events.findIndex(event => event.id === expandedCard);
+      return expandedCardIndex !== -1 ? `${(expandedCardIndex * 60) + 600}px` : "auto";
+    }
+    return `${events.length * 60 + 100}px`;
+  };
+
   return (
     <div className="relative w-full">
       {/* Background Layers */}
@@ -347,77 +357,101 @@ export function EventsSection() {
           >
             <EventFilters
               filters={filters}
-              onFiltersChange={(f) => {
-                setFilters(f);
-                setExpandedCard(null);
-              }}
+              onFiltersChange={handleFiltersChange}
             />
           </motion.div>
 
-          {/* Two Stacks */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-            {/* Day 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }} 
-            >
-              <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
-                <Calendar className="w-4 h-4" />
-                <SplitText text="Day 1 - March 15" delay={0.2} />
-              </h3>
+          {/* Two Stacks - Responsive layout */}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 mt-12">
+            {/* Day 1 - Only show if there are events or no filters */}
+            {(filteredDay1.length > 0 || filters.categoryFilter.length === 0) && (
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.6 }}
-                className="relative w-full max-w-sm mx-auto"
-                style={{ height: expandedCard ? "600px" : "700px" }}
+                transition={{ duration: 0.8, delay: 1 }}
+                className="flex-1 min-w-0"
               >
-                {filteredDay1.map((event, index) => (
-                  <StackedEventCard
-                    key={event.id}
-                    event={event}
-                    index={index}
-                    totalCards={filteredDay1.length}
-                    isExpanded={expandedCard === event.id}
-                    onExpand={() => setExpandedCard(event.id)}
-                    onCollapse={() => setExpandedCard(null)}
-                  />
-                ))}
+                <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
+                  <Calendar className="w-4 h-4" />
+                  <SplitText text="Day 1 - March 15" delay={0.2} />
+                </h3>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.6 }}
+                  className="relative w-full max-w-sm mx-auto"
+                  style={{ height: getContainerHeight(filteredDay1), minHeight: filteredDay1.length === 0 ? "100px" : "auto" }}
+                >
+                  {filteredDay1.length > 0 ? (
+                    filteredDay1.map((event, index) => (
+                      <StackedEventCard
+                        key={event.id}
+                        event={event}
+                        index={index}
+                        totalCards={filteredDay1.length}
+                        isExpanded={expandedCard === event.id}
+                        onExpand={() => setExpandedCard(event.id)}
+                        onCollapse={() => setExpandedCard(null)}
+                      />
+                    ))
+                  ) : (
+                    <p className="text-center text-cyan-400/70 py-8">
+                      No events found for Day 1.
+                    </p>
+                  )}
+                </motion.div>
               </motion.div>
-            </motion.div>
+            )}
 
-            {/* Day 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.3 }}
-            >
-              <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
-                <Calendar className="w-4 h-4" />
-                <SplitText text="Day 2 - March 16" delay={0.2} />
-              </h3>
+            {/* Day 2 - Only show if there are events or no filters */}
+            {(filteredDay2.length > 0 || filters.categoryFilter.length === 0) && (
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1}}
-                className="relative w-full max-w-sm mx-auto"
-                style={{ height: expandedCard ? "600px" : "700px" }}
+                transition={{ duration: 0.8, delay: 1.3 }}
+                className="flex-1 min-w-0"
               >
-                {filteredDay2.map((event, index) => (
-                  <StackedEventCard
-                    key={event.id}
-                    event={event}
-                    index={index}
-                    totalCards={filteredDay2.length}
-                    isExpanded={expandedCard === event.id}
-                    onExpand={() => setExpandedCard(event.id)}
-                    onCollapse={() => setExpandedCard(null)}
-                  />
-                ))}
+                <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
+                  <Calendar className="w-4 h-4" />
+                  <SplitText text="Day 2 - March 16" delay={0.2} />
+                </h3>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.9 }}
+                  className="relative w-full max-w-sm mx-auto"
+                  style={{ height: getContainerHeight(filteredDay2), minHeight: filteredDay2.length === 0 ? "100px" : "auto" }}
+                >
+                  {filteredDay2.length > 0 ? (
+                    filteredDay2.map((event, index) => (
+                      <StackedEventCard
+                        key={event.id}
+                        event={event}
+                        index={index}
+                        totalCards={filteredDay2.length}
+                        isExpanded={expandedCard === event.id}
+                        onExpand={() => setExpandedCard(event.id)}
+                        onCollapse={() => setExpandedCard(null)}
+                      />
+                    ))
+                  ) : (
+                    <p className="text-center text-cyan-400/70 py-8">
+                      No events found for Day 2.
+                    </p>
+                  )}
+                </motion.div>
               </motion.div>
-            </motion.div>
+            )}
           </div>
+
+          {/* Show message when no events found in both days */}
+          {filters.categoryFilter.length > 0 && filteredDay1.length === 0 && filteredDay2.length === 0 && (
+            <div className="text-center mt-12">
+              <p className="text-cyan-400/70 text-lg">
+                No events found for the selected filters.
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </div>

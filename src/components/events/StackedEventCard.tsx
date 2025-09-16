@@ -1,4 +1,4 @@
-import {
+import { 
   Card,
   CardContent,
   CardDescription,
@@ -54,6 +54,8 @@ export function StackedEventCard({
     };
     if (isExpanded) {
       style.zIndex = 1000;
+      // Keep the card in its original position when expanded
+      style.top = `${baseOffset}px`;
     }
     return style;
   };
@@ -63,29 +65,25 @@ export function StackedEventCard({
 
   return (
     <motion.div
-  ref={cardRef}
-  initial={{ opacity: 0, scale: 0.8, y: 40 }}
-  animate={
-    inView
-      ? { opacity: 1, scale: 1, y: 0 } // lift expanded card
-      : {}
-  }
-  transition={{
-    duration: 0.2,
-    delay: index * 0.15,
-    ease: [0.25, 0.8, 0.25, 1], 
-  }}
-  className="absolute w-full transition-all duration-700 ease-out cursor-pointer font-[Poppins]"
-  style={{
-    ...getCardStyle(),
-    top: isExpanded ? 0 : `${index * 60}px`, 
-  }}
-  onClick={isExpanded ? onCollapse : onExpand}
->
-
+      ref={cardRef}
+      initial={{ opacity: 0, scale: 0.8, y: 40 }}
+      animate={
+        inView
+          ? { opacity: 1, scale: 1, y: 0 }
+          : {}
+      }
+      transition={{
+        duration: 0.2,
+        delay: index * 0.15,
+        ease: [0.25, 0.8, 0.25, 1], 
+      }}
+      className="absolute w-full transition-all duration-300 ease-out cursor-pointer font-[Poppins]"
+      style={getCardStyle()}
+      onClick={isExpanded ? onCollapse : onExpand}
+    >
       <Card
-        className={`w-full max-w-sm mx-auto bg-gradient-to-tr from-blue-950 via-black to-blue-950 border border-cyan-400/40 shadow-[0_0_20px_rgba(0,255,255,0.15)] transition-all duration-500 rounded-xl overflow-hidden ${
-          isExpanded ? "shadow-[0_0_35px_rgba(0,255,255,0.4)] scale-105" : ""
+        className={`w-full max-w-sm mx-auto bg-gradient-to-tr from-blue-950 via-black to-blue-950 border border-cyan-400/40 shadow-[0_0_20px_rgba(0,255,255,0.15)] transition-all duration-300 rounded-xl overflow-hidden ${
+          isExpanded ? "shadow-[0_0_35px_rgba(0,255,255,0.4)]" : ""
         }`}
       >
         {/* Neon animated border - only visible when expanded */}
@@ -113,7 +111,7 @@ export function StackedEventCard({
 
         {/* Content */}
         <div
-          className={`transition-all duration-500 overflow-hidden ${
+          className={`transition-all duration-300 overflow-hidden ${
             isExpanded ? "max-h-[600px] opacity-100" : "max-h-20 opacity-100"
           }`}
         >
@@ -163,7 +161,7 @@ export function StackedEventCard({
         </div>
       </Card>
 
-      {/* Neon border + glowing title CSS (unchanged) */}
+      {/* Neon border + glowing title CSS */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
