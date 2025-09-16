@@ -6,6 +6,9 @@ import { EventFilters, FilterOptions } from "./EventFilters";
 import LightRays from "../../LightRays";
 import ParticlesBackground from "../../ParticlesBackground";
 
+import { motion } from "framer-motion";
+import SplitText from "../../SplitText";
+
 const day1Events: Event[] = [
   {
     id: "d1-1",
@@ -293,13 +296,11 @@ export function EventsSection() {
     setFilters(newFilters);
     setExpandedCard(null);
   };
-
+  
   return (
     <div className="relative w-full">
-      {/* Solid background */}
+      {/* Background Layers */}
       <div className="absolute inset-0 bg-gray-950 -z-50" />
-
-      {/* Particles + Light Rays Layer */}
       <div className="absolute inset-0 -z-40 pointer-events-none">
         <ParticlesBackground />
         <LightRays
@@ -308,7 +309,7 @@ export function EventsSection() {
           raysSpeed={1.5}
           lightSpread={0.8}
           rayLength={1.2}
-          followMouse={true}
+          followMouse
           mouseInfluence={0.1}
           noiseAmount={0.1}
           distortion={0.05}
@@ -316,37 +317,59 @@ export function EventsSection() {
         />
       </div>
 
-      {/* Content Section (always on top, interactive) */}
+      {/* Content */}
       <section className="py-16 px-4 font-sans tracking-wide relative z-20">
         <div className="max-w-6xl mx-auto">
-          {/* Title */}
           <div className="h-[2.5cm]" />
-          <div className="text-center mb-12">
+
+          {/* Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
             <h2 className="mb-4 text-cyan-300 font-bold text-4xl tracking-wider">
               SYNC 2025
             </h2>
             <p className="text-cyan-200/80 max-w-2xl mx-auto">
               Two amazing days of learning, networking, and innovation.
             </p>
-          </div>
+          </motion.div>
 
           <div className="h-[2.5cm]" />
 
-          {/* Filters */}
-          <EventFilters
-            filters={filters}
-            onFiltersChange={handleFiltersChange}
-          />
+          {/* Filters Animation */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <EventFilters
+              filters={filters}
+              onFiltersChange={(f) => {
+                setFilters(f);
+                setExpandedCard(null);
+              }}
+            />
+          </motion.div>
 
-          {/* Two stacks */}
+          {/* Two Stacks */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             {/* Day 1 */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }} 
+            >
               <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
                 <Calendar className="w-4 h-4" />
-                Day 1 - March 15
+                <SplitText text="Day 1 - March 15" delay={0.2} />
               </h3>
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.6 }}
                 className="relative w-full max-w-sm mx-auto"
                 style={{ height: expandedCard ? "600px" : "700px" }}
               >
@@ -361,21 +384,23 @@ export function EventsSection() {
                     onCollapse={() => setExpandedCard(null)}
                   />
                 ))}
-              </div>
-              {filteredDay1.length === 0 && (
-                <p className="text-center text-cyan-400/70 mt-8">
-                  No events found for Day 1.
-                </p>
-              )}
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Day 2 */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.3 }}
+            >
               <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
                 <Calendar className="w-4 h-4" />
-                Day 2 - March 16
+                <SplitText text="Day 2 - March 16" delay={0.2} />
               </h3>
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1}}
                 className="relative w-full max-w-sm mx-auto"
                 style={{ height: expandedCard ? "600px" : "700px" }}
               >
@@ -390,18 +415,11 @@ export function EventsSection() {
                     onCollapse={() => setExpandedCard(null)}
                   />
                 ))}
-              </div>
-              {filteredDay2.length === 0 && (
-                <p className="text-center text-cyan-400/70 mt-8">
-                  No events found for Day 2.
-                </p>
-              )}
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
     </div>
   );
 }
-
-

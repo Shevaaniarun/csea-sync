@@ -1,5 +1,6 @@
 import { Badge } from "../ui/badge";
 import { Filter, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 export interface FilterOptions {
   categoryFilter: string[];
@@ -29,8 +30,19 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
 
   return (
     <div className="mb-8 font-sans tracking-wide">
-      {/* Filter bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-gradient-to-r from-blue-950 via-cyan-950 via-gray-950 via-cyan-950 to-blue-950 rounded-xl px-4 py-3 shadow-sm border border-cyan-400/40 gap-3">
+      {/* Filter bar with ends → middle reveal - ALTERNATIVE APPROACH */}
+      <motion.div
+        initial={{ 
+          clipPath: "polygon(0 0, 0 100%, 0 100%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 0)" 
+        }} // Only ends visible
+        animate={{ 
+          clipPath: "polygon(0 0, 0 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0)" 
+        }} // Middle revealed
+        transition={{ duration: 1.2, ease: "easeInOut" }}
+        className="flex flex-col sm:flex-row sm:items-center sm:justify-between 
+                   bg-gradient-to-r from-blue-950 via-cyan-950 via-gray-950 via-cyan-950 to-blue-950 
+                   rounded-xl px-4 py-3 shadow-sm border border-cyan-400/40 gap-3"
+      >
         {/* Top/Left: Icon + label */}
         <div className="flex items-center gap-2 justify-center sm:justify-start">
           <Filter className="w-5 h-5 text-cyan-300" />
@@ -71,12 +83,16 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
             </button>
           )}
         </div>
-      </div>
+      </motion.div>
 
       {/* Active filters summary */}
       {hasActiveFilters && (
         <div className="mt-2 text-sm text-cyan-300 text-center italic">
-          Showing <span className="font-medium">{filters.categoryFilter.join(", ")}</span> events
+          Showing{" "}
+          <span className="font-medium">
+            {filters.categoryFilter.join(", ")}
+          </span>{" "}
+          events
         </div>
       )}
     </div>

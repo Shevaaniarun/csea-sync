@@ -8,6 +8,7 @@ import {
 import { Calendar, MapPin, Users, Gift, X } from "lucide-react";
 import { Event } from "./EventCard";
 import { useRef, useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface StackedEventCardProps {
   event: Event;
@@ -29,6 +30,9 @@ export function StackedEventCard({
   const cardRef = useRef<HTMLDivElement>(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // detect when card enters viewport (only once)
+  const inView = useInView(cardRef, { once: true, margin: "-50px" });
+
   // Close when clicking outside
   useEffect(() => {
     if (!isExpanded) return;
@@ -41,38 +45,44 @@ export function StackedEventCard({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isExpanded, onCollapse]);
 
-  // Card stacking style
-  const getCardStyle = () => {
-    const baseOffset = index * 60;
+  const getCardStyle = (): React.CSSProperties => {
+    const baseOffset = index * 60; 
     const zIndex = totalCards - index;
-
-    if (isExpanded) {
-      return {
-        transform: `translateY(${baseOffset}px) scale(1)`,
-        zIndex: 1000,
-      };
-    }
-
-    // 🔹 FIXED: Remove scaling, keep all cards same width
-    return {
-      transform: `translateY(${baseOffset}px)`,
+    const style: React.CSSProperties = {
+      top: `${baseOffset}px`,
       zIndex,
     };
+    if (isExpanded) {
+      style.zIndex = 1000;
+    }
+    return style;
   };
 
-  // Handle animation state
   const handleTransitionStart = () => setIsAnimating(true);
   const handleTransitionEnd = () => setIsAnimating(false);
 
   return (
-    <div
-      ref={cardRef}
-      className="absolute w-full transition-all duration-500 ease-out cursor-pointer font-[Poppins]"
-      style={getCardStyle()}
-      onTransitionStart={handleTransitionStart}
-      onTransitionEnd={handleTransitionEnd}
-      onClick={isExpanded ? onCollapse : onExpand}
-    >
+    <motion.div
+  ref={cardRef}
+  initial={{ opacity: 0, scale: 0.8, y: 40 }}
+  animate={
+    inView
+      ? { opacity: 1, scale: 1, y: 0 } // lift expanded card
+      : {}
+  }
+  transition={{
+    duration: 0.2,
+    delay: index * 0.15,
+    ease: [0.25, 0.8, 0.25, 1], 
+  }}
+  className="absolute w-full transition-all duration-700 ease-out cursor-pointer font-[Poppins]"
+  style={{
+    ...getCardStyle(),
+    top: isExpanded ? 0 : `${index * 60}px`, 
+  }}
+  onClick={isExpanded ? onCollapse : onExpand}
+>
+
       <Card
         className={`w-full max-w-sm mx-auto bg-gradient-to-tr from-blue-950 via-black to-blue-950 border border-cyan-400/40 shadow-[0_0_20px_rgba(0,255,255,0.15)] transition-all duration-500 rounded-xl overflow-hidden ${
           isExpanded ? "shadow-[0_0_35px_rgba(0,255,255,0.4)] scale-105" : ""
@@ -153,12 +163,10 @@ export function StackedEventCard({
         </div>
       </Card>
 
-      {/* Neon border + glowing title CSS */}
+      {/* Neon border + glowing title CSS (unchanged) */}
       <style>{`
-        /* Import smooth Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-        /* Neon Border Animation */
         @keyframes neonMoveHorizontal {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
@@ -198,12 +206,11 @@ export function StackedEventCard({
           animation: neonMoveVertical 4s linear infinite;
         }
 
-        /* Glowing title effect */
         .glowing-title {
           text-shadow: 0 0 6px rgba(0, 234, 255, 0.7), 
                        0 0 14px rgba(0, 234, 255, 0.5);
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 }
