@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { EventsSection } from "./components/events/EventsSection";
 import AppLoader from "./components/loader/AppLoader";
-import LightRays from "./LightRays";
-import ParticlesBackground from "./ParticlesBackground";
-import React from "react";
+import LightRays from "./components/ui/bg-animations/LightRays";
+import ParticlesBackground from "./components/ui/bg-animations/ParticlesBackground";
 import { Footer } from "./components/Footer";
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);

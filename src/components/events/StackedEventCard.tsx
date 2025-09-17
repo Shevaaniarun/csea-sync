@@ -73,8 +73,8 @@ export function StackedEventCard({
           : {}
       }
       transition={{
-        duration: 0.3,
-        delay: index * 0.15,
+        duration: 0.2,
+        delay: index * 0.1,
         ease: [0.25, 0.8, 0.25, 1], 
       }}
       className="absolute w-full transition-all duration-300 ease-out cursor-pointer font-[Poppins]"

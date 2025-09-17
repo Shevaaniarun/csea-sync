@@ -70,10 +70,10 @@ const Shuffle: React.FC<ShuffleProps> = ({
 
   useEffect(() => {
     if ('fonts' in document) {
-      // @ts-expect-error modern browsers support document.fonts
+      
       if (document.fonts.status === 'loaded') setFontsLoaded(true);
       else
-        // @ts-expect-error modern browsers support document.fonts
+        
         document.fonts.ready.then(() => setFontsLoaded(true));
     } else setFontsLoaded(true);
   }, []);

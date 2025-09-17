@@ -3,10 +3,10 @@ import { Calendar } from "lucide-react";
 import { Event } from "./EventCard";
 import { StackedEventCard } from "./StackedEventCard";
 import { EventFilters, FilterOptions } from "./EventFilters";
-import LightRays from "../../LightRays";
-import ParticlesBackground from "../../ParticlesBackground";
+import LightRays from "../ui/bg-animations/LightRays";
+import ParticlesBackground from "../ui/bg-animations/ParticlesBackground";
 import { motion } from "framer-motion";
-import SplitText from "../../SplitText";
+import SplitText from "../ui/bg-animations/SplitText";
 
 const day1Events: Event[] = [
   {
@@ -426,7 +426,7 @@ export function EventsSection() {
               >
                 <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
                   <Calendar className="w-4 h-4" />
-                  <SplitText text="Day 2 - March 16" delay={0.2} />
+                  <SplitText text="Day 2 - March 16" delay={0.1} />
                 </h3>
                 <motion.div
                   key={`day2-cards-${filters.categoryFilter.join("-")}`}
