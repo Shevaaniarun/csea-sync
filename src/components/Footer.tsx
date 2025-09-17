@@ -84,12 +84,12 @@ export function Footer() {
       animate={isVisible ? "visible" : "hidden"}
       variants={containerVariants}
     >
-      {/* Background Pattern */}
+      
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
 
-      {/* Scroll to Top Button */}
+      
       <motion.button
         onClick={scrollToTop}
         className="fixed bottom-8 right-8 z-50 bg-white hover:bg-gray-900 text-gray-950 hover:text-white p-3 rounded-full shadow-lg transition-all duration-300"
@@ -108,7 +108,6 @@ export function Footer() {
           <motion.div className="space-y-4" variants={itemVariants}>
             <div className="text-center md:text-left">
               <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent tracking-wide mb-2">SYNC 2025</h2>
-              <p className="text-cyan-200 text-lg md:text-xl">CSEA, College of Engineering Guindy</p>
             </div>
             <div>
               <h3 className="text-xl md:text-2xl font-semibold text-cyan-300 mb-2">Follow us</h3>
