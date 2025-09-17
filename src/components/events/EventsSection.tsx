@@ -3,10 +3,10 @@ import { Calendar } from "lucide-react";
 import { Event } from "./EventCard";
 import { StackedEventCard } from "./StackedEventCard";
 import { EventFilters, FilterOptions } from "./EventFilters";
-import LightRays from "../ui/bg-animations/LightRays";
-import ParticlesBackground from "../ui/bg-animations/ParticlesBackground";
+import LightRays from "../ui/LightRays";
+import ParticlesBackground from "../ui/ParticlesBackground";
 import { motion } from "framer-motion";
-import SplitText from "../ui/bg-animations/SplitText";
+import SplitText from "../ui/SplitText";
 
 const day1Events: Event[] = [
   {
