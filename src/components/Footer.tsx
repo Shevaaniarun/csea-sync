@@ -77,7 +77,7 @@ export function Footer() {
     <motion.footer 
       className="relative bg-black text-white overflow-hidden"
       style={{ 
-        minHeight: '20vh',
+        minHeight: '10vh',
         fontFamily: "'Exo 2', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif"
       }}
       initial="hidden"
@@ -102,13 +102,102 @@ export function Footer() {
         <ArrowUp className="w-5 h-5" />
       </motion.button>
 
-      <div className="relative z-10 container mx-auto px-4 py-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Column 1: SYNC 2025 + socials */}
+      <div className="relative z-10 container mx-auto px-4 py-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Column 1: Contact Us */}
           <motion.div className="space-y-4" variants={itemVariants}>
-            <div className="text-center md:text-left">
-              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent tracking-wide mb-2">SYNC 2025</h2>
+            <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left">Contact Us</h3>
+            <div className="space-y-8 text-cyan-100">
+              {/* 2-2 grid of plain text blocks with ample spacing */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+                {/* Kamalesh */}
+                <div>
+                  <div className="text-xl font-semibold text-white">Kamalesh N</div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <span className="font-semibold text-lg">+91 86103 86055</span>
+                  </div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <span className="text-base">chairperson@abacus.org.in</span>
+                  </div>
+                </div>
+
+                {/* Sulochana */}
+                <div>
+                  <div className="text-xl font-semibold text-white">Sulochana H</div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <span className="font-semibold text-lg">+91 90251 93250</span>
+                  </div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <span className="text-base">chairperson@abacus.org.in</span>
+                  </div>
+                </div>
+
+                {/* Hariharan */}
+                <div>
+                  <div className="text-xl font-semibold text-white">Hariharan</div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <span className="font-semibold text-lg">+91 90000 00001</span>
+                  </div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <span className="text-base">vicechairperson@abacus.org.in</span>
+                  </div>
+                </div>
+
+                {/* Ishwarya */}
+                <div>
+                  <div className="text-xl font-semibold text-white">Ishwarya</div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <span className="font-semibold text-lg">+91 90000 00002</span>
+                  </div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <span className="text-base">vicechairperson@abacus.org.in</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Centered last contact, plain text (also centered on mobile) */}
+              <div className="flex justify-center">
+                <div className="text-center w-full sm:w-auto">
+                  <div className="text-xl font-semibold text-white">Madhubaalika</div>
+                  <div className="mt-1 flex items-center justify-center gap-2">
+                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <span className="font-semibold text-lg">+91 90000 00003</span>
+                  </div>
+                  <div className="mt-1 flex items-center justify-center gap-2">
+                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <span className="text-base">generalsecretary@abacus.org.in</span>
+                  </div>
+                </div>
+              </div>
             </div>
+          </motion.div>
+
+          {/* Column 2: Map + Socials */}
+          <motion.div className="space-y-4" variants={itemVariants}>
+            <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left">Map</h3>
+            <div className="flex items-start gap-2 text-cyan-100">
+              <MapPin className="w-6 h-6 mt-0.5 text-cyan-300" />
+              <div className="text-lg md:text-xl">Department of CSE, CEG, Anna University</div>
+            </div>
+            <div className="relative w-full overflow-hidden rounded-lg border border-cyan-500/30 bg-gray-900/40 h-48 md:h-60">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.362437905573!2d80.23340887484216!3d13.012576387306542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52679f6aaaaaab%3A0x90dc1b9c54311d4b!2sDepartment%20Of%20Computer%20Science%20and%20Engineering!5e0!3m2!1sen!2sin!4v1758099584202!5m2!1sen!2sin"
+                className="absolute top-0 left-0 w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
             <div>
               <h3 className="text-xl md:text-2xl font-semibold text-cyan-300 mb-2">Follow us</h3>
               <div className="flex gap-3 justify-center md:justify-start">
@@ -127,53 +216,6 @@ export function Footer() {
                   </motion.a>
                 ))}
               </div>
-            </div>
-          </motion.div>
-
-          {/* Column 2: Simple Contact text */}
-          <motion.div className="space-y-3" variants={itemVariants}>
-            <h3 className="text-3xl font-bold text-cyan-300">Contact Us</h3>
-            <div className="space-y-2 text-cyan-100">
-              <div className="flex items-start gap-2">
-                <Mail className="w-6 h-6 mt-0.5 text-cyan-300" />
-                <div>
-                  <div className="text-base md:text-lg uppercase tracking-wide text-cyan-200/80">Email</div>
-                  <div className="font-semibold text-lg md:text-xl">chairman@abacus.org.in</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <Phone className="w-6 h-6 mt-0.5 text-cyan-300" />
-                <div className="space-y-1">
-                  <div className="text-base md:text-lg uppercase tracking-wide text-cyan-200/80">Phone</div>
-                  <div>
-                    <div className="text-lg">Kamalesh N</div>
-                    <div className="font-semibold text-lg md:text-xl">+91 86103 86055</div>
-                  </div>
-                  <div>
-                    <div className="text-lg">Sulochana H</div>
-                    <div className="font-semibold text-lg md:text-xl">+91 90251 93250</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Column 3: Address + Map */}
-          <motion.div className="space-y-3" variants={itemVariants}>
-            <h3 className="text-3xl font-bold text-cyan-300">Location</h3>
-            <div className="flex items-start gap-2 text-cyan-100">
-              <MapPin className="w-6 h-6 mt-0.5 text-cyan-300" />
-              <div className="text-lg md:text-xl">Department of CSE, CEG, Anna University</div>
-            </div>
-            <div className="relative w-full overflow-hidden rounded-lg border border-cyan-500/30 bg-gray-900/40" style={{paddingBottom: '56.25%'}}>
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.362437905573!2d80.23340887484216!3d13.012576387306542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52679f6aaaaaab%3A0x90dc1b9c54311d4b!2sDepartment%20Of%20Computer%20Science%20and%20Engineering!5e0!3m2!1sen!2sin!4v1758099584202!5m2!1sen!2sin"
-                className="absolute top-0 left-0 w-full h-full"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
             </div>
           </motion.div>
         </div>
