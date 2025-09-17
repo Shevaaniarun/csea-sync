@@ -348,15 +348,13 @@ export function EventsSection() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="mb-4 text-cyan-300 font-bold text-4xl tracking-wider">
-              SYNC 2025
+            <h2 className="mb-4 text-cyan-300 font-bitgrid text-7xl tracking-wider">
+              EVENTS
             </h2>
-            <p className="text-cyan-200/80 max-w-2xl mx-auto">
-              Two amazing days of learning, networking, and innovation.
-            </p>
+            
           </motion.div>
 
-          <div className="h-[2.5cm]" />
+          <div className="h-[1.5cm]" />
 
           {/* Filters */}
           <motion.div

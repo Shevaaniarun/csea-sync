@@ -9,7 +9,11 @@ export default {
         DEFAULT: '#0284C7',
         dark: '#0369A1',
       }
-    }
+    },
+    fontFamily: {
+    bitgrid: ['"Bitcount Grid Double"', 'sans-serif'],
+  }
+    
   }
 },
   darkMode: 'class',
