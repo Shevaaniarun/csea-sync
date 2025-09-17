@@ -280,6 +280,7 @@ const day2Events: Event[] = [
 export function EventsSection() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const [filters, setFilters] = useState<FilterOptions>({ categoryFilter: [] });
+  const [filtering, setFiltering] = useState(false); // 👈 track filter state
 
   const filterEvents = (events: Event[]) =>
     filters.categoryFilter.length === 0
@@ -294,22 +295,31 @@ export function EventsSection() {
   const handleFiltersChange = (newFilters: FilterOptions) => {
     setFilters(newFilters);
     setExpandedCard(null);
+    setFiltering(true);
+    // reset after short time to restore normal delays
+    setTimeout(() => setFiltering(false), 100);
   };
 
-  // Calculate dynamic container height
+  // Dynamic height
   const getContainerHeight = (events: Event[]) => {
     if (events.length === 0) return "auto";
     if (expandedCard) {
-      // If a card is expanded, make container tall enough for expanded card
-      const expandedCardIndex = events.findIndex(event => event.id === expandedCard);
-      return expandedCardIndex !== -1 ? `${(expandedCardIndex * 60) + 600}px` : "auto";
+      const expandedCardIndex = events.findIndex(
+        (event) => event.id === expandedCard
+      );
+      return expandedCardIndex !== -1
+        ? `${expandedCardIndex * 60 + 600}px`
+        : "auto";
     }
     return `${events.length * 60 + 100}px`;
   };
 
+  // delay config: faster when filtering
+  const baseDelay = filtering ? 0 : 1;
+
   return (
     <div className="relative w-full">
-      {/* Background Layers */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gray-950 -z-50" />
       <div className="absolute inset-0 -z-40 pointer-events-none">
         <ParticlesBackground />
@@ -327,7 +337,6 @@ export function EventsSection() {
         />
       </div>
 
-      {/* Content */}
       <section className="py-16 px-4 font-sans tracking-wide relative z-20">
         <div className="max-w-6xl mx-auto">
           <div className="h-[2.5cm]" />
@@ -349,7 +358,7 @@ export function EventsSection() {
 
           <div className="h-[2.5cm]" />
 
-          {/* Filters Animation */}
+          {/* Filters */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -361,14 +370,15 @@ export function EventsSection() {
             />
           </motion.div>
 
-          {/* Two Stacks - Responsive layout */}
+          {/* Event stacks */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 mt-12">
-            {/* Day 1 - Only show if there are events or no filters */}
+            {/* Day 1 */}
             {(filteredDay1.length > 0 || filters.categoryFilter.length === 0) && (
               <motion.div
+                key={`day1-${filters.categoryFilter.join("-")}`}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
+                transition={{ duration: 0.8, delay: baseDelay }}
                 className="flex-1 min-w-0"
               >
                 <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
@@ -376,11 +386,15 @@ export function EventsSection() {
                   <SplitText text="Day 1 - March 15" delay={0.2} />
                 </h3>
                 <motion.div
+                  key={`day1-cards-${filters.categoryFilter.join("-")}`}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.6 }}
+                  transition={{ duration: 0.8, delay: baseDelay + 0.2 }}
                   className="relative w-full max-w-sm mx-auto"
-                  style={{ height: getContainerHeight(filteredDay1), minHeight: filteredDay1.length === 0 ? "100px" : "auto" }}
+                  style={{
+                    height: getContainerHeight(filteredDay1),
+                    minHeight: filteredDay1.length === 0 ? "100px" : "auto",
+                  }}
                 >
                   {filteredDay1.length > 0 ? (
                     filteredDay1.map((event, index) => (
@@ -403,12 +417,13 @@ export function EventsSection() {
               </motion.div>
             )}
 
-            {/* Day 2 - Only show if there are events or no filters */}
+            {/* Day 2 */}
             {(filteredDay2.length > 0 || filters.categoryFilter.length === 0) && (
               <motion.div
+                key={`day2-${filters.categoryFilter.join("-")}`}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.5}}
+                transition={{ duration: 0.8, delay: baseDelay + 0.3 }}
                 className="flex-1 min-w-0"
               >
                 <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
@@ -416,11 +431,15 @@ export function EventsSection() {
                   <SplitText text="Day 2 - March 16" delay={0.2} />
                 </h3>
                 <motion.div
+                  key={`day2-cards-${filters.categoryFilter.join("-")}`}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 2 }}
+                  transition={{ duration: 0.8, delay: baseDelay + 0.5 }}
                   className="relative w-full max-w-sm mx-auto"
-                  style={{ height: getContainerHeight(filteredDay2), minHeight: filteredDay2.length === 0 ? "100px" : "auto" }}
+                  style={{
+                    height: getContainerHeight(filteredDay2),
+                    minHeight: filteredDay2.length === 0 ? "100px" : "auto",
+                  }}
                 >
                   {filteredDay2.length > 0 ? (
                     filteredDay2.map((event, index) => (
@@ -444,16 +463,19 @@ export function EventsSection() {
             )}
           </div>
 
-          {/* Show message when no events found in both days */}
-          {filters.categoryFilter.length > 0 && filteredDay1.length === 0 && filteredDay2.length === 0 && (
-            <div className="text-center mt-12">
-              <p className="text-cyan-400/70 text-lg">
-                No events found for the selected filters.
-              </p>
-            </div>
-          )}
+          {/* No results message */}
+          {filters.categoryFilter.length > 0 &&
+            filteredDay1.length === 0 &&
+            filteredDay2.length === 0 && (
+              <div className="text-center mt-12">
+                <p className="text-cyan-400/70 text-lg">
+                  No events found for the selected filters.
+                </p>
+              </div>
+            )}
         </div>
       </section>
     </div>
   );
 }
+
