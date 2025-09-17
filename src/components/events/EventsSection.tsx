@@ -339,7 +339,7 @@ export function EventsSection() {
 
       <section className="py-16 px-4 font-sans tracking-wide relative z-20">
         <div className="max-w-6xl mx-auto">
-          <div className="h-[2.5cm]" />
+          <div className="h-[1.5cm]" />
 
           {/* Title */}
           <motion.div
@@ -348,7 +348,7 @@ export function EventsSection() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="mb-4 text-cyan-300 font-bitgrid text-7xl tracking-wider">
+            <h2 className="mb-4 text-cyan-300 text-center font-bitgrid text-7xl tracking-wider">
               EVENTS
             </h2>
             
