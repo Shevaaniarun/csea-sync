@@ -89,7 +89,6 @@ export function Footer() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
 
-      
       <motion.button
         onClick={scrollToTop}
         className="fixed bottom-8 right-8 z-50 bg-white hover:bg-gray-900 text-gray-950 hover:text-white p-3 rounded-full shadow-lg transition-all duration-300"
@@ -106,9 +105,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Column 1: Contact Us */}
           <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left">Contact Us</h3>
+            {/* shifted slightly left with pl-12 */}
+            <h3 className="text-3xl font-bold text-cyan-300 pl-0 md:pl-56">Contact Us</h3>
             <div className="space-y-8 text-cyan-100">
-              {/* 2-2 grid of plain text blocks with ample spacing */}
+              {/* 2-2 grid of contacts */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
                 {/* Kamalesh */}
                 <div>
@@ -163,24 +163,24 @@ export function Footer() {
                 </div>
               </div>
 
-              {/* Centered last contact, plain text (also centered on mobile) */}
-              <div className="flex justify-center">
-                <div className="text-center w-full sm:w-auto">
+              {/* Madhubaalika shifted left too */}
+              <div className="flex justify-start pl-0 md:pl-56">
+                <div className="text-left w-full sm:w-auto">
                   <div className="text-xl font-semibold text-white">Madhubaalika</div>
-                  <div className="mt-1 flex items-center justify-center gap-2">
+                  <div className="mt-1 flex items-center gap-2">
                     <Phone className="w-5 h-5 text-cyan-300" />
                     <span className="font-semibold text-lg">+91 90000 00003</span>
                   </div>
-                  <div className="mt-1 flex items-center justify-center gap-2">
+                  <div className="mt-1 flex items-center gap-2">
                     <Mail className="w-5 h-5 text-cyan-300" />
-                    <span className="text-base">generalsecretary@abacus.org.in</span>
+                    <span className="text-base">generalsecretary@abacus.org.in</span> 
                   </div>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Column 2: Map + Socials */}
+          {/* Column 2: Map + Socials (unchanged) */}
           <motion.div className="space-y-4" variants={itemVariants}>
             <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left">Map</h3>
             <div className="flex items-start gap-2 text-cyan-100">
