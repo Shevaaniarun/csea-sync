@@ -101,7 +101,7 @@ export function Footer() {
         <ArrowUp className="w-5 h-5" />
       </motion.button>
 
-      <div className="relative z-10 container mx-auto px-4 py-4">
+      <div className="relative z-10 container mx-auto px-4 py-4" id="nav-footer-div">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Column 1: Contact Us */}
           <motion.div className="space-y-4" variants={itemVariants}>

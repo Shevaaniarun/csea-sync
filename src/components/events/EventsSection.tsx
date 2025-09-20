@@ -318,26 +318,7 @@ export function EventsSection() {
   const baseDelay = filtering ? 0 : 1;
 
   return (
-    <div className="relative w-full">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gray-950 -z-50" />
-      <div className="absolute inset-0 -z-40 pointer-events-none">
-        <ParticlesBackground />
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#00b7ff"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="w-full h-full"
-        />
-      </div>
-
-      <section className="py-16 px-4 font-sans tracking-wide relative z-20">
+      <section className="py-16 px-4 font-sans tracking-wide relative z-20" id="nav-events-section">
         <div className="max-w-6xl mx-auto">
           <div className="h-[1.5cm]" />
 
@@ -473,7 +454,7 @@ export function EventsSection() {
             )}
         </div>
       </section>
-    </div>
+
   );
 }
 
