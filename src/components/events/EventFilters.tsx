@@ -69,7 +69,7 @@ export function EventFilters({ filters, onFiltersChange }: EventFiltersProps) {
                 key={category}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.2 }}
               >
                 <Badge
                   variant="outline"

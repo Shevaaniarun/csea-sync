@@ -12,7 +12,7 @@ export interface SplitTextProps {
   animationFrom?: { opacity: number; y: number };
   animationTo?: { opacity: number; y: number };
   duration?: number;
-  ease?: string;
+  ease?: string | ((t: number) => number);
 }
 
 const SplitText: React.FC<SplitTextProps> = ({
@@ -41,7 +41,7 @@ const SplitText: React.FC<SplitTextProps> = ({
           transition={{
             duration,
             delay: delay + i * staggerDelay,
-            ease
+            ease: ease as any // Fix for TypeScript error
           }}
           style={{ 
             display: "inline-block", 

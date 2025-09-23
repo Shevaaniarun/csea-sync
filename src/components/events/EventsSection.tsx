@@ -3,8 +3,6 @@ import { Calendar } from "lucide-react";
 import { Event } from "./EventCard";
 import { StackedEventCard } from "./StackedEventCard";
 import { EventFilters, FilterOptions } from "./EventFilters";
-import LightRays from "../ui/bg-animations/LightRays";
-import ParticlesBackground from "../ui/bg-animations/ParticlesBackground";
 import { motion, useInView } from "framer-motion";
 import SplitText from "../ui/bg-animations/SplitText";
 import { useRef } from "react";
@@ -343,7 +341,7 @@ export function EventsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <EventFilters
             filters={filters}
@@ -409,7 +407,7 @@ export function EventsSection() {
               key={`day2-${filters.categoryFilter.join("-")}`}
               initial={{ opacity: 0, y: 40 }}
               animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: baseDelay + 0.3 }}
+              transition={{ duration: 0.8, delay: baseDelay + 0.5 }}
               className="flex-1 min-w-0"
             >
               <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">

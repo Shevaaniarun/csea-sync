@@ -69,7 +69,7 @@ export function StackedEventCard({
       initial={{ opacity: 0, scale: 0.8, y: 40 }}
       animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
       transition={{
-        duration: 0.2,
+        duration: 0.15, 
         delay: index * 0.1,
         ease: [0.25, 0.8, 0.25, 1], 
       }}
