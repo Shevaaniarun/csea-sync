@@ -280,7 +280,7 @@ export function EventsSection() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const [filters, setFilters] = useState<FilterOptions>({ categoryFilter: [] });
   const [filtering, setFiltering] = useState(false);
-  
+
   const sectionRef = useRef(null);
   const isSectionInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -301,25 +301,14 @@ export function EventsSection() {
     setTimeout(() => setFiltering(false), 100);
   };
 
-  // Dynamic height
-  const getContainerHeight = (events: Event[]) => {
-    if (events.length === 0) return "auto";
-    if (expandedCard) {
-      const expandedCardIndex = events.findIndex(
-        (event) => event.id === expandedCard
-      );
-      return expandedCardIndex !== -1
-        ? `${expandedCardIndex * 60 + 600}px`
-        : "auto";
-    }
-    return `${events.length * 60 + 100}px`;
-  };
-
-  // delay config: faster when filtering
   const baseDelay = filtering ? 0 : 1;
 
   return (
-    <section ref={sectionRef} className="py-16 px-4 font-sans tracking-wide relative z-20" id="nav-events-section">
+    <section
+      ref={sectionRef}
+      className="py-16 px-4 font-sans tracking-wide relative z-20"
+      id="nav-events-section"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="h-[1.5cm]" />
 
@@ -341,118 +330,95 @@ export function EventsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <EventFilters
-            filters={filters}
-            onFiltersChange={handleFiltersChange}
-          />
+          <EventFilters filters={filters} onFiltersChange={handleFiltersChange} />
         </motion.div>
 
         {/* Event stacks */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 mt-12">
           {/* Day 1 */}
-          {(filteredDay1.length > 0 || filters.categoryFilter.length === 0) && (
-            <motion.div
-              key={`day1-${filters.categoryFilter.join("-")}`}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: baseDelay }}
-              className="flex-1 min-w-0"
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: baseDelay }}
+            className="flex-1 min-w-0"
+          >
+            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
+              <Calendar className="w-4 h-4" />
+              <SplitText
+                text="Day 1 - March 15"
+                delay={0.2}
+                scrollTrigger={isSectionInView}
+                tag="span"
+              />
+            </h3>
+            <div
+              className="relative w-full max-w-sm mx-auto"
+              style={{ height: expandedCard ? "600px" : "700px" }}
             >
-              <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
-                <Calendar className="w-4 h-4" />
-                <SplitText 
-                  text="Day 1 - March 15" 
-                  delay={0.2} 
-                  scrollTrigger={isSectionInView}
-                  tag="span"
-                />
-              </h3>
-              <motion.div
-                key={`day1-cards-${filters.categoryFilter.join("-")}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: baseDelay + 0.2 }}
-                className="relative w-full max-w-sm mx-auto"
-                style={{
-                  height: getContainerHeight(filteredDay1),
-                  minHeight: filteredDay1.length === 0 ? "100px" : "auto",
-                }}
-              >
-                {filteredDay1.length > 0 ? (
-                  filteredDay1.map((event, index) => (
-                    <StackedEventCard
-                      key={event.id}
-                      event={event}
-                      index={index}
-                      totalCards={filteredDay1.length}
-                      isExpanded={expandedCard === event.id}
-                      onExpand={() => setExpandedCard(event.id)}
-                      onCollapse={() => setExpandedCard(null)}
-                    />
-                  ))
-                ) : (
-                  <p className="text-center text-cyan-400/70 py-8">
-                    No events found for Day 1.
-                  </p>
-                )}
-              </motion.div>
-            </motion.div>
-          )}
+              {filteredDay1.length > 0 ? (
+                filteredDay1.map((event, index) => (
+                  <StackedEventCard
+                    key={event.id}
+                    event={event}
+                    index={index}
+                    totalCards={filteredDay1.length}
+                    isExpanded={expandedCard === event.id}
+                    onExpand={() => setExpandedCard(event.id)}
+                    onCollapse={() => setExpandedCard(null)}
+                  />
+                ))
+              ) : (
+                <p className="text-center text-cyan-400/70 py-8">
+                  No events found for Day 1.
+                </p>
+              )}
+            </div>
+          </motion.div>
 
           {/* Day 2 */}
-          {(filteredDay2.length > 0 || filters.categoryFilter.length === 0) && (
-            <motion.div
-              key={`day2-${filters.categoryFilter.join("-")}`}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: baseDelay + 0.5 }}
-              className="flex-1 min-w-0"
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: baseDelay + 0.5 }}
+            className="flex-1 min-w-0"
+          >
+            <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
+              <Calendar className="w-4 h-4" />
+              <SplitText
+                text="Day 2 - March 16"
+                delay={0.1}
+                scrollTrigger={isSectionInView}
+                tag="span"
+              />
+            </h3>
+            <div
+              className="relative w-full max-w-sm mx-auto"
+              style={{ height: expandedCard ? "600px" : "700px" }}
             >
-              <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
-                <Calendar className="w-4 h-4" />
-                <SplitText 
-                  text="Day 2 - March 16" 
-                  delay={0.1} 
-                  scrollTrigger={isSectionInView}
-                  tag="span"
-                />
-              </h3>
-              <motion.div
-                key={`day2-cards-${filters.categoryFilter.join("-")}`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: baseDelay + 0.5 }}
-                className="relative w-full max-w-sm mx-auto"
-                style={{
-                  height: getContainerHeight(filteredDay2),
-                  minHeight: filteredDay2.length === 0 ? "100px" : "auto",
-                }}
-              >
-                {filteredDay2.length > 0 ? (
-                  filteredDay2.map((event, index) => (
-                    <StackedEventCard
-                      key={event.id}
-                      event={event}
-                      index={index}
-                      totalCards={filteredDay2.length}
-                      isExpanded={expandedCard === event.id}
-                      onExpand={() => setExpandedCard(event.id)}
-                      onCollapse={() => setExpandedCard(null)}
-                    />
-                  ))
-                ) : (
-                  <p className="text-center text-cyan-400/70 py-8">
-                    No events found for Day 2.
-                  </p>
-                )}
-              </motion.div>
-            </motion.div>
-          )}
+              {filteredDay2.length > 0 ? (
+                filteredDay2.map((event, index) => (
+                  <StackedEventCard
+                    key={event.id}
+                    event={event}
+                    index={index}
+                    totalCards={filteredDay2.length}
+                    isExpanded={expandedCard === event.id}
+                    onExpand={() => setExpandedCard(event.id)}
+                    onCollapse={() => setExpandedCard(null)}
+                  />
+                ))
+              ) : (
+                <p className="text-center text-cyan-400/70 py-8">
+                  No events found for Day 2.
+                </p>
+              )}
+            </div>
+          </motion.div>
         </div>
 
-        {/* No results message */}
+        {/* No results */}
         {filters.categoryFilter.length > 0 &&
           filteredDay1.length === 0 &&
           filteredDay2.length === 0 && (

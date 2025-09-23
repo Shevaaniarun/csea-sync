@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { 
   Facebook, 
   Linkedin, 
@@ -9,6 +9,7 @@ import {
   Phone, 
   ArrowUp, 
 } from "lucide-react";
+import { easeOut } from "framer-motion";
 
 const socialLinks = [
   {
@@ -32,16 +33,8 @@ const socialLinks = [
 ];
 
 export function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -49,64 +42,65 @@ export function Footer() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        staggerChildren: 0.2
-      }
-    }
+        duration: 0.9,
+        ease: easeOut, 
+        staggerChildren: 0.25,
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 25 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.7, ease: easeOut },
+    },
+  };
+
+  // Slower variants for the second column
+  const slowItemVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { 
+        duration: 1.6, 
+        ease: easeOut,
+        delay: 0.7, 
+      },
+    },
   };
 
   const iconVariants = {
-    hover: { 
-      scale: 1.2, 
-      rotate: 5,
-      transition: { duration: 0.3 }
-    },
-    tap: { scale: 0.9 }
+    hover: { scale: 1.2, rotate: 5, transition: { duration: 0.3 } },
+    tap: { scale: 0.9 },
   };
 
   return (
-    <motion.footer 
+    <motion.footer
+      ref={ref}
       className="relative bg-black text-white overflow-hidden"
       style={{ 
-        minHeight: '10vh',
-        fontFamily: "'Exo 2', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif"
+        minHeight: "20vh",
+        fontFamily:
+          "'Exo 2', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif",
       }}
       initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
+      animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
     >
-      
+      {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
 
-      <motion.button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 z-50 bg-white hover:bg-gray-900 text-gray-950 hover:text-white p-3 rounded-full shadow-lg transition-all duration-300"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1 }}
-      >
-        <ArrowUp className="w-5 h-5" />
-      </motion.button>
-
-      <div className="relative z-10 container mx-auto px-4 py-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Column 1: Contact Us */}
+      <div className="relative z-10 container mx-auto px-4 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Column 1: Contact Us - Normal speed */}
           <motion.div className="space-y-4" variants={itemVariants}>
-            {/* shifted slightly left with pl-12 */}
-            <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left pl-0 md:pl-56">Contact Us</h3>
+            <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left md:pl-56">Contact Us</h3>
             <div className="space-y-8 text-cyan-100">
               {/* 2-2 grid of contacts */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
@@ -180,8 +174,8 @@ export function Footer() {
             </div>
           </motion.div>
 
-          {/* Column 2: Map + Socials (unchanged) */}
-          <motion.div className="space-y-4" variants={itemVariants}>
+          {/* Column 2: Map + Socials */}
+          <motion.div className="space-y-4" variants={slowItemVariants}>
             <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left">Map</h3>
             <div className="flex items-start gap-2 text-cyan-100">
               <MapPin className="w-6 h-6 mt-0.5 text-cyan-300" />
@@ -221,31 +215,21 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Animated Background Elements */}
+      {/* Background floating elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <motion.div
           className="absolute top-10 left-8 w-16 h-16 bg-blue-500/5 rounded-full blur-xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute bottom-10 right-8 w-24 h-24 bg-purple-500/5 rounded-full blur-xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.1, 0.3, 0.1],
-          }}
+          animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.3, 0.1] }}
           transition={{
             duration: 5,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
+            delay: 1,
           }}
         />
       </div>
