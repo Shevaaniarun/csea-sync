@@ -3,6 +3,8 @@ import { Calendar } from "lucide-react";
 import { Event } from "./EventCard";
 import { StackedEventCard } from "./StackedEventCard";
 import { EventFilters, FilterOptions } from "./EventFilters";
+import LightRays from "../ui/bg-animations/LightRays";
+import ParticlesBackground from "../ui/bg-animations/ParticlesBackground";
 import { motion, useInView } from "framer-motion";
 import SplitText from "../ui/bg-animations/SplitText";
 import { useRef } from "react";
@@ -301,6 +303,20 @@ export function EventsSection() {
     setTimeout(() => setFiltering(false), 100);
   };
 
+  // Dynamic height calculation (fixes footer overlap + gaps)
+  const getContainerHeight = (events: Event[]) => {
+    if (events.length === 0) return "100px";
+    if (expandedCard) {
+      const expandedCardIndex = events.findIndex(
+        (event) => event.id === expandedCard
+      );
+      return expandedCardIndex !== -1
+        ? `${expandedCardIndex * 60 + 600}px`
+        : `${events.length * 60 + 100}px`;
+    }
+    return `${events.length * 60 + 100}px`;
+  };
+
   const baseDelay = filtering ? 0 : 1;
 
   return (
@@ -330,7 +346,7 @@ export function EventsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <EventFilters filters={filters} onFiltersChange={handleFiltersChange} />
         </motion.div>
@@ -339,6 +355,7 @@ export function EventsSection() {
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 mt-12">
           {/* Day 1 */}
           <motion.div
+            key={`day1-${filters.categoryFilter.join("-")}`} // <-- forces refresh
             initial={{ opacity: 0, y: 40 }}
             animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: baseDelay }}
@@ -355,7 +372,7 @@ export function EventsSection() {
             </h3>
             <div
               className="relative w-full max-w-sm mx-auto"
-              style={{ height: expandedCard ? "600px" : "700px" }}
+              style={{ height: getContainerHeight(filteredDay1) }}
             >
               {filteredDay1.length > 0 ? (
                 filteredDay1.map((event, index) => (
@@ -379,6 +396,7 @@ export function EventsSection() {
 
           {/* Day 2 */}
           <motion.div
+            key={`day2-${filters.categoryFilter.join("-")}`} // <-- forces refresh
             initial={{ opacity: 0, y: 40 }}
             animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: baseDelay + 0.5 }}
@@ -395,7 +413,7 @@ export function EventsSection() {
             </h3>
             <div
               className="relative w-full max-w-sm mx-auto"
-              style={{ height: expandedCard ? "600px" : "700px" }}
+              style={{ height: getContainerHeight(filteredDay2) }}
             >
               {filteredDay2.length > 0 ? (
                 filteredDay2.map((event, index) => (
