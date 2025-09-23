@@ -2,8 +2,8 @@ import React from "react";
 import HomeComponent from "./home-components/HomeComponent";
 import { EventsSection } from "./components/events/EventsSection";
 import Navbar from "./navbar-components/NavbarComponent";
-import ParticlesBackground from "./components/ui/ParticlesBackground";
-import LightRays from "./components/ui/LightRays";
+import LightRays from "./components/ui/bg-animations/LightRays";
+import ParticlesBackground from "./components/ui/bg-animations/ParticlesBackground";
 
 export default function HomeEventsWrapper() {
   return (
