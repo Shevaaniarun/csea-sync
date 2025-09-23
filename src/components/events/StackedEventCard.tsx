@@ -29,7 +29,7 @@ export function StackedEventCard({
 }: StackedEventCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isAnimating, setIsAnimating] = useState(false);
-
+  
   // detect when card enters viewport (only once)
   const inView = useInView(cardRef, { once: true, margin: "-50px" });
 
@@ -67,11 +67,7 @@ export function StackedEventCard({
     <motion.div
       ref={cardRef}
       initial={{ opacity: 0, scale: 0.8, y: 40 }}
-      animate={
-        inView
-          ? { opacity: 1, scale: 1, y: 0 }
-          : {}
-      }
+      animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
       transition={{
         duration: 0.2,
         delay: index * 0.1,
