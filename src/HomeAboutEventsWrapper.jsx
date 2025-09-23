@@ -4,6 +4,7 @@ import { EventsSection } from "./components/events/EventsSection";
 import Navbar from "./navbar-components/NavbarComponent";
 import LightRays from "./components/ui/bg-animations/LightRays";
 import ParticlesBackground from "./components/ui/bg-animations/ParticlesBackground";
+import AboutUs from "./components/about";
 
 export default function HomeEventsWrapper() {
   return (
@@ -30,6 +31,7 @@ export default function HomeEventsWrapper() {
       <div className="relative z-0">
         <Navbar />
         <HomeComponent />
+        <AboutUs />
         <EventsSection />
       </div>
     </>

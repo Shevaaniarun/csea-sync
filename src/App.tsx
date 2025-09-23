@@ -3,7 +3,7 @@ import AppLoader from "./components/ui/loader/AppLoader";
 import LightRays from "./components/ui/bg-animations/LightRays";
 import ParticlesBackground from "./components/ui/bg-animations/ParticlesBackground";
 import { Footer } from "./components/Footer";
-import HomeEventsWrapper from "./HomeEventsWrapper";
+import HomeEventsWrapper from "./HomeAboutEventsWrapper";
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
