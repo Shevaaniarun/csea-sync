@@ -1,6 +1,6 @@
 import React from "react";
-import cseaImage from "../assets/csea.webp";
-import syncImage from "../assets/sync.png";
+import cseaImage from "../../assets/csea.webp";
+import syncImage from "../../assets/sync.png";
 import "./ImageAnimator.css";
 
 export default function ImageAnimator({ currentPhase }) {

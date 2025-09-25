@@ -1,7 +1,7 @@
 import React from "react";
 import HomeComponent from "./home/HomeComponent";
 import { EventsSection } from "./events/EventsSection";
-import Navbar from "./navbar-components/NavbarComponent";
+import Navbar from "./navbar/NavbarComponent";
 import LightRays from "./ui/bg-animations/LightRays";
 import ParticlesBackground from "./ui/bg-animations/ParticlesBackground";
 import AboutUs from "./about";
