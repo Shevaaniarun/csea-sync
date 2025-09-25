@@ -8,24 +8,33 @@
 
 }
 
-/*Main container*/
+/* Main container */
 .home-container {
   display: flex;
-  align-items: stretch;
+  justify-content: center!important; /* Center the group of items */
+  align-items: center !important;    /* Vertically align content */
   width: 100%;
-  gap: 3rem;
 }
 
-/* Left Column*/
+.about-section, .animation-section {
+  /* Add these 3 lines to center the content inside each box */
+  display: flex;
+  justify-content: center; /* Horizontally centers the text/logo */
+  align-items: center;    /* Vertically centers the text/logo */
+}
 .about-section {
-  flex: 1;
+  width: 50%;
 }
 
-/* Right Column*/
+.animation-section {
+  width: 50%;
+}
+
+/* Right Column */
 .animation-section {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 2rem;
 }
 

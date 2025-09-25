@@ -1,5 +1,4 @@
 .about-container {
-  padding: 4rem; /* Keep padding as it defines the overall space */
   height: 100%;
   display: flex;
   flex-direction: column;
