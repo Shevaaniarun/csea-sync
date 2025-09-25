@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes neonBorder {
+  0% {
+    box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15px cyan, 0 0 20px cyan;
+  }
+  50% {
+    box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
+  }
+  100% {
+    box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15px cyan, 0 0 20px cyan;
+  }
+}
+
+.animate-neonBorder {
+  animation: neonBorder 3s linear infinite;
+}
+
+/* Blue neon glassy utilities (subtle, not full glassmorphism) */
+.glassy-blue {
+  position: relative;
+  background: linear-gradient(
+      180deg,
+      rgba(6, 40, 80, 0.96),
+      rgba(2, 10, 18, 0.985)
+    );
+  border: 1px solid rgba(0, 225, 255, 0.22);
+  backdrop-filter: blur(1px) saturate(102%);
+  -webkit-backdrop-filter: blur(1px) saturate(102%);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 240, 255, 0.03),
+    0 3px 10px rgba(0, 220, 255, 0.05),
+    0 0 10px rgba(0, 255, 255, 0.07);
+}
+
+.glassy-blue:hover {
+  border-color: rgba(0, 255, 255, 0.22);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 255, 255, 0.06),
+    0 5px 14px rgba(0, 235, 255, 0.09),
+    0 0 14px rgba(0, 255, 255, 0.10);
+}
+
+.glassy-chip {
+  background: rgba(4, 24, 36, 0.96);
+  border: 1px solid rgba(0, 240, 255, 0.22);
+  backdrop-filter: blur(0.5px) saturate(102%);
+  -webkit-backdrop-filter: blur(0.5px) saturate(102%);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.08);
+}
+
+.glassy-button {
+  background: rgba(6, 36, 52, 0.96);
+  border: 1px solid rgba(0, 240, 255, 0.22);
+  backdrop-filter: blur(1px) saturate(102%);
+  -webkit-backdrop-filter: blur(1px) saturate(102%);
+}

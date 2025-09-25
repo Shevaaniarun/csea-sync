@@ -1,0 +1,92 @@
+.home-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin-top:105px;
+
+}
+
+/* Main container */
+.home-container {
+  display: flex;
+  justify-content: center!important; /* Center the group of items */
+  align-items: center !important;    /* Vertically align content */
+  width: 100%;
+}
+
+.about-section, .animation-section {
+  /* Add these 3 lines to center the content inside each box */
+  display: flex;
+  justify-content: center; /* Horizontally centers the text/logo */
+  align-items: center;    /* Vertically centers the text/logo */
+}
+.about-section {
+  width: 50%;
+}
+
+.animation-section {
+  width: 50%;
+}
+
+/* Right Column */
+.animation-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.image-container {
+  max-width: 250px;
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/*Responsive Layout*/
+@media (max-width: 900px) {
+  .home-body{
+    margin-top:80px;
+  }
+  .home-container {
+    flex-direction: column;
+    margin-top:0px;
+    margin-bottom: 0px;
+  }
+
+  .about-section {
+    order: 2;
+    width: 100%;
+  }
+
+  /*Grid for Responsiveness*/
+  .animation-section {
+    order: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* ✨ ADDED: Remove background image for mobile layout */
+  .home-body {
+    background-image: none; /* No background image on mobile */
+  }
+}
