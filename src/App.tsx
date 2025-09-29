@@ -2,6 +2,7 @@ import { useState } from "react";
 import AppLoader from "./components/ui/loader/AppLoader";
 import LightRays from "./components/ui/bg-animations/LightRays";
 import ParticlesBackground from "./components/ui/bg-animations/ParticlesBackground";
+import Navbar from "./components/navbar/NavbarComponent";
 import { Footer } from "./components/Footer";
 import HomeEventsWrapper from "./components/HomeAboutEventsWrapper";
 export default function App() {
@@ -16,8 +17,9 @@ export default function App() {
       {isLoading && <AppLoader onDone={() => setIsLoading(false)} minDurationMs={2200} />}
       {!isLoading && (
         <div className="relative z-10">
-        <HomeEventsWrapper/>
-        <Footer/>
+          <Navbar />
+          <HomeEventsWrapper/>
+          <Footer/>
         </div>
       )}
     </div>

@@ -11,6 +11,7 @@ export default {
       }
     },
     fontFamily: {
+    exo: ['Exo', 'sans-serif'],
     bitgrid: ['"Bitcount Grid Double"', 'sans-serif'],
   }
     

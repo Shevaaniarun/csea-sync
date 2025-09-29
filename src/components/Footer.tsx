@@ -79,95 +79,92 @@ export function Footer() {
   };
 
   return (
+    
     <motion.footer
       ref={ref}
-      className="relative bg-black text-white overflow-hidden"
-      style={{ 
-        minHeight: "20vh",
-        fontFamily:
-          "'Exo 2', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif",
-      }}
+      className="relative z-[1] bg-black text-white overflow-hidden min-h-[20vh] font-exo"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
     >
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10" style={{ zIndex: 0 }}>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
-
-      <div className="relative z-10 container mx-auto px-4 py-6" id="nav-footer-div">
+      <div className="h-[1cm]" />
+      <div className="relative z-10 container mx-auto px-4 py-6 text-lg md:text-[19px]" style={{ zIndex: 1 }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Column 1: Contact Us - Normal speed */}
+          
           <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left md:pl-56">Contact Us</h3>
-            <div className="space-y-8 text-cyan-100">
+            <h3 id="nav-footer-div" className="text-3xl font-bold text-cyan-300 text-center md:text-left md:pl-60 scroll-mt-40 md:scroll-mt-48">Contact Us</h3>
+            <div className="space-y-8 text-cyan-100 md:pl-16">
               {/* 2-2 grid of contacts */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
                 {/* Kamalesh */}
                 <div className="text-center md:text-left">
-                  <div className="text-xl font-semibold text-white">Kamalesh N</div>
+                  <div className="text-lg font-semibold text-white">Kamalesh N</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Phone className="w-5 h-5 text-cyan-300" />
                     <span className="font-semibold text-lg">+91 86103 86055</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Mail className="w-5 h-5 text-cyan-300" />
-                    <span className="text-base">chairperson@abacus.org.in</span>
+                    <span className="text-lg">chairperson@abacus.org.in</span>
                   </div>
                 </div>
 
                 {/* Sulochana */}
                 <div className="text-center md:text-left">
-                  <div className="text-xl font-semibold text-white">Sulochana H</div>
+                  <div className="text-lg font-semibold text-white">Sulochana H</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Phone className="w-5 h-5 text-cyan-300" />
                     <span className="font-semibold text-lg">+91 90251 93250</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Mail className="w-5 h-5 text-cyan-300" />
-                    <span className="text-base">chairperson@abacus.org.in</span>
+                    <span className="text-lg">chairperson@abacus.org.in</span>
                   </div>
                 </div>
 
                 {/* Hariharan */}
                 <div className="text-center md:text-left">
-                  <div className="text-xl font-semibold text-white">Hariharan A</div>
+                  <div className="text-lg font-semibold text-white">Hariharan A</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Phone className="w-5 h-5 text-cyan-300" />
                     <span className="font-semibold text-lg">+91 90000 00001</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Mail className="w-5 h-5 text-cyan-300" />
-                    <span className="text-base">vicechairperson@abacus.org.in</span>
+                    <span className="text-lg">vicechairperson@abacus.org.in</span>
                   </div>
                 </div>
 
                 {/* Ishwarya */}
                 <div className="text-center md:text-left">
-                  <div className="text-xl font-semibold text-white">Ishwarya D</div>
+                  <div className="text-lg font-semibold text-white">Ishwarya D</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Phone className="w-5 h-5 text-cyan-300" />
                     <span className="font-semibold text-lg">+91 9345214813</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Mail className="w-5 h-5 text-cyan-300" />
-                    <span className="text-base">vicechairperson@abacus.org.in</span>
+                    <span className="text-lg">vicechairperson@abacus.org.in</span>
                   </div>
                 </div>
               </div>
 
               {/* Madhubaalika */}
-              <div className="flex justify-center md:justify-start pl-0 md:pl-56">
+              <div className="flex justify-center md:justify-start pl-0 md:pl-48">
                 <div className="text-center md:text-left w-full sm:w-auto">
-                  <div className="text-xl font-semibold text-white ">Madhubaalika M</div>
+                  <div className="text-lg font-semibold text-white ">Madhubaalika M</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start ">
                     <Phone className="w-5 h-5 text-cyan-300" />
                     <span className="font-semibold text-lg ">+91 7305897553</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Mail className="w-5 h-5 text-cyan-300" />
-                    <span className="text-base">generalsecretary@abacus.org.in</span> 
+                    <span className="text-lg">generalsecretary@abacus.org.in</span> 
                   </div>
                 </div>
               </div>
@@ -179,7 +176,7 @@ export function Footer() {
             <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left">Map</h3>
             <div className="flex items-start gap-2 text-cyan-100">
               <MapPin className="w-6 h-6 mt-0.5 text-cyan-300" />
-              <div className="text-lg md:text-xl">Department of CSE, CEG, Anna University</div>
+              <div className="text-lg md:text-lg">Department of CSE, CEG, Anna University</div>
             </div>
             <div className="relative w-full overflow-hidden rounded-lg border border-cyan-500/30 bg-gray-900/40 h-48 md:h-60">
               <iframe 
@@ -193,7 +190,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl font-semibold text-cyan-300 mb-2">Follow us</h3>
+              <h3 className="text-lg md:text-2xl font-semibold text-cyan-300 mb-2">Follow us</h3>
               <div className="flex gap-3 justify-center md:justify-start">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -216,7 +213,7 @@ export function Footer() {
       </div>
 
       {/* Background floating elements */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
         <motion.div
           className="absolute top-10 left-8 w-16 h-16 bg-blue-500/5 rounded-full blur-xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
