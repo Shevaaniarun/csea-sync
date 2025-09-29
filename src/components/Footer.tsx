@@ -81,27 +81,22 @@ export function Footer() {
   return (
     <motion.footer
       ref={ref}
-      className="relative bg-black text-white overflow-hidden"
-      style={{ 
-        minHeight: "20vh",
-        fontFamily:
-          "'Exo 2', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif",
-      }}
+      className="relative z-[1] bg-black text-white overflow-hidden min-h-[20vh]"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
     >
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10" style={{ zIndex: 0 }}>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-6" id="nav-footer-div">
+      <div className="relative z-10 container mx-auto px-4 py-6" style={{ zIndex: 1 }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Column 1: Contact Us - Normal speed */}
           <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 className="text-3xl font-bold text-cyan-300 text-center md:text-left md:pl-56">Contact Us</h3>
-            <div className="space-y-8 text-cyan-100">
+            <h3 id="nav-footer-div" className="text-3xl font-bold text-cyan-300 text-center md:text-left md:pl-60 scroll-mt-40 md:scroll-mt-48">Contact Us</h3>
+            <div className="space-y-8 text-cyan-100 md:pl-16">
               {/* 2-2 grid of contacts */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
                 {/* Kamalesh */}
@@ -158,7 +153,7 @@ export function Footer() {
               </div>
 
               {/* Madhubaalika */}
-              <div className="flex justify-center md:justify-start pl-0 md:pl-56">
+              <div className="flex justify-center md:justify-start pl-0 md:pl-48">
                 <div className="text-center md:text-left w-full sm:w-auto">
                   <div className="text-xl font-semibold text-white ">Madhubaalika M</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start ">
@@ -216,7 +211,7 @@ export function Footer() {
       </div>
 
       {/* Background floating elements */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
         <motion.div
           className="absolute top-10 left-8 w-16 h-16 bg-blue-500/5 rounded-full blur-xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}

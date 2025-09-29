@@ -9,7 +9,8 @@
   width: 95%;
   max-width: 1400px;
   height: 65px;
-  z-index: 1000;
+  z-index: 2147483647;
+  pointer-events: auto;
   display: flex;
   justify-content: center; /* Centering the content now */
   align-items: center;
@@ -103,7 +104,7 @@
   width: 28px;
   height: 22px;
   cursor: pointer;
-  z-index: 1002;
+  z-index: 2147483647;
 }
 .hamburger-menu .bar {
   height: 3px;
@@ -127,7 +128,7 @@
   right: 0;
   height: 100vh;
   width: 150px;
-  z-index: 999;
+  z-index: 2147483000;
   display: flex;
   flex-direction: column;
   padding-top: 100px;
