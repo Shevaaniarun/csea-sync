@@ -5,7 +5,11 @@ import SpotlightCard from "../components/ui/spotlight";
 
 export default function AboutUs() {
   return (
-    <section className="flex flex-col items-center justify-center pt-0 pb-16 px-6" id="nav-about-div">
+    <section
+      className="flex flex-col items-center justify-center pt-0 pb-16 px-6"
+      id="nav-about-div"
+      style={{ fontFamily: "'Exo 2', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif" }}
+    >
       
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
@@ -21,7 +25,7 @@ export default function AboutUs() {
         spotlightColor="rgba(0, 229, 255, 0.25)"
       >
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-left mb-8 md:mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-justify mb-8 md:mb-10">
           <p className="text-gray-200 leading-relaxed text-sm sm:text-base">
             Sync is an intra-college symposium hosted by the Department of
             Computer Science. It is conducted with the notion of aggrandizing
@@ -47,7 +51,7 @@ export default function AboutUs() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-start gap-4 text-left bg-black/20 p-4 sm:p-5 rounded-xl border border-white/10 hover:border-cyan-400 transition-all duration-300 w-full"
+          className="flex flex-col sm:flex-row items-start gap-4 text-justify bg-black/20 p-4 sm:p-5 rounded-xl border border-white/10 hover:border-cyan-400 transition-all duration-300 w-full"
         >
           <div className="flex-shrink-0 text-cyan-400">
             <Calendar size={30} className="sm:w-10 sm:h-10 w-8 h-8" />
