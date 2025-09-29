@@ -5,11 +5,8 @@ import SpotlightCard from "../components/ui/spotlight";
 
 export default function AboutUs() {
   return (
-    <section
-      className="flex flex-col items-center justify-center pt-0 pb-16 px-6"
-      id="nav-about-div"
-      style={{ fontFamily: "'Exo 2', 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif" }}
-    >
+    <section className="flex flex-col items-center justify-center pt-0 pb-16 px-6 font-exo text-base" id="nav-about-div">
+
       
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
