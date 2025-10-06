@@ -3,6 +3,10 @@
 #nav-about-div{
   min-height: 80px;
 }
+
+#nav-home-div{
+  min-height: 115px;
+}
 /* Main Navbar Container */
 .navbar-container {
   position: fixed;
@@ -95,8 +99,10 @@
     font-size: 0.9rem; /* Reduced from 1.1rem */
     padding: 6px 8px; /* Reduced from 8px 16px */
   }
+  #nav-home-div{
+  min-height: 20px;
+}
   
-  /* Logo resizing rules have been removed */
 }
 
 /* Hamburger menu styles are kept below, but will not be used unless you change the media query back. */

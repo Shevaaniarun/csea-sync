@@ -1,9 +1,8 @@
 .home-body {
-  margin-top: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
+  padding: 3rem;
   box-sizing: border-box;
 }
 
@@ -16,7 +15,6 @@
 }
 
 .about-section, .animation-section {
-  /* Add these 3 lines to center the content inside each box */
   display: flex;
   justify-content: center; /* Horizontally centers the text/logo */
   align-items: center;    /* Vertically centers the text/logo */
