@@ -322,7 +322,7 @@ export function EventsSection() {
   return (
     <section
       ref={sectionRef}
-      className="py-16 px-4 font-sans tracking-wide relative z-20"
+      className="pb-16 lg:pt-5 pt-2 px-4 font-sans tracking-wide relative z-20"
       id="nav-events-section"
     >
       <div className="max-w-6xl mx-auto">
@@ -339,8 +339,6 @@ export function EventsSection() {
             EVENTS
           </h2>
         </motion.div>
-
-        <div className="h-[1.5cm]" />
 
         {/* Filters */}
         <motion.div

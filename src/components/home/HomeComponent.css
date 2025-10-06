@@ -2,10 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding-left: 3rem;
+  padding-top: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 2rem;
   box-sizing: border-box;
 }
-
+.home-body *{
+  font-family: 'Cormorant Garamond' !important;
+}
 /* Main container */
 .home-container {
   display: flex;
@@ -53,6 +58,7 @@
 @media (max-width: 900px) {
   .home-body{
     margin-top:80px;
+    padding-bottom: 0px;
   }
   .home-container {
     flex-direction: column;
@@ -82,8 +88,4 @@
     aspect-ratio: 1 / 1;
   }
 
-  /* ✨ ADDED: Remove background image for mobile layout */
-  .home-body {
-    background-image: none; /* No background image on mobile */
-  }
 }

@@ -27,7 +27,7 @@
   background-color: rgba(10, 25, 47, 0.25);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(36, 212, 232, 0.2);
+  border: 1px solid #24d4e8;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -38,8 +38,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: #24d4e8;
-  box-shadow: 0 0 10px 1px #24d4e8;
+  box-shadow: 0 0 8px .5px #24d4e8 ;
 }
 .navbar-container::before {
   top: 0;
@@ -101,6 +100,9 @@
   }
   #nav-home-div{
   min-height: 20px;
+}
+#nav-about-div{
+  min-height: 65px;
 }
   
 }
