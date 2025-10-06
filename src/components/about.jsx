@@ -7,14 +7,18 @@ export default function AboutUs() {
   return (
     <section className="flex flex-col items-center justify-center pt-0 pb-16 px-6" id="nav-about-div">
       
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="cursor-target text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 mb-8 sm:mb-10 text-center"
+      {/* Title - match Events styling and transition */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-20%" }}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-12"
       >
-        About Us
-      </motion.h2>
+        <h2 className="mb-4 text-cyan-300 text-center font-bitgrid text-4xl sm:text-5xl tracking-wider">
+          ABOUT
+        </h2>
+      </motion.div>
       
       <SpotlightCard
         className="max-w-5xl w-full text-center backdrop-blur-md border border-white/10 shadow-xl"
