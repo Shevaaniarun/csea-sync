@@ -1,11 +1,10 @@
 .home-body {
+  margin-top: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 5rem;
   box-sizing: border-box;
-  margin-top:105px;
-
 }
 
 /* Main container */

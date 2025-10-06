@@ -5,7 +5,9 @@ import SpotlightCard from "../components/ui/spotlight";
 
 export default function AboutUs() {
   return (
-    <section className="flex flex-col items-center justify-center pt-0 pb-16 px-6 font-exo text-base" id="nav-about-div">
+    <>
+    <div id="nav-about-div"></div>
+    <section className="flex flex-col items-center justify-center pt-0 pb-16 px-6 font-exo text-base">
 
       
       <motion.h2
@@ -67,5 +69,6 @@ export default function AboutUs() {
         </motion.div>
       </SpotlightCard>
     </section>
+    </>
   );
 }

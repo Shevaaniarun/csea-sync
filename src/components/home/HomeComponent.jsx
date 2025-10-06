@@ -8,8 +8,8 @@ export default function HomeComponent() {
   const { currentPhase } = useAnimationTimer();
 
   return (
-    <div className="home-body" id="nav-home-div">
-      <div className="home-container">
+    <div className="home-body">
+      <div className="home-container" id="nav-home-div">
         {/* Left Column: About Text */}
         <div className="about-section">
           <LeftInfo />
