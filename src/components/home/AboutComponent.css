@@ -7,16 +7,17 @@
 }
 
 .about-container h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   color: #24d4e8; /* Keep the blue color for the heading */
-  font-weight: 600;
+  font-weight: 501;
 }
 
 .about-container p {
   color: #fffcfc; /* Changed to a lighter grey for the date, as in the image */
   margin: 0; /* Reset margin for date paragraph */
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.5;
+  text-shadow: 0 0 2px #fffcfc;
 }
 
 .about-container p:nth-of-type(1) {
@@ -58,6 +59,7 @@
   /* Reduce font sizes to better fit smaller screens */
   .about-container h1 {
     font-size: 2.5rem; /* Reduced from 3rem */
+    font-weight:3rem;
   }
 
   .about-container p,
