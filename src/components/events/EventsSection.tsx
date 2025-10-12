@@ -12,269 +12,269 @@ import { useRef } from "react";
 const day1Events: Event[] = [
   {
     id: "d1-1",
-    title: "Code Bingo",
-    description: "Step into the captivating world of Coding, an exhilarating coding adventure where each challenge unlocks the secrets of the next thrilling quest!",
-    date: "September 28, 2024",
-    time: "09:30 AM - 12:30 PM",
-    venue: "RUSA Gallery, KP",
+    title: "IPL Auction",
+    description: "Form your dream IPL team in this intense two-round event featuring quizzes and a live auction.",
+    date: "October 15, 2025",
+    time: "09:30 AM - 12:00 PM",
+    venue: "Auditorium",
+    category: "Non-Tech",
+    prizePool: "Rs.2000/-",
+    participation: "Team of 2–3",
+    contacts: [
+      { name: "Renjitha", phone: "9876543210" },
+      { name: "Sarvesh", phone: "9876504321" }
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d",
+    rules: [
+      "Round 1: Quiz on IPL and world cricket; top 8–10 teams qualify.",
+      "Round 2: Each team gets ₹60 Cr virtual purse to buy 9 players.",
+      "Team composition: 3 batsmen, 3 bowlers, 1 wicketkeeper, 1 all-rounder, 1 extra.",
+      "Top 7 players’ points count for final scoring.",
+      "Player stats are based on real IPL/T20 data.",
+      "Overspending or violating composition rules leads to disqualification.",
+      "Highest total team points wins."
+    ]
+  },
+  {
+    id: "d1-2",
+    title: "Rayan Rumble",
+    description: "A memory-based IQ competition testing logic, recall, and teamwork through puzzles and mini-games.",
+    date: "October 15, 2025",
+    time: "12:30 PM - 03:00 PM",
+    venue: "Seminar Hall A",
+    category: "Non-Tech",
+    prizePool: "Rs.1500/-",
+    participation: "Team of 2–3",
+    contacts: [
+      { name: "Kiruthiga", phone: "9876112345" },
+      { name: "Sarvesh", phone: "9876432110" }
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+    rules: [
+      "Round 1: IQ, logic, and observation-based MCQs with a memory scene task.",
+      "Top 10–14 teams qualify for Round 2.",
+      "Round 2: Mini-games like Rhyme Recall, Rapid Recall, Picture Chain, and Visual Quiz.",
+      "No mobiles or external help allowed.",
+      "Judging based on accuracy, recall, creativity, and teamwork."
+    ]
+  },
+  {
+    id: "d1-3",
+    title: "Treasure Hunt",
+    description: "Solve clues, explore campus locations, and find the hidden treasure before others!",
+    date: "October 15, 2025",
+    time: "10:00 AM - 12:30 PM",
+    venue: "Campus Grounds",
+    category: "Non-Tech",
+    prizePool: "Rs.2000/-",
+    participation: "Team of 3",
+    contacts: [
+      { name: "Harisangar", phone: "9876501234" },
+      { name: "Balaji", phone: "9876504322" }
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1499428665502-503f6c608263",
+    rules: [
+      "Teams of 3 must stay together throughout.",
+      "Clues must be followed in order; skipping is not allowed.",
+      "Damaging or revealing clues to others leads to disqualification.",
+      "Winners are decided by correct completion order and time.",
+      "Organizers’ decision is final."
+    ]
+  },
+  {
+    id: "d1-4",
+    title: "Mystery Quest",
+    description: "Unravel a thrilling mystery by decoding puzzles, ciphers, and logic challenges.",
+    date: "October 15, 2025",
+    time: "02:00 PM - 04:00 PM",
+    venue: "Lab 201, CS Block",
+    category: "Non-Tech",
+    prizePool: "Rs.1500/-",
+    participation: "Team of 2",
+    contacts: [
+      { name: "Sahana", phone: "9876098765" },
+      { name: "Varsha", phone: "9876045678" }
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
+    rules: [
+      "Teams of 2 only; no external help or devices allowed.",
+      "Solve logic puzzles, ciphers, and hidden clues to find the culprit.",
+      "Final submission must include murderer, motive, and reasoning.",
+      "Fastest correct team wins.",
+      "Misconduct or plagiarism leads to disqualification."
+    ]
+  },
+  {
+    id: "d1-5",
+    title: "Hello World",
+    description: "A two-round coding challenge testing aptitude and programming skills.",
+    date: "October 15, 2025",
+    time: "09:30 AM - 12:00 PM",
+    venue: "Lab 102, CS Block",
+    category: "Tech",
+    prizePool: "Rs.1500/-",
+    participation: "Solo or Team of 2",
+    contacts: [
+      { name: "Renjitha", phone: "9876540011" },
+      { name: "Pradeep", phone: "9876509876" }
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1551033406-611cf9a28f67",
+    rules: [
+      "Round 1: Aptitude quiz (logical, quantitative, verbal).",
+      "Round 2: Coding on HackerRank — 2 problems based on logic and efficiency.",
+      "Evaluation on correctness and code optimization.",
+      "Top scorers from Round 1 qualify for Round 2."
+    ]
+  },
+  {
+    id: "d1-6",
+    title: "Algobazaar",
+    description: "A strategic coding event combining algorithms and bidding challenges.",
+    date: "October 15, 2025",
+    time: "01:30 PM - 04:00 PM",
+    venue: "Lab 103, CS Block",
     category: "Tech",
     prizePool: "Rs.2000/-",
     participation: "Team of 2",
     contacts: [
-      { name: "Sreenithika S", phone: "4716826672" },
-      { name: "Ahalya V S", phone: "7124947967" }
+      { name: "Sahana", phone: "9876043212" },
+      { name: "Balaji", phone: "9876001122" }
     ],
-    imageUrl: "https://images.unsplash.com/photo-1551033406-611cf9a28f67"
-  },
-  {
-    id: "d1-2",
-    title: "Bug Hunt",
-    description: "Race against time to debug code snippets and find hidden errors in real-world problems.",
-    date: "September 28, 2024",
-    time: "01:30 PM - 03:00 PM",
-    venue: "Lab 101, CS Block",
-    category: "Tech",
-    prizePool: "Rs.1500/-",
-    participation: "Solo",
-    contacts: [{ name: "Rahul R", phone: "9876543210" }],
-    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475"
-  },
-  {
-    id: "d1-3",
-    title: "Capture the Flag",
-    description: "A thrilling cybersecurity contest where participants solve real-world hacking challenges.",
-    date: "September 28, 2024",
-    time: "03:30 PM - 05:30 PM",
-    venue: "Cyber Lab",
-    category: "Tech",
-    prizePool: "Rs.3000/-",
-    participation: "Team of 3",
-    contacts: [{ name: "Meera P", phone: "9845612345" }],
-    imageUrl: "https://images.unsplash.com/photo-1605902711622-cfb43c44367f"
-  },
-  {
-    id: "d1-4",
-    title: "AI Quizathon",
-    description: "A fast-paced quiz competition testing your AI and ML knowledge.",
-    date: "September 28, 2024",
-    time: "11:00 AM - 12:30 PM",
-    venue: "Seminar Hall A",
-    category: "Tech",
-    prizePool: "Rs.1000/-",
-    participation: "Team of 2",
-    contacts: [{ name: "Arjun M", phone: "9876501234" }],
-    imageUrl: "https://images.unsplash.com/photo-1581091870622-7c92df9a8b32"
-  },
-  {
-    id: "d1-5",
-    title: "Pixel Perfect",
-    description: "A digital art competition where creativity meets technology.",
-    date: "September 28, 2024",
-    time: "02:00 PM - 04:00 PM",
-    venue: "Art Studio",
-    category: "Non-Tech",
-    prizePool: "Rs.1200/-",
-    participation: "Solo",
-    contacts: [{ name: "Neha K", phone: "9998823456" }],
-    imageUrl: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
-  },
-  {
-    id: "d1-6",
-    title: "Photography Challenge",
-    description: "Capture campus moments and tell a story through your lens.",
-    date: "September 28, 2024",
-    time: "Full Day",
-    venue: "Campus Grounds",
-    category: "Non-Tech",
-    prizePool: "Rs.2000/-",
-    participation: "Solo",
-    contacts: [{ name: "Kiran S", phone: "8899776655" }],
-    imageUrl: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
-  },
-  {
-    id: "d1-7",
-    title: "Treasure Hunt",
-    description: "Decode clues and race across campus in this adventurous challenge.",
-    date: "September 28, 2024",
-    time: "10:00 AM - 12:00 PM",
-    venue: "Campus",
-    category: "Non-Tech",
-    prizePool: "Rs.1500/-",
-    participation: "Team of 4",
-    contacts: [{ name: "Anu T", phone: "7776655443" }],
-    imageUrl: "https://images.unsplash.com/photo-1499428665502-503f6c608263"
-  },
-  {
-    id: "d1-8",
-    title: "Movie Mania",
-    description: "A fun quiz on movies, series, and pop culture.",
-    date: "September 28, 2024",
-    time: "01:00 PM - 02:30 PM",
-    venue: "Auditorium",
-    category: "Non-Tech",
-    prizePool: "Rs.800/-",
-    participation: "Team of 2",
-    contacts: [{ name: "Deepa V", phone: "7788996655" }],
-    imageUrl: "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4"
-  },
-  {
-    id: "d1-9",
-    title: "UI/UX Design Workshop",
-    description: "Learn how to design user-friendly and visually appealing applications.",
-    date: "September 28, 2024",
-    time: "09:30 AM - 11:30 AM",
-    venue: "Design Lab",
-    category: "Workshop",
-    prizePool: "Certificates",
-    participation: "Solo",
-    contacts: [{ name: "Ramesh P", phone: "9877701234" }],
-    imageUrl: "https://images.unsplash.com/photo-1587614295999-6c8c9b87e7f6"
-  },
-  {
-    id: "d1-10",
-    title: "Agile Project Workshop",
-    description: "Hands-on training in Agile project management and Scrum practices.",
-    date: "September 28, 2024",
-    time: "02:00 PM - 05:00 PM",
-    venue: "Workshop Hall",
-    category: "Workshop",
-    prizePool: "Certificates",
-    participation: "Team of 2",
-    contacts: [{ name: "Shalini N", phone: "976543210" }],
-    imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    rules: [
+      "Round 1: MCQs + short coding (earn AlgoCoins).",
+      "Round 2: Teams bid AlgoCoins to buy algorithms before solving challenges.",
+      "Scoring: 50% correctness, 25% efficiency, 25% smart algorithm use.",
+      "Trading algorithms between teams is allowed.",
+      "Highest cumulative score wins."
+    ]
   }
 ];
 
 const day2Events: Event[] = [
   {
     id: "d2-1",
-    title: "Hackathon",
-    description: "An all-day coding marathon where participants solve real-world problems.",
-    date: "September 29, 2024",
-    time: "09:00 AM - 06:00 PM",
-    venue: "Innovation Hub",
+    title: "OSPC",
+    description: "A two-round coding and problem-solving contest for sharp minds.",
+    date: "October 16, 2025",
+    time: "09:30 AM - 12:00 PM",
+    venue: "Lab 105, CS Block",
     category: "Tech",
-    prizePool: "Rs.5000/-",
-    participation: "Team of 3",
-    contacts: [{ name: "Vishnu K", phone: "9876541111" }],
-    imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+    prizePool: "Rs.2000/-",
+    participation: "Solo or Team of 2",
+    contacts: [
+      { name: "Harisangar", phone: "9876012345" },
+      { name: "Dhanush", phone: "9876056789" }
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1581091870622-7c92df9a8b32",
+    rules: [
+      "Round 1: MCQ quiz on DS, Algorithms, and Problem Solving.",
+      "Round 2: Coding + Secret Code Challenge.",
+      "Special problem reveals a bonus round that teams can bid points on.",
+      "Winning depends on total score and time efficiency."
+    ]
   },
   {
     id: "d2-2",
-    title: "Tech Debate",
-    description: "Debate on the most impactful technologies shaping our future.",
-    date: "September 29, 2024",
-    time: "11:00 AM - 01:00 PM",
-    venue: "Auditorium",
+    title: "Two Minds, One Flow",
+    description: "A fun coding communication challenge pairing coders with non-coders.",
+    date: "October 16, 2025",
+    time: "11:30 AM - 01:30 PM",
+    venue: "Lab 204, CS Block",
     category: "Tech",
-    prizePool: "Rs.2000/-",
+    prizePool: "Rs.1500/-",
     participation: "Team of 2",
-    contacts: [{ name: "Aravind S", phone: "9812345670" }],
-    imageUrl: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36"
+    contacts: [
+      { name: "Kiruthiga", phone: "9876012341" },
+      { name: "Pradeep", phone: "9876012346" }
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+    rules: [
+      "Round 1: Non-CSE reads code aloud, coder predicts output while blindfolded.",
+      "Top 6 teams qualify for Round 2.",
+      "Round 2: Non-coder types as coder instructs verbally; no screen viewing allowed.",
+      "Bonus riddles give extra time for coding.",
+      "Judged on teamwork, coordination, and accuracy."
+    ]
   },
   {
     id: "d2-3",
-    title: "Cloud Challenge",
-    description: "Solve real-world problems using cloud technologies in a timed event.",
-    date: "September 29, 2024",
-    time: "02:00 PM - 04:00 PM",
-    venue: "Cloud Lab",
+    title: "Ctrl + HER",
+    description: "An exclusive coding relay challenge celebrating women in tech.",
+    date: "October 16, 2025",
+    time: "02:00 PM - 04:30 PM",
+    venue: "Lab 202, CS Block",
     category: "Tech",
-    prizePool: "Rs.2500/-",
-    participation: "Team of 2",
-    contacts: [{ name: "Priya G", phone: "9812765432" }],
-    imageUrl: "https://images.unsplash.com/photo-1581090700227-4c4f4a6b6a73"
+    prizePool: "Rs.2000/-",
+    participation: "Team of 2 (Girls Only)",
+    contacts: [
+      { name: "Renjitha", phone: "9876503210" },
+      { name: "Varsha", phone: "9876023456" }
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1581090700227-4c4f4a6b6a73",
+    rules: [
+      "Round 1: Quiz on data structures, algorithms, and pseudocode.",
+      "Round 2: Coding relay — 10 minutes per member, no communication during switches.",
+      "Judging: accuracy, logic, efficiency.",
+      "Plagiarism or communication leads to disqualification."
+    ]
   },
   {
     id: "d2-4",
-    title: "Quiz Bowl",
-    description: "A brain-teasing quiz on science, tech, and general knowledge.",
-    date: "September 29, 2024",
-    time: "10:00 AM - 11:30 AM",
-    venue: "Seminar Hall B",
-    category: "Tech",
-    prizePool: "Rs.1200/-",
-    participation: "Team of 2",
-    contacts: [{ name: "Manoj T", phone: "9888776655" }],
-    imageUrl: "https://images.unsplash.com/photo-1529070538774-1843cb3265df"
+    title: "Chess – Castle Red",
+    description: "A competitive chess tournament for strategic thinkers.",
+    date: "October 16, 2025",
+    time: "09:30 AM - 12:30 PM",
+    venue: "Library Hall",
+    category: "Non-Tech",
+    prizePool: "Rs.1000/-",
+    participation: "Solo",
+    contacts: [{ name: "Event Team", phone: "9876000001" }],
+    imageUrl: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a",
+    rules: [
+      "Swiss or knockout format based on entries.",
+      "Standard chess rules apply.",
+      "Touch-move enforced.",
+      "Organizers’ decision final."
+    ]
   },
   {
     id: "d2-5",
-    title: "Cooking Without Fire",
-    description: "A fun culinary contest to create unique dishes without fire.",
-    date: "September 29, 2024",
+    title: "Fandom Quiz – Quizzers Anonymous",
+    description: "A pop culture and fandom quiz for trivia lovers.",
+    date: "October 16, 2025",
     time: "12:00 PM - 01:30 PM",
-    venue: "Cafeteria",
+    venue: "Seminar Hall B",
     category: "Non-Tech",
     prizePool: "Rs.1000/-",
     participation: "Team of 2",
-    contacts: [{ name: "Sneha R", phone: "9898123456" }],
-    imageUrl: "https://images.unsplash.com/photo-1600891963932-db97d1d4a0b1"
+    contacts: [{ name: "Event Team", phone: "9876011223" }],
+    imageUrl: "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4",
+    rules: [
+      "Quiz on movies, anime, TV shows, and pop culture.",
+      "Multiple rounds — buzzer, audio, and rapid fire.",
+      "No mobile or external help.",
+      "Highest total score wins."
+    ]
   },
   {
     id: "d2-6",
-    title: "Dance Battle",
-    description: "Showcase your moves in this high-energy dance contest.",
-    date: "September 29, 2024",
-    time: "03:00 PM - 05:00 PM",
-    venue: "Open Stage",
-    category: "Non-Tech",
-    prizePool: "Rs.2500/-",
-    participation: "Solo/Team",
-    contacts: [{ name: "Akash M", phone: "9911223344" }],
-    imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
-  },
-  {
-    id: "d2-7",
-    title: "Drama Fest",
-    description: "Perform a short drama on social issues or comedy skits.",
-    date: "September 29, 2024",
-    time: "05:30 PM - 07:00 PM",
-    venue: "Auditorium",
-    category: "Non-Tech",
-    prizePool: "Rs.2000/-",
-    participation: "Team of 5-8",
-    contacts: [{ name: "Riya P", phone: "9800765432" }],
-    imageUrl: "https://images.unsplash.com/photo-1515165562835-c4c9e0caf67b"
-  },
-  {
-    id: "d2-8",
-    title: "Fashion Show",
-    description: "Walk the ramp with creative themes and style.",
-    date: "September 29, 2024",
-    time: "07:30 PM - 09:00 PM",
-    venue: "Main Stage",
-    category: "Non-Tech",
-    prizePool: "Rs.5000/-",
-    participation: "Team",
-    contacts: [{ name: "Asha K", phone: "9823456789" }],
-    imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
-  },
-  {
-    id: "d2-9",
-    title: "AR/VR Workshop",
-    description: "Hands-on session to build augmented and virtual reality apps.",
-    date: "September 29, 2024",
-    time: "09:30 AM - 12:00 PM",
-    venue: "VR Lab",
-    category: "Workshop",
-    prizePool: "Certificates",
-    participation: "Team of 2",
-    contacts: [{ name: "Rohit K", phone: "9834561234" }],
-    imageUrl: "https://images.unsplash.com/photo-1581092334607-1e27f23d2e45"
-  },
-  {
-    id: "d2-10",
-    title: "Entrepreneurship Workshop",
-    description: "Learn startup pitching, funding basics, and team building.",
-    date: "September 29, 2024",
-    time: "01:00 PM - 04:00 PM",
-    venue: "Innovation Hall",
-    category: "Workshop",
-    prizePool: "Certificates",
-    participation: "Solo/Team",
-    contacts: [{ name: "Varun S", phone: "9886543211" }],
-    imageUrl: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36"
+    title: "Cybersecurity Challenge – ACM",
+    description: "A Capture the Flag-style cybersecurity contest.",
+    date: "October 16, 2025",
+    time: "02:00 PM - 05:00 PM",
+    venue: "Cyber Lab",
+    category: "Tech",
+    prizePool: "Rs.3000/-",
+    participation: "Team of 3",
+    contacts: [{ name: "ACM Team", phone: "9876067890" }],
+    imageUrl: "https://images.unsplash.com/photo-1605902711622-cfb43c44367f",
+    rules: [
+      "Teams solve cybersecurity and network-based challenges.",
+      "No internet except for challenge environment.",
+      "Points based on number and difficulty of flags captured.",
+      "Fastest top-scoring team wins."
+    ]
   }
 ];
 
