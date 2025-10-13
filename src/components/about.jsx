@@ -17,8 +17,8 @@ export default function AboutUs() {
         transition={{ duration: 0.8 }}
         className="text-center mb-12"
       >
-        <h2 className="text-cyan-300 text-center font-bitgrid text-4xl sm:text-5xl tracking-wider">
-          ABOUT US
+        <h2 className="mb-4 text-cyan-300 text-center font-bitgrid text-4xl sm:text-5xl tracking-wider">
+          ABOUT
         </h2>
       </motion.div>
       
