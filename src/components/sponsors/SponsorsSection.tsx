@@ -64,27 +64,27 @@ export function SponsorsSection() {
               />
 
               <Card
-                className="relative overflow-hidden rounded-2xl border border-white/10 shadow-xl bg-neutral-900 group-hover:shadow-[0_0_40px_rgba(34,211,238,0.25)] transition-shadow duration-500 font-[Poppins] tracking-wide"
+                className="relative overflow-hidden rounded-2xl border border-cyan-400/30 shadow-[0_0_14px_rgba(0,255,255,0.12)] bg-gradient-to-tr from-blue-950 via-black to-blue-950 group-hover:shadow-[0_0_40px_rgba(34,211,238,0.25)] transition-shadow duration-500 font-[Poppins] tracking-wide"
               >
                 <div className="px-6 pt-6 pb-4">
                 {/* Tier line */}
-                  <div className="text-center text-base md:text-lg font-semibold tracking-wide text-gray-200/95 border-b border-white/10 pb-3">
+                  <div className="text-center text-base md:text-lg font-semibold tracking-wide text-cyan-200 border-b border-cyan-400/30 pb-3">
                   {sponsor.tier}
                 </div>
 
-                {/* Logo */}
-                <div className="flex items-center justify-center py-8">
+                {/* Logo (white bg only for Bonbloc/Title Sponsor) */}
+                <div className={`flex items-center justify-center py-8 ${sponsor.id === "bonbloc" ? "bg-white rounded-xl border border-cyan-400/20" : ""}`}>
                   <img
                     src={sponsor.imageSrc}
                     alt={sponsor.name}
-                    className="h-24 md:h-28 object-contain"
+                    className={`h-24 md:h-28 object-contain ${sponsor.id === "bonbloc" ? "p-2" : ""}`}
                     loading="lazy"
                   />
                 </div>
 
                 {/* Name line */}
-                  <div className="text-center border-t border-white/10 pt-3 pb-2">
-                  <p className="text-xl md:text-2xl font-semibold text-gray-100 tracking-wide">
+                  <div className="text-center border-t border-cyan-400/30 pt-3 pb-2">
+                  <p className="text-xl md:text-2xl font-semibold text-cyan-100 tracking-wide">
                     {sponsor.name}
                   </p>
                 </div>
