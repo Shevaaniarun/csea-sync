@@ -443,7 +443,7 @@ export function EventsSection() {
             <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
               <Calendar className="w-4 h-4" />
               <SplitText
-                text="Day 2 - October 16"
+                text="Day 2 - October 26"
                 delay={0.1}
                 scrollTrigger={isSectionInView}
                 tag="span"
