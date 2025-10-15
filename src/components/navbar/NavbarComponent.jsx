@@ -16,11 +16,11 @@ const Navbar = () => {
       <a href="#nav-about-div">
         About
       </a>
-      <a href="#nav-events-section">
-        Events
-      </a>
       <a href="#nav-sponsors-section">
         Sponsors
+      </a>
+      <a href="#nav-events-section">
+        Events
       </a>
       <a href="#nav-footer-div">
         Contact

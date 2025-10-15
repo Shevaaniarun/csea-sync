@@ -31,8 +31,8 @@ export default function HomeEventsWrapper() {
       <div className="relative z-0">
         <HomeComponent />
         <AboutUs />
-        <EventsSection />
         <SponsorsSection />
+        <EventsSection />
       </div>
     </>
   );
