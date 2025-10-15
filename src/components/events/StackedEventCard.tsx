@@ -71,7 +71,8 @@ export function StackedEventCard({
           <button
             onClick={(e) => {
               e.stopPropagation();
-              onCollapse();
+              onCollapse(); // closes and shrinks card
+              setTimeout(() => setShowRules(false), 300); // reset rules state after animation
             }}
             className="absolute top-3 right-3 z-10 p-1 rounded-full glassy-button hover:bg-cyan-700/40 transition"
           >
@@ -139,7 +140,7 @@ export function StackedEventCard({
                         whileTap={{ scale: 0.95 }}
                         className="px-4 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400 text-cyan-200 text-sm font-medium hover:bg-cyan-500/30 transition-all"
                       >
-                        View Rules →
+                        View Rules
                       </motion.button>
                     </div>
                   )}
@@ -159,6 +160,7 @@ export function StackedEventCard({
                   {event.title} - Rules
                 </CardTitle>
               </CardHeader>
+
               <CardContent className="space-y-2 text-sm text-cyan-200/80 pb-5">
                 <ul className="list-disc list-inside space-y-1">
                   {event.rules?.map((rule, i) => (
@@ -175,7 +177,7 @@ export function StackedEventCard({
                     whileTap={{ scale: 0.95 }}
                     className="px-4 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400 text-cyan-200 text-sm font-medium hover:bg-cyan-500/30 transition-all"
                   >
-                    ← Back
+                  Back
                   </motion.button>
                 </div>
               </CardContent>

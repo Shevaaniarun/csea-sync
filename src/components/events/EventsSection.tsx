@@ -15,7 +15,7 @@ const day1Events: Event[] = [
     title: "IPL Auction",
     description:
       "Form your dream IPL team in this intense two-round event featuring quizzes and a live auction.",
-    date: "October 15, 2025",
+    date: "October 25, 2025",
     time: "09:30 AM - 12:00 PM",
     venue: "Auditorium",
     category: "Non-Tech",
@@ -41,7 +41,7 @@ const day1Events: Event[] = [
     title: "Rayan Rumble",
     description:
       "A memory-based IQ competition testing logic, recall, and teamwork through puzzles and mini-games.",
-    date: "October 15, 2025",
+    date: "October 25, 2025",
     time: "12:30 PM - 03:00 PM",
     venue: "Seminar Hall A",
     category: "Non-Tech",
@@ -65,7 +65,7 @@ const day1Events: Event[] = [
     title: "Treasure Hunt",
     description:
       "Solve clues, explore campus locations, and find the hidden treasure before others!",
-    date: "October 15, 2025",
+    date: "October 25, 2025",
     time: "10:00 AM - 12:30 PM",
     venue: "Campus Grounds",
     category: "Non-Tech",
@@ -89,7 +89,7 @@ const day1Events: Event[] = [
     title: "Mystery Quest",
     description:
       "Unravel a thrilling mystery by decoding puzzles, ciphers, and logic challenges.",
-    date: "October 15, 2025",
+    date: "October 25, 2025",
     time: "02:00 PM - 04:00 PM",
     venue: "Lab 201, CS Block",
     category: "Non-Tech",
@@ -113,7 +113,7 @@ const day1Events: Event[] = [
     title: "Hello World",
     description:
       "A two-round coding challenge testing aptitude and programming skills.",
-    date: "October 15, 2025",
+    date: "October 25, 2025",
     time: "09:30 AM - 12:00 PM",
     venue: "Lab 102, CS Block",
     category: "Tech",
@@ -136,7 +136,7 @@ const day1Events: Event[] = [
     title: "Algobazaar",
     description:
       "A strategic coding event combining algorithms and bidding challenges.",
-    date: "October 15, 2025",
+    date: "October 25, 2025",
     time: "01:30 PM - 04:00 PM",
     venue: "Lab 103, CS Block",
     category: "Tech",
@@ -163,7 +163,7 @@ const day2Events: Event[] = [
     title: "OSPC",
     description:
       "A two-round coding and problem-solving contest for sharp minds.",
-    date: "October 16, 2025",
+    date: "October 26, 2025",
     time: "09:30 AM - 12:00 PM",
     venue: "Lab 105, CS Block",
     category: "Tech",
@@ -186,7 +186,7 @@ const day2Events: Event[] = [
     title: "Two Minds, One Flow",
     description:
       "A fun coding communication challenge pairing coders with non-coders.",
-    date: "October 16, 2025",
+    date: "October 26, 2025",
     time: "11:30 AM - 01:30 PM",
     venue: "Lab 204, CS Block",
     category: "Tech",
@@ -210,7 +210,7 @@ const day2Events: Event[] = [
     title: "Ctrl + HER",
     description:
       "An exclusive coding relay challenge celebrating women in tech.",
-    date: "October 16, 2025",
+    date: "October 26, 2025",
     time: "02:00 PM - 04:30 PM",
     venue: "Lab 202, CS Block",
     category: "Tech",
@@ -233,7 +233,7 @@ const day2Events: Event[] = [
     title: "Chess",
     description:
       'A competitive chess tournament for strategic thinkers by "Castle Red".',
-    date: "October 16, 2025",
+    date: "October 26, 2025",
     time: "09:30 AM - 12:30 PM",
     venue: "Library Hall",
     category: "Non-Tech",
@@ -253,7 +253,7 @@ const day2Events: Event[] = [
     title: "Fandom Quiz",
     description:
       'A pop culture and fandom quiz for trivia lovers by "Quizzers Anonymous".',
-    date: "October 16, 2025",
+    date: "October 26, 2025",
     time: "12:00 PM - 01:30 PM",
     venue: "Seminar Hall B",
     category: "Non-Tech",
@@ -272,7 +272,7 @@ const day2Events: Event[] = [
     id: "d2-6",
     title: "Cybersecurity Challenge",
     description: 'A Capture the Flag-style cybersecurity contest by "ACM".',
-    date: "October 16, 2025",
+    date: "October 26, 2025",
     time: "02:00 PM - 05:00 PM",
     venue: "Cyber Lab",
     category: "Tech",
@@ -402,7 +402,7 @@ export function EventsSection() {
             <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
               <Calendar className="w-4 h-4" />
               <SplitText
-                text="Day 1 - March 15"
+                text="Day 1 - October 25"
                 delay={0.2}
                 scrollTrigger={isSectionInView}
                 tag="span"
@@ -443,7 +443,7 @@ export function EventsSection() {
             <h3 className="flex items-center justify-center gap-2 text-lg font-semibold mb-6 text-cyan-300">
               <Calendar className="w-4 h-4" />
               <SplitText
-                text="Day 2 - March 16"
+                text="Day 2 - October 16"
                 delay={0.1}
                 scrollTrigger={isSectionInView}
                 tag="span"
