@@ -351,7 +351,7 @@ export function EventsSection() {
         (event) => event.id === expandedCard
       );
       return expandedCardIndex !== -1
-        ? `${expandedCardIndex * 60 + 600}px`
+        ? `${expandedCardIndex * 60 + 350}px`
         : `${events.length * 60 + 100}px`;
     }
     return `${events.length * 60 + 100}px`;
