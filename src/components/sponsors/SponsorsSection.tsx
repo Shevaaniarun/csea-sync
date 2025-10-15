@@ -72,12 +72,12 @@ export function SponsorsSection() {
                   {sponsor.tier}
                 </div>
 
-                {/* Logo (white bg only for Bonbloc/Title Sponsor) */}
-                <div className={`flex items-center justify-center py-8 ${sponsor.id === "bonbloc" ? "bg-white rounded-xl border border-cyan-400/20" : ""}`}>
+                {/* Logo (white bg for Title & Associate sponsors) */}
+                <div className={`flex items-center justify-center py-8 ${(sponsor.tier === "Title Sponsor" || sponsor.tier === "Associate Sponsor") ? "bg-white rounded-xl border border-cyan-400/20" : ""}`}>
                   <img
                     src={sponsor.imageSrc}
                     alt={sponsor.name}
-                    className={`h-24 md:h-28 object-contain ${sponsor.id === "bonbloc" ? "p-2" : ""}`}
+                    className={`h-24 md:h-28 object-contain ${(sponsor.tier === "Title Sponsor" || sponsor.tier === "Associate Sponsor") ? "p-2" : ""}`}
                     loading="lazy"
                   />
                 </div>
