@@ -4,7 +4,7 @@ import LightRays from "./components/ui/bg-animations/LightRays";
 import ParticlesBackground from "./components/ui/bg-animations/ParticlesBackground";
 import Navbar from "./components/navbar/NavbarComponent";
 import { Footer } from "./components/Footer";
-import HomeEventsWrapper from "./components/HomeAboutEventsWrapper";
+import HomeEventsWrapper from "./components/HomeAboutSponsorEventsWrapper";
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
