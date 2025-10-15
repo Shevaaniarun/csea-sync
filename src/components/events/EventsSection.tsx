@@ -13,7 +13,8 @@ const day1Events: Event[] = [
   {
     id: "d1-1",
     title: "IPL Auction",
-    description: "Form your dream IPL team in this intense two-round event featuring quizzes and a live auction.",
+    description:
+      "Form your dream IPL team in this intense two-round event featuring quizzes and a live auction.",
     date: "October 15, 2025",
     time: "09:30 AM - 12:00 PM",
     venue: "Auditorium",
@@ -21,8 +22,8 @@ const day1Events: Event[] = [
     prizePool: "Rs.2000/-",
     participation: "Team of 2–3",
     contacts: [
-      { name: "Renjitha", phone: "9876543210" },
-      { name: "Sarvesh", phone: "9876504321" }
+      { name: "Renjitha", phone: "7907854731" },
+      { name: "Sarvesh", phone: "8939733220" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d",
     rules: [
@@ -32,13 +33,14 @@ const day1Events: Event[] = [
       "Top 7 players’ points count for final scoring.",
       "Player stats are based on real IPL/T20 data.",
       "Overspending or violating composition rules leads to disqualification.",
-      "Highest total team points wins."
-    ]
+      "Highest total team points wins.",
+    ],
   },
   {
     id: "d1-2",
     title: "Rayan Rumble",
-    description: "A memory-based IQ competition testing logic, recall, and teamwork through puzzles and mini-games.",
+    description:
+      "A memory-based IQ competition testing logic, recall, and teamwork through puzzles and mini-games.",
     date: "October 15, 2025",
     time: "12:30 PM - 03:00 PM",
     venue: "Seminar Hall A",
@@ -46,8 +48,8 @@ const day1Events: Event[] = [
     prizePool: "Rs.1500/-",
     participation: "Team of 2–3",
     contacts: [
-      { name: "Kiruthiga", phone: "9876112345" },
-      { name: "Sarvesh", phone: "9876432110" }
+      { name: "Kiruthiga", phone: "8870413188" },
+      { name: "Sarvesh", phone: "8939733220" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
     rules: [
@@ -55,13 +57,14 @@ const day1Events: Event[] = [
       "Top 10–14 teams qualify for Round 2.",
       "Round 2: Mini-games like Rhyme Recall, Rapid Recall, Picture Chain, and Visual Quiz.",
       "No mobiles or external help allowed.",
-      "Judging based on accuracy, recall, creativity, and teamwork."
-    ]
+      "Judging based on accuracy, recall, creativity, and teamwork.",
+    ],
   },
   {
     id: "d1-3",
     title: "Treasure Hunt",
-    description: "Solve clues, explore campus locations, and find the hidden treasure before others!",
+    description:
+      "Solve clues, explore campus locations, and find the hidden treasure before others!",
     date: "October 15, 2025",
     time: "10:00 AM - 12:30 PM",
     venue: "Campus Grounds",
@@ -69,8 +72,8 @@ const day1Events: Event[] = [
     prizePool: "Rs.2000/-",
     participation: "Team of 3",
     contacts: [
-      { name: "Harisangar", phone: "9876501234" },
-      { name: "Balaji", phone: "9876504322" }
+      { name: "Harisangar", phone: "9952878399" },
+      { name: "Balaji", phone: "8220706643" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1499428665502-503f6c608263",
     rules: [
@@ -78,13 +81,14 @@ const day1Events: Event[] = [
       "Clues must be followed in order; skipping is not allowed.",
       "Damaging or revealing clues to others leads to disqualification.",
       "Winners are decided by correct completion order and time.",
-      "Organizers’ decision is final."
-    ]
+      "Organizers’ decision is final.",
+    ],
   },
   {
     id: "d1-4",
     title: "Mystery Quest",
-    description: "Unravel a thrilling mystery by decoding puzzles, ciphers, and logic challenges.",
+    description:
+      "Unravel a thrilling mystery by decoding puzzles, ciphers, and logic challenges.",
     date: "October 15, 2025",
     time: "02:00 PM - 04:00 PM",
     venue: "Lab 201, CS Block",
@@ -92,8 +96,8 @@ const day1Events: Event[] = [
     prizePool: "Rs.1500/-",
     participation: "Team of 2",
     contacts: [
-      { name: "Sahana", phone: "9876098765" },
-      { name: "Varsha", phone: "9876045678" }
+      { name: "Sahana", phone: "7418247031" },
+      { name: "Varsha", phone: "8056246330" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
     rules: [
@@ -101,13 +105,14 @@ const day1Events: Event[] = [
       "Solve logic puzzles, ciphers, and hidden clues to find the culprit.",
       "Final submission must include murderer, motive, and reasoning.",
       "Fastest correct team wins.",
-      "Misconduct or plagiarism leads to disqualification."
-    ]
+      "Misconduct or plagiarism leads to disqualification.",
+    ],
   },
   {
     id: "d1-5",
     title: "Hello World",
-    description: "A two-round coding challenge testing aptitude and programming skills.",
+    description:
+      "A two-round coding challenge testing aptitude and programming skills.",
     date: "October 15, 2025",
     time: "09:30 AM - 12:00 PM",
     venue: "Lab 102, CS Block",
@@ -115,21 +120,22 @@ const day1Events: Event[] = [
     prizePool: "Rs.1500/-",
     participation: "Solo or Team of 2",
     contacts: [
-      { name: "Renjitha", phone: "9876540011" },
-      { name: "Pradeep", phone: "9876509876" }
+      { name: "Renjitha", phone: "7907854731" },
+      { name: "Pradeep", phone: "7904137572" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1551033406-611cf9a28f67",
     rules: [
       "Round 1: Aptitude quiz (logical, quantitative, verbal).",
       "Round 2: Coding on HackerRank — 2 problems based on logic and efficiency.",
       "Evaluation on correctness and code optimization.",
-      "Top scorers from Round 1 qualify for Round 2."
-    ]
+      "Top scorers from Round 1 qualify for Round 2.",
+    ],
   },
   {
     id: "d1-6",
     title: "Algobazaar",
-    description: "A strategic coding event combining algorithms and bidding challenges.",
+    description:
+      "A strategic coding event combining algorithms and bidding challenges.",
     date: "October 15, 2025",
     time: "01:30 PM - 04:00 PM",
     venue: "Lab 103, CS Block",
@@ -137,8 +143,8 @@ const day1Events: Event[] = [
     prizePool: "Rs.2000/-",
     participation: "Team of 2",
     contacts: [
-      { name: "Sahana", phone: "9876043212" },
-      { name: "Balaji", phone: "9876001122" }
+      { name: "Sahana", phone: "7418247031" },
+      { name: "Balaji", phone: "8220706643" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     rules: [
@@ -146,16 +152,17 @@ const day1Events: Event[] = [
       "Round 2: Teams bid AlgoCoins to buy algorithms before solving challenges.",
       "Scoring: 50% correctness, 25% efficiency, 25% smart algorithm use.",
       "Trading algorithms between teams is allowed.",
-      "Highest cumulative score wins."
-    ]
-  }
+      "Highest cumulative score wins.",
+    ],
+  },
 ];
 
 const day2Events: Event[] = [
   {
     id: "d2-1",
     title: "OSPC",
-    description: "A two-round coding and problem-solving contest for sharp minds.",
+    description:
+      "A two-round coding and problem-solving contest for sharp minds.",
     date: "October 16, 2025",
     time: "09:30 AM - 12:00 PM",
     venue: "Lab 105, CS Block",
@@ -163,21 +170,22 @@ const day2Events: Event[] = [
     prizePool: "Rs.2000/-",
     participation: "Solo or Team of 2",
     contacts: [
-      { name: "Harisangar", phone: "9876012345" },
-      { name: "Dhanush", phone: "9876056789" }
+      { name: "Harisangar", phone: "9952878399" },
+      { name: "Dhanush", phone: "8124868540" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1581091870622-7c92df9a8b32",
     rules: [
       "Round 1: MCQ quiz on DS, Algorithms, and Problem Solving.",
       "Round 2: Coding + Secret Code Challenge.",
       "Special problem reveals a bonus round that teams can bid points on.",
-      "Winning depends on total score and time efficiency."
-    ]
+      "Winning depends on total score and time efficiency.",
+    ],
   },
   {
     id: "d2-2",
     title: "Two Minds, One Flow",
-    description: "A fun coding communication challenge pairing coders with non-coders.",
+    description:
+      "A fun coding communication challenge pairing coders with non-coders.",
     date: "October 16, 2025",
     time: "11:30 AM - 01:30 PM",
     venue: "Lab 204, CS Block",
@@ -185,8 +193,8 @@ const day2Events: Event[] = [
     prizePool: "Rs.1500/-",
     participation: "Team of 2",
     contacts: [
-      { name: "Kiruthiga", phone: "9876012341" },
-      { name: "Pradeep", phone: "9876012346" }
+      { name: "Kiruthiga", phone: "8870413188" },
+      { name: "Pradeep", phone: "7904137572" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
     rules: [
@@ -194,13 +202,14 @@ const day2Events: Event[] = [
       "Top 6 teams qualify for Round 2.",
       "Round 2: Non-coder types as coder instructs verbally; no screen viewing allowed.",
       "Bonus riddles give extra time for coding.",
-      "Judged on teamwork, coordination, and accuracy."
-    ]
+      "Judged on teamwork, coordination, and accuracy.",
+    ],
   },
   {
     id: "d2-3",
     title: "Ctrl + HER",
-    description: "An exclusive coding relay challenge celebrating women in tech.",
+    description:
+      "An exclusive coding relay challenge celebrating women in tech.",
     date: "October 16, 2025",
     time: "02:00 PM - 04:30 PM",
     venue: "Lab 202, CS Block",
@@ -208,75 +217,106 @@ const day2Events: Event[] = [
     prizePool: "Rs.2000/-",
     participation: "Team of 2 (Girls Only)",
     contacts: [
-      { name: "Renjitha", phone: "9876503210" },
-      { name: "Varsha", phone: "9876023456" }
+      { name: "Renjitha", phone: "7907854731" },
+      { name: "Varsha", phone: "8056246330" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1581090700227-4c4f4a6b6a73",
     rules: [
       "Round 1: Quiz on data structures, algorithms, and pseudocode.",
       "Round 2: Coding relay — 10 minutes per member, no communication during switches.",
       "Judging: accuracy, logic, efficiency.",
-      "Plagiarism or communication leads to disqualification."
-    ]
+      "Plagiarism or communication leads to disqualification.",
+    ],
   },
   {
     id: "d2-4",
-    title: "Chess – Castle Red",
-    description: "A competitive chess tournament for strategic thinkers.",
+    title: "Chess",
+    description:
+      'A competitive chess tournament for strategic thinkers by "Castle Red".',
     date: "October 16, 2025",
     time: "09:30 AM - 12:30 PM",
     venue: "Library Hall",
     category: "Non-Tech",
     prizePool: "Rs.1000/-",
     participation: "Solo",
-    contacts: [{ name: "Event Team", phone: "9876000001" }],
+    contacts: [{ name: "Balaji", phone: "8220706643" }],
     imageUrl: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a",
     rules: [
       "Swiss or knockout format based on entries.",
       "Standard chess rules apply.",
       "Touch-move enforced.",
-      "Organizers’ decision final."
-    ]
+      "Organizers’ decision final.",
+    ],
   },
   {
     id: "d2-5",
-    title: "Fandom Quiz – Quizzers Anonymous",
-    description: "A pop culture and fandom quiz for trivia lovers.",
+    title: "Fandom Quiz",
+    description:
+      'A pop culture and fandom quiz for trivia lovers by "Quizzers Anonymous".',
     date: "October 16, 2025",
     time: "12:00 PM - 01:30 PM",
     venue: "Seminar Hall B",
     category: "Non-Tech",
     prizePool: "Rs.1000/-",
     participation: "Team of 2",
-    contacts: [{ name: "Event Team", phone: "9876011223" }],
+    contacts: [{ name: "Sarvesh", phone: "8939733220" }],
     imageUrl: "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4",
     rules: [
       "Quiz on movies, anime, TV shows, and pop culture.",
       "Multiple rounds — buzzer, audio, and rapid fire.",
       "No mobile or external help.",
-      "Highest total score wins."
-    ]
+      "Highest total score wins.",
+    ],
   },
   {
     id: "d2-6",
-    title: "Cybersecurity Challenge – ACM",
-    description: "A Capture the Flag-style cybersecurity contest.",
+    title: "Cybersecurity Challenge",
+    description: 'A Capture the Flag-style cybersecurity contest by "ACM".',
     date: "October 16, 2025",
     time: "02:00 PM - 05:00 PM",
     venue: "Cyber Lab",
     category: "Tech",
     prizePool: "Rs.3000/-",
     participation: "Team of 3",
-    contacts: [{ name: "ACM Team", phone: "9876067890" }],
+    contacts: [{ name: "Dhanush", phone: "8124868540" }],
     imageUrl: "https://images.unsplash.com/photo-1605902711622-cfb43c44367f",
     rules: [
       "Teams solve cybersecurity and network-based challenges.",
       "No internet except for challenge environment.",
       "Points based on number and difficulty of flags captured.",
-      "Fastest top-scoring team wins."
-    ]
-  }
+      "Fastest top-scoring team wins.",
+    ],
+  },
+  {
+  id: "w-1",
+  title: "AI on Logic",
+  description:
+    "Join an exclusive hands-on workshop by \"Bonbloc Technologies\" exploring the evolution of AI from Machine Learning to Agentic Systems. Build your own RAG assistant and multi-agent system in real time!",
+  date: "October 25, 2025",
+  time: "09:30 AM - 01:30 PM",
+  venue: "GFL (Ground Floor Lab), CSE Dept",
+  category: "Workshop",
+  prizePool: "E-Certificates for all active participants",
+  participation: "Open to all students",
+  contacts: [
+    { name: "Sanjay", phone: "8448358787" },
+    { name: "Deepak", phone: "6380156548" } 
+
+  ],
+  imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+  rules: [
+    "Register before 20th October 2025 using the provided form link.",
+    "Open to all students; no registration fee required.",
+    "Bring your own laptop for hands-on practice.",
+    "Ensure Python, Streamlit, and basic ML libraries are pre-installed.",
+    "Workshop covers LangChain, Ollama, FAISS/ChromaDB, Streamlit, and LangGraph.",
+    "Participants will build an AI RAG Assistant and a Multi-Agent System.",
+    "Certificates will be provided to active participants."
+  ]
+}
+
 ];
+
 
 export function EventsSection() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);

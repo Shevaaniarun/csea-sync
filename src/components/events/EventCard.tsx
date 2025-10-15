@@ -53,7 +53,6 @@ export function EventCard({ event }: EventCardProps) {
           </div>
         </div>
 
-        {/* Top image placeholder */}
         <div className="relative h-40 overflow-hidden rounded-t-lg bg-gradient-to-tr from-blue-950 via-black to-blue-950">
           <Badge className="absolute top-3 left-3 glassy-chip text-cyan-200 text-xs px-3 py-1">
             {event.category}
@@ -70,7 +69,7 @@ export function EventCard({ event }: EventCardProps) {
               transition={{ duration: 0.35 }}
             >
               <CardHeader className="pb-3">
-                <CardTitle className="font-semibold text-lg text-cyan-200 glowing-title">
+                <CardTitle className="text-lg font-semibold text-cyan-200 glowing-title">
                   {event.title}
                 </CardTitle>
                 <CardDescription className="text-cyan-100/70 mt-1">
@@ -111,7 +110,10 @@ export function EventCard({ event }: EventCardProps) {
                   <div className="flex justify-end mt-4">
                     <motion.button
                       onClick={() => setViewRules(true)}
-                      whileHover={{ scale: 1.08, boxShadow: "0 0 12px #00eaff" }}
+                      whileHover={{
+                        scale: 1.08,
+                        boxShadow: "0 0 12px #00eaff",
+                      }}
                       whileTap={{ scale: 0.95 }}
                       className="px-4 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400 text-cyan-200 text-sm font-medium hover:bg-cyan-500/30 transition-all"
                     >
@@ -130,7 +132,7 @@ export function EventCard({ event }: EventCardProps) {
               transition={{ duration: 0.35 }}
             >
               <CardHeader className="pb-3">
-                <CardTitle className="font-semibold text-lg text-cyan-200 glowing-title">
+                <CardTitle className="text-lg font-semibold text-cyan-200 glowing-title">
                   {event.title} - Rules
                 </CardTitle>
               </CardHeader>
@@ -143,7 +145,10 @@ export function EventCard({ event }: EventCardProps) {
                 <div className="flex justify-start mt-4">
                   <motion.button
                     onClick={() => setViewRules(false)}
-                    whileHover={{ scale: 1.08, boxShadow: "0 0 12px #00eaff" }}
+                    whileHover={{
+                      scale: 1.08,
+                      boxShadow: "0 0 12px #00eaff",
+                    }}
                     whileTap={{ scale: 0.95 }}
                     className="px-4 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400 text-cyan-200 text-sm font-medium hover:bg-cyan-500/30 transition-all"
                   >
@@ -155,7 +160,6 @@ export function EventCard({ event }: EventCardProps) {
           )}
         </AnimatePresence>
 
-        {/* Neon animation and glow styling */}
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
           @keyframes neonMoveHorizontal {

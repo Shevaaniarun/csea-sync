@@ -55,7 +55,7 @@ export function StackedEventCard({
       ref={cardRef}
       initial={{ opacity: 0, scale: 0.8, y: 40 }}
       animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
-      transition={{ duration: 0.2, delay: index * 0.1 }}
+      transition={{ duration: 0.25, delay: index * 0.1 }}
       className="absolute w-full transition-all duration-300 ease-out cursor-pointer font-[Poppins]"
       style={getCardStyle()}
       onClick={isExpanded ? onCollapse : onExpand}
@@ -139,7 +139,7 @@ export function StackedEventCard({
                         whileTap={{ scale: 0.95 }}
                         className="px-4 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400 text-cyan-200 text-sm font-medium hover:bg-cyan-500/30 transition-all"
                       >
-                        View Rules
+                        View Rules →
                       </motion.button>
                     </div>
                   )}
@@ -175,7 +175,7 @@ export function StackedEventCard({
                     whileTap={{ scale: 0.95 }}
                     className="px-4 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400 text-cyan-200 text-sm font-medium hover:bg-cyan-500/30 transition-all"
                   >
-                    Back
+                    ← Back
                   </motion.button>
                 </div>
               </CardContent>
@@ -184,8 +184,44 @@ export function StackedEventCard({
         </AnimatePresence>
 
         <style>{`
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+          @keyframes neonMoveHorizontal {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+          }
+          @keyframes neonMoveVertical {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+          }
+          .neon-border-animation::before,
+          .neon-border-animation::after,
+          .neon-border-animation .vertical-left,
+          .neon-border-animation .vertical-right {
+            content: '';
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #00eaff, #00eaff, transparent);
+          }
+          .neon-border-animation::before {
+            top: 0; left: 0; right: 0; height: 3px;
+            animation: neonMoveHorizontal 4s linear infinite;
+          }
+          .neon-border-animation::after {
+            bottom: 0; left: 0; right: 0; height: 3px;
+            animation: neonMoveHorizontal 4s linear infinite reverse;
+          }
+          .neon-border-animation .vertical-left {
+            top: 0; bottom: 0; left: 0; width: 3px;
+            background: linear-gradient(180deg, transparent, #00eaff, #00eaff, transparent);
+            animation: neonMoveVertical 4s linear infinite reverse;
+          }
+          .neon-border-animation .vertical-right {
+            top: 0; bottom: 0; right: 0; width: 3px;
+            background: linear-gradient(180deg, transparent, #00eaff, #00eaff, transparent);
+            animation: neonMoveVertical 4s linear infinite;
+          }
           .glowing-title {
-            text-shadow: 0 0 6px rgba(0, 234, 255, 0.7), 0 0 14px rgba(0, 234, 255, 0.5);
+            text-shadow: 0 0 6px rgba(0, 234, 255, 0.7),
+                         0 0 14px rgba(0, 234, 255, 0.5);
           }
         `}</style>
       </Card>
