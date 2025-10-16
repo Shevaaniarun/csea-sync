@@ -20,7 +20,7 @@ const sponsors: Sponsor[] = [
   {
     id: "cock",
     tier: "Associate Sponsor",
-    name: "Cock",
+    name: "Sri Kaliswari Fireworks",
     imageSrc: "/cock.png",
   },
 ];
@@ -38,7 +38,7 @@ export function SponsorsSection() {
         transition={{ duration: 0.8 }}
         className="text-center mb-10"
       ><div className="h-[2cm]" />
-        <h2 className="mb-2 text-cyan-300 text-center font-bitgrid text-4xl sm:text-5xl tracking-wider">
+        <h2 className="mb-2 text-cyan-300 text-center font-bitgrid text-6xl sm:text-7xl tracking-wider">
           <SplitText text="SPONSORS" delay={0.15} scrollTrigger={isSectionInView} tag="span" />
         </h2>
       </motion.div>
