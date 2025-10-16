@@ -93,23 +93,23 @@ export function Footer() {
       </div>
       <div className="h-[1cm]" />
       <div className="relative z-10 container mx-auto px-4 py-6 text-lg md:text-[19px]" style={{ zIndex: 1 }}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Column 1: Contact Us - Normal speed */}
           
           <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 id="nav-footer-div" className="text-3xl font-bold text-cyan-300 text-center md:text-left md:pl-60 scroll-mt-40 md:scroll-mt-48">Contact Us</h3>
-            <div className="space-y-8 text-cyan-100 md:pl-16">
+            <h3 id="nav-footer-div" className="text-3xl font-bold text-cyan-300 text-center md:text-left 2xl:pl-60 scroll-mt-40 md:scroll-mt-48">Contact Us</h3>
+            <div className="space-y-8 text-cyan-100 lg:pl-8">
               {/* 2-2 grid of contacts */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
                 {/* Kamalesh */}
                 <div className="text-center md:text-left">
                   <div className="text-lg font-semibold text-white">Kamalesh N</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
-                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <Phone className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="font-semibold text-lg">+91 86103 86055</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
-                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <Mail className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="text-lg">chairperson@abacus.org.in</span>
                   </div>
                 </div>
@@ -118,11 +118,11 @@ export function Footer() {
                 <div className="text-center md:text-left">
                   <div className="text-lg font-semibold text-white">Sulochana H</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
-                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <Phone className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="font-semibold text-lg">+91 90251 93250</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
-                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <Mail className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="text-lg">chairperson@abacus.org.in</span>
                   </div>
                 </div>
@@ -131,11 +131,11 @@ export function Footer() {
                 <div className="text-center md:text-left">
                   <div className="text-lg font-semibold text-white">Hariharan A</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
-                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <Phone className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="font-semibold text-lg">+91 77084 62392</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
-                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <Mail className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="text-lg">vicechairperson@abacus.org.in</span>
                   </div>
                 </div>
@@ -144,26 +144,26 @@ export function Footer() {
                 <div className="text-center md:text-left">
                   <div className="text-lg font-semibold text-white">Ishwarya D</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
-                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <Phone className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="font-semibold text-lg">+91 9345214813</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
-                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <Mail className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="text-lg">vicechairperson@abacus.org.in</span>
                   </div>
                 </div>
               </div>
 
               {/* Madhubaalika */}
-              <div className="flex justify-center md:justify-start pl-0 md:pl-48">
+              <div className="flex justify-center md:justify-start pl-0 2xl:pl-48">
                 <div className="text-center md:text-left w-full sm:w-auto">
                   <div className="text-lg font-semibold text-white ">Madhubaalika M</div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start ">
-                    <Phone className="w-5 h-5 text-cyan-300" />
+                    <Phone className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="font-semibold text-lg ">+91 7305897553</span>
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
-                    <Mail className="w-5 h-5 text-cyan-300" />
+                    <Mail className="w-5 h-5 text-cyan-300 shrink-0" />
                     <span className="text-lg">generalsecretary@abacus.org.in</span> 
                   </div>
                 </div>
