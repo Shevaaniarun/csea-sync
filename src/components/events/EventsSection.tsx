@@ -228,26 +228,7 @@ const day2Events: Event[] = [
       "Plagiarism or communication leads to disqualification.",
     ],
   },
-  {
-    id: "d2-4",
-    title: "Chess",
-    description:
-      'A competitive chess tournament for strategic thinkers by "Castle Red".',
-    date: "October 26, 2025",
-    time: "09:30 AM - 12:30 PM",
-    venue: "Library Hall",
-    category: "Non-Tech",
-    prizePool: "Rs.1000/-",
-    participation: "Solo",
-    contacts: [{ name: "Balaji", phone: "8220706643" }],
-    imageUrl: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a",
-    rules: [
-      "Swiss or knockout format based on entries.",
-      "Standard chess rules apply.",
-      "Touch-move enforced.",
-      "Organizers’ decision final.",
-    ],
-  },
+  
   {
     id: "d2-5",
     title: "Fandom Quiz",
@@ -293,7 +274,7 @@ const day2Events: Event[] = [
     description:
       'Join an exclusive hands-on workshop by "Bonbloc Technologies" exploring the evolution of AI from Machine Learning to Agentic Systems. Build your own RAG assistant and multi-agent system in real time!',
     date: "October 25, 2025",
-    time: "09:30 AM - 01:30 PM",
+    time: "09:30 AM - 12:30 PM",
     venue: "GFL (Ground Floor Lab), CSE Dept",
     category: "Workshop",
     prizePool: "E-Certificates for all active participants",
