@@ -243,7 +243,7 @@ const day2Events: Event[] = [
     prizePool: "Rs.1000/-",
     participation: "Team of 2–3",
     contacts: [
-      { name: "Kiruthiga", phone: "8870413188" },
+      { name: "Kiruthiga", phone: "8870413188"},
       { name: "Sarvesh", phone: "8939733220" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
