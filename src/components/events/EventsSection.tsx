@@ -298,10 +298,8 @@ const day2Events: Event[] = [
       "Plagiarism or communication leads to disqualification.",
     ],
   },
-
-  
   {
-    id: "d2-5",
+    id: "d2-6",
     title: "Fandom Quiz",
     description:
       'A pop culture and fandom quiz for trivia lovers by "Quizzers Anonymous".',
@@ -321,7 +319,7 @@ const day2Events: Event[] = [
     ],
   },
   {
-    id: "d2-6",
+    id: "d2-7",
     title: "Two Minds, One Flow",
     description:
       "A fun coding communication challenge pairing coders with non-coders.",
