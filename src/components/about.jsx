@@ -28,7 +28,7 @@ export default function AboutUs() {
       >
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-left mb-8 md:mb-10">
-          <p className="text-gray-200 leading-relaxed text-sm sm:text-base">
+          <p className="text-gray-200 leading-relaxed text-sm sm:text-base text-justify">
             Sync is an intra-college symposium hosted by the Department of
             Computer Science. It is conducted with the notion of aggrandizing
             the intellect and kindling the passion for computer science in
@@ -38,7 +38,7 @@ export default function AboutUs() {
             equilibrium between tech and non-tech events.
           </p>
 
-          <p className="text-gray-200 leading-relaxed text-sm sm:text-base">
+          <p className="text-gray-200 leading-relaxed text-sm sm:text-base text-justify">
             This year, we have decided to have the events around Digital
             Well-being. Sync ‘25 is about to blossom afresh on 25th and 26th of
             October, 2025. Encompassing multifarious events, this version has
