@@ -82,9 +82,9 @@ const day1Events: Event[] = [
   },
   {
     id: "d1-4",
-    title: "CSAU",
+    title: "Breakpoint",
     description:
-      "A competitive programming event testing algorithmic thinking and coding skills.",
+      "A competitive coding event testing debugging skills, logical reasoning, and programming proficiency. Participants identify errors, understand code behavior, and implement efficient fixes.",
     date: "October 25, 2025",
     time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 05:00 PM (Round 2)",
     venue: "Round 1: SFL, DCSE | Round 2: SFL, DCSE",
@@ -97,10 +97,11 @@ const day1Events: Event[] = [
     ],
     imageUrl: "https://images.unsplash.com/photo-1551033406-611cf9a28f67",
     rules: [
-      "Round 1: Algorithmic problem solving and data structures.",
-      "Round 2: Advanced competitive programming challenges.",
-      "Evaluation based on correctness and efficiency.",
-      "Top performers from Round 1 qualify for Round 2.",
+      "Round 1: 25 MCQs on logical reasoning, general quizzes, and programming concepts.",
+      "Round 2: Debugging Challenge on programs with intentional syntax or logic errors (recursion, arrays, sorting, pointers).",
+      "Buggy codes provided via HackerRank link; difficulty increases progressively.",
+      "Evaluation: correctness, efficiency, speed, innovative approaches, and clean code.",
+      "Highest cumulative score wins."
     ],
   },
   {
@@ -232,7 +233,7 @@ const day2Events: Event[] = [
     id: "d2-3",
     title: "ACM",
     description:
-      "A competitive programming and algorithmic thinking contest by ACM.",
+      "Hands-on cybersecurity event where teams find and exploit web vulnerabilities in OWASP Juice Shop, simulating real-world ethical hacking.",
     date: "October 26, 2025",
     time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 04:30 PM (Round 2)",
     venue: "Round 1: GFL, DCSE | Round 2: GFL, DCSE",
@@ -245,11 +246,10 @@ const day2Events: Event[] = [
     ],
     imageUrl: "https://images.unsplash.com/photo-1605902711622-cfb43c44367f",
     rules: [
-      "Round 1: Algorithmic problem solving and data structures.",
-      "Round 2: Advanced competitive programming challenges.",
-      "Evaluation based on correctness and efficiency.",
-      "Top performers from Round 1 qualify for Round 2.",
-      "No external help or resources allowed.",
+       "Round 1: Short MCQs on web security basics (SQLi, XSS, CSRF).",
+        "Round 2: Exploit vulnerabilities in Juice Shop for points (login bypass, XSS, API exploits).",
+        "Ranking based on number/severity of vulnerabilities, proof quality, and speed.",
+        "Follow lab rules; no destructive attacks."
     ],
   },
   {
