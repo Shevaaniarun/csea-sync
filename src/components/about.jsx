@@ -40,7 +40,7 @@ export default function AboutUs() {
 
           <p className="text-gray-200 leading-relaxed text-sm sm:text-base">
             This year, we have decided to have the events around Digital
-            Well-being. Sync ‘25 is about to blossom afresh on 24th and 25th of
+            Well-being. Sync ‘25 is about to blossom afresh on 25th and 26th of
             October, 2025. Encompassing multifarious events, this version has
             the benchmark features to enthrall the multitude, albeit in a
             sustainable manner. Every experience brings a greater clarity of
