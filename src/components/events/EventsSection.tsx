@@ -175,6 +175,32 @@ const day1Events: Event[] = [
       "Organizers' decision is final.",
     ],
   },
+  {
+    id: "w-1",
+    title: "AI on Logic",
+    description:
+      'Join an exclusive hands-on workshop by "Bonbloc Technologies" exploring the evolution of AI from Machine Learning to Agentic Systems. Build your own RAG assistant and multi-agent system in real time!',
+    date: "October 25, 2025",
+    time: "09:30 AM - 12:30 PM",
+    venue: "GFL (Ground Floor Lab), CSE Dept",
+    category: "Workshop",
+    prizePool: "E-Certificates for all active participants",
+    participation: "Open to all students",
+    contacts: [
+      { name: "Sanjay", phone: "8448358787" },
+      { name: "Deepak", phone: "6380156548" },
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    rules: [
+      "Register before 20th October 2025 using the provided form link.",
+      "Open to all students; no registration fee required.",
+      "Bring your own laptop for hands-on practice.",
+      "Ensure Python, Streamlit, and basic ML libraries are pre-installed.",
+      "Workshop covers LangChain, Ollama, FAISS/ChromaDB, Streamlit, and LangGraph.",
+      "Participants will build an AI RAG Assistant and a Multi-Agent System.",
+      "Certificates will be provided to active participants.",
+    ],
+  },
 ];
 
 const day2Events: Event[] = [
@@ -340,32 +366,6 @@ const day2Events: Event[] = [
       "Round 2: Non-coder types as coder instructs verbally; no screen viewing allowed.",
       "Bonus riddles give extra time for coding.",
       "Judged on teamwork, coordination, and accuracy.",
-    ],
-  },
-  {
-    id: "w-1",
-    title: "AI on Logic",
-    description:
-      'Join an exclusive hands-on workshop by "Bonbloc Technologies" exploring the evolution of AI from Machine Learning to Agentic Systems. Build your own RAG assistant and multi-agent system in real time!',
-    date: "October 25, 2025",
-    time: "09:30 AM - 12:30 PM",
-    venue: "GFL (Ground Floor Lab), CSE Dept",
-    category: "Workshop",
-    prizePool: "E-Certificates for all active participants",
-    participation: "Open to all students",
-    contacts: [
-      { name: "Sanjay", phone: "8448358787" },
-      { name: "Deepak", phone: "6380156548" },
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
-    rules: [
-      "Register before 20th October 2025 using the provided form link.",
-      "Open to all students; no registration fee required.",
-      "Bring your own laptop for hands-on practice.",
-      "Ensure Python, Streamlit, and basic ML libraries are pre-installed.",
-      "Workshop covers LangChain, Ollama, FAISS/ChromaDB, Streamlit, and LangGraph.",
-      "Participants will build an AI RAG Assistant and a Multi-Agent System.",
-      "Certificates will be provided to active participants.",
     ],
   },
 ];
