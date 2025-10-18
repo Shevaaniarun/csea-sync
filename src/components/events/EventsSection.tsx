@@ -7,7 +7,7 @@ import LightRays from "../ui/bg-animations/LightRays";
 import ParticlesBackground from "../ui/bg-animations/ParticlesBackground";
 import { motion, useInView } from "framer-motion";
 import SplitText from "../ui/bg-animations/SplitText";
-import React,{ useRef } from "react";
+import React, { useRef } from "react";
 
 const day1Events: Event[] = [
   {
@@ -153,9 +153,9 @@ const day1Events: Event[] = [
   },
   {
     id: "d1-7",
-    title: "Quizzers Anonymous",
+    title: "Three Dragon Quiz",
     description:
-      "A comprehensive quiz competition testing general knowledge and quick thinking.",
+      "A cinematic showdown for true fans - the “Three Dragon Quiz” by Quizzers Anonymous celebrates the legends Rajni, Kamal, and ARR. Test your fandom and prove you know the magic behind Tamil cinema’s greatest trio!",
     date: "October 25, 2025",
     time: "10:00 AM - 01:00 PM (Round 1), 02:00 PM - 05:00 PM (Round 2)",
     venue: "Round 1: Turing Hall, DCSE | Round 2: R1, DCSE",
@@ -324,26 +324,7 @@ const day2Events: Event[] = [
       "Plagiarism or communication leads to disqualification.",
     ],
   },
-  {
-    id: "d2-6",
-    title: "Fandom Quiz",
-    description:
-      'A pop culture and fandom quiz for trivia lovers by "Quizzers Anonymous".',
-    date: "October 26, 2025",
-    time: "12:00 PM - 01:30 PM",
-    venue: "Seminar Hall B",
-    category: "Non-Tech",
-    prizePool: "Rs.1000/-",
-    participation: "Team of 2",
-    contacts: [{ name: "Sarvesh", phone: "8939733220" }],
-    imageUrl: "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4",
-    rules: [
-      "Quiz on movies, anime, TV shows, and pop culture.",
-      "Multiple rounds — buzzer, audio, and rapid fire.",
-      "No mobile or external help.",
-      "Highest total score wins.",
-    ],
-  },
+
   {
     id: "d2-7",
     title: "Two Minds, One Flow",
