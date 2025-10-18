@@ -298,6 +298,28 @@ const day2Events: Event[] = [
       "Plagiarism or communication leads to disqualification.",
     ],
   },
+
+  
+  {
+    id: "d2-5",
+    title: "Fandom Quiz",
+    description:
+      'A pop culture and fandom quiz for trivia lovers by "Quizzers Anonymous".',
+    date: "October 26, 2025",
+    time: "12:00 PM - 01:30 PM",
+    venue: "Seminar Hall B",
+    category: "Non-Tech",
+    prizePool: "Rs.1000/-",
+    participation: "Team of 2",
+    contacts: [{ name: "Sarvesh", phone: "8939733220" }],
+    imageUrl: "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4",
+    rules: [
+      "Quiz on movies, anime, TV shows, and pop culture.",
+      "Multiple rounds — buzzer, audio, and rapid fire.",
+      "No mobile or external help.",
+      "Highest total score wins.",
+    ],
+  },
   {
     id: "d2-6",
     title: "Two Minds, One Flow",
@@ -323,35 +345,32 @@ const day2Events: Event[] = [
     ],
   },
   {
-  id: "w-1",
-  title: "AI on Logic",
-  description:
-    "Join an exclusive hands-on workshop by \"Bonbloc Technologies\" exploring the evolution of AI from Machine Learning to Agentic Systems. Build your own RAG assistant and multi-agent system in real time!",
-  date: "October 25, 2025",
-  time: "09:30 AM - 01:30 PM",
-  venue: "GFL (Ground Floor Lab), CSE Dept",
-  category: "Workshop",
-  prizePool: "E-Certificates for all active participants",
-  participation: "Open to all students",
-  contacts: [
-    { name: "Sanjay", phone: "8448358787" },
-    { name: "Deepak", phone: "6380156548" } 
-
-  ],
-  imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
-  rules: [
-    "Register before 20th October 2025 using the provided form link.",
-    "Open to all students; no registration fee required.",
-    "Bring your own laptop for hands-on practice.",
-    "Ensure Python, Streamlit, and basic ML libraries are pre-installed.",
-    "Workshop covers LangChain, Ollama, FAISS/ChromaDB, Streamlit, and LangGraph.",
-    "Participants will build an AI RAG Assistant and a Multi-Agent System.",
-    "Certificates will be provided to active participants."
-  ]
-}
-
+    id: "w-1",
+    title: "AI on Logic",
+    description:
+      'Join an exclusive hands-on workshop by "Bonbloc Technologies" exploring the evolution of AI from Machine Learning to Agentic Systems. Build your own RAG assistant and multi-agent system in real time!',
+    date: "October 25, 2025",
+    time: "09:30 AM - 12:30 PM",
+    venue: "GFL (Ground Floor Lab), CSE Dept",
+    category: "Workshop",
+    prizePool: "E-Certificates for all active participants",
+    participation: "Open to all students",
+    contacts: [
+      { name: "Sanjay", phone: "8448358787" },
+      { name: "Deepak", phone: "6380156548" },
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    rules: [
+      "Register before 20th October 2025 using the provided form link.",
+      "Open to all students; no registration fee required.",
+      "Bring your own laptop for hands-on practice.",
+      "Ensure Python, Streamlit, and basic ML libraries are pre-installed.",
+      "Workshop covers LangChain, Ollama, FAISS/ChromaDB, Streamlit, and LangGraph.",
+      "Participants will build an AI RAG Assistant and a Multi-Agent System.",
+      "Certificates will be provided to active participants.",
+    ],
+  },
 ];
-
 
 export function EventsSection() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
@@ -359,7 +378,10 @@ export function EventsSection() {
   const [filtering, setFiltering] = useState(false);
 
   const sectionRef = useRef(null);
-  const isSectionInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isSectionInView = useInView(sectionRef, {
+    once: true,
+    margin: "-100px",
+  });
 
   const filterEvents = (events: Event[]) =>
     filters.categoryFilter.length === 0
@@ -410,7 +432,7 @@ export function EventsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="mb-4 text-cyan-300 text-center font-bitgrid text-7xl tracking-wider">
+          <h2 className="mb-4 text-cyan-300 text-center font-bitgrid text-6xl sm:text-7xl  tracking-wider">
             EVENTS
           </h2>
         </motion.div>
@@ -421,7 +443,10 @@ export function EventsSection() {
           animate={isSectionInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <EventFilters filters={filters} onFiltersChange={handleFiltersChange} />
+          <EventFilters
+            filters={filters}
+            onFiltersChange={handleFiltersChange}
+          />
         </motion.div>
 
         {/* Event stacks */}
