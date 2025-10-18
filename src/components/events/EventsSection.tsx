@@ -257,7 +257,7 @@ const day2Events: Event[] = [
   },
   {
     id: "d2-3",
-    title: "ACM",
+    title: "CyberSprint",
     description:
       "Hands-on cybersecurity event where teams find and exploit web vulnerabilities in OWASP Juice Shop, simulating real-world ethical hacking.",
     date: "October 26, 2025",
