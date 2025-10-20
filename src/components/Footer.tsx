@@ -110,7 +110,7 @@ export function Footer() {
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Mail className="w-5 h-5 text-cyan-300 shrink-0" />
-                    <span className="text-lg">chairperson@abacus.org.in</span>
+                    <span className="text-lg">chairman@abacus.org.in</span>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@ export function Footer() {
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Mail className="w-5 h-5 text-cyan-300 shrink-0" />
-                    <span className="text-lg">chairperson@abacus.org.in</span>
+                    <span className="text-lg">chairman@abacus.org.in</span>
                   </div>
                 </div>
 
@@ -136,7 +136,7 @@ export function Footer() {
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Mail className="w-5 h-5 text-cyan-300 shrink-0" />
-                    <span className="text-lg">vicechairperson@abacus.org.in</span>
+                    <span className="text-lg">vicechairman@abacus.org.in</span>
                   </div>
                 </div>
 
@@ -149,7 +149,7 @@ export function Footer() {
                   </div>
                   <div className="mt-1 flex items-center gap-2 justify-center md:justify-start">
                     <Mail className="w-5 h-5 text-cyan-300 shrink-0" />
-                    <span className="text-lg">vicechairperson@abacus.org.in</span>
+                    <span className="text-lg">vicechairman@abacus.org.in</span>
                   </div>
                 </div>
               </div>
