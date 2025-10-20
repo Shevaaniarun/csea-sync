@@ -15,8 +15,8 @@ export interface Event {
   title: string;
   description: string;
   date: string;
-  time: string;
-  venue: string;
+  time: Array<string>;
+  venue: Array<string>;
   category: "Tech" | "Non-Tech" | "Workshop";
   prizePool: string;
   participation: string;

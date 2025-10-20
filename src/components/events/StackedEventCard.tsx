@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card.tsx";
-import { Calendar, MapPin, Users, Gift, X } from "lucide-react";
+import { Calendar, MapPin, Users, Gift, X, Timer, Clock} from "lucide-react";
 import { Event } from "./EventCard";
 import { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -103,21 +103,29 @@ export function StackedEventCard({
               {isExpanded && (
                 <CardContent className="space-y-2 text-sm text-cyan-200/80 pb-5">
                   <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-cyan-400" />
-                    <span>
-                      {event.date}, {event.time}
+                    <Clock className="w-[16px] h-[16px] text-cyan-400 flex-shrink-0" />
+                    <span className="text-sm">
+                      <div>
+                        {event.time.map((t, i) => (
+                          <div key={i}>{t}</div>
+                        ))}
+                      </div>
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-cyan-400" />
-                    <span>{event.venue}</span>
+                    <MapPin className="w-[16px] h-[16px] text-cyan-400 flex-shrink-0" />
+                    <span>
+                      {event.venue.map((t, i) => (
+                        <div key={i}>{t}</div>
+                      ))}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4 text-cyan-400" />
+                    <Users className="w-[16px] h-[16px] text-cyan-400 flex-shrink-0" />
                     <span>{event.participation}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Gift className="w-4 h-4 text-cyan-400" />
+                    <Gift className="w-[16px] h-[16px] text-cyan-400 flex-shrink-0" />
                     <span>{event.prizePool}</span>
                   </div>
                   <div>

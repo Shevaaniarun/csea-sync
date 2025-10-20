@@ -16,8 +16,15 @@ const day1Events: Event[] = [
     description:
       "A two-round coding challenge testing aptitude and programming skills.",
     date: "October 25, 2025",
-    time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 05:00 PM (Round 2)",
-    venue: "Round 1: R1, DCSE | Round 2: GFL, DCSE",
+    time: [
+      "09:30 AM - 12:30 PM (Round 1)",
+      "02:00 PM - 05:00 PM (Round 2)"
+    ],
+    venue: [
+      "Round 1: R1, DCSE",
+      "Round 2: GFL, DCSE"
+    ],
+
     category: "Tech",
     prizePool: "Rs.2000/-",
     participation: "Solo or Team of 2",
@@ -39,8 +46,8 @@ const day1Events: Event[] = [
     description:
       "A two-round coding and problem-solving contest for sharp minds.",
     date: "October 25, 2025",
-    time: "09:30 AM - 04:00 PM (Round 1)",
-    venue: "Round 1: FFL, DCSE",
+    time: ["09:30 AM - 04:00 PM (Round 1)"],
+    venue: ["Round 1: FFL, DCSE"],
     category: "Tech",
     prizePool: "Rs.2500/-",
     participation: "Solo or Team of 2",
@@ -62,8 +69,8 @@ const day1Events: Event[] = [
     description:
       "A strategic coding event combining algorithms and bidding challenges.",
     date: "October 25, 2025",
-    time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 05:00 PM (Round 2)",
-    venue: "Round 1: TFL, DCSE | Round 2: TFL, DCSE",
+    time: ["09:30 AM - 12:30 PM (Round 1)", "02:00 PM - 05:00 PM (Round 2)"],
+    venue: ["Round 1: TFL, DCSE ", "Round 2: TFL, DCSE"],
     category: "Tech",
     prizePool: "Rs.2000/-",
     participation: "Team of 2",
@@ -86,8 +93,8 @@ const day1Events: Event[] = [
     description:
       "A competitive coding event testing debugging skills, logical reasoning, and programming proficiency. Participants identify errors, understand code behavior, and implement efficient fixes.",
     date: "October 25, 2025",
-    time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 05:00 PM (Round 2)",
-    venue: "Round 1: SFL, DCSE | Round 2: SFL, DCSE",
+    time: ["09:30 AM - 12:30 PM (Round 1)", "02:00 PM - 05:00 PM (Round 2)"],
+    venue: ["Round 1: SFL, DCSE", "Round 2: SFL, DCSE"],
     category: "Tech",
     prizePool: "Rs.2000/-",
     participation: "Solo or Team of 2",
@@ -110,8 +117,8 @@ const day1Events: Event[] = [
     description:
       "Unravel a thrilling mystery by decoding puzzles, ciphers, and logic challenges.",
     date: "October 25, 2025",
-    time: "10:00 AM - 04:00 PM (Round 1)",
-    venue: "Round 1: R4, DCSE",
+    time: ["10:00 AM - 04:00 PM (Round 1)"],
+    venue: ["Round 1: R4, DCSE"],
     category: "Non-Tech",
     prizePool: "Rs.1000/-",
     participation: "Team of 2",
@@ -134,8 +141,8 @@ const day1Events: Event[] = [
     description:
       "Solve clues, explore campus locations, and find the hidden treasure before others!",
     date: "October 25, 2025",
-    time: "10:00 AM - 04:00 PM (Round 1)",
-    venue: "Round 1: Registration Desk, in front of DCSE",
+    time: ["10:00 AM - 04:00 PM (Round 1)"],
+    venue: ["Round 1: Registration Desk, in front of DCSE"],
     category: "Non-Tech",
     prizePool: "Rs.1000/-",
     participation: "Team of 3",
@@ -158,8 +165,8 @@ const day1Events: Event[] = [
     description:
       "A cinematic showdown for true fans - the “Three Dragon Quiz” by Quizzers Anonymous celebrates the legends Rajni, Kamal, and ARR. Test your fandom and prove you know the magic behind Tamil cinema’s greatest trio!",
     date: "October 25, 2025",
-    time: "10:00 AM - 01:00 PM (Round 1), 02:00 PM - 05:00 PM (Round 2)",
-    venue: "Round 1: Turing Hall, DCSE | Round 2: R1, DCSE",
+    time: ["10:00 AM - 01:00 PM (Round 1)","02:00 PM - 05:00 PM (Round 2)"],
+    venue: ["Round 1: Turing Hall, DCSE",  "Round 2: R1, DCSE"],
     category: "Non-Tech",
     prizePool: "Rs.1000/-",
     participation: "Team of 2",
@@ -182,8 +189,8 @@ const day1Events: Event[] = [
     description:
       'Join an exclusive hands-on workshop by "Bonbloc Technologies" exploring the evolution of AI from Machine Learning to Agentic Systems. Build your own RAG assistant and multi-agent system in real time!',
     date: "October 25, 2025",
-    time: "09:30 AM - 12:30 PM",
-    venue: "GFL (Ground Floor Lab), CSE Dept",
+    time: ["09:30 AM - 12:30 PM"],
+    venue: ["GFL (Ground Floor Lab), CSE Dept"],
     category: "Workshop",
     prizePool: "E-Certificates for all active participants",
     participation: "Open to all students",
@@ -211,8 +218,8 @@ const day2Events: Event[] = [
     description:
       "Form your dream IPL team in this intense two-round event featuring quizzes and a live auction.",
     date: "October 26, 2025",
-    time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 04:30 PM (Round 2)",
-    venue: "Round 1: R1, DCSE | Round 2: R1, DCSE",
+    time: ["09:30 AM - 12:30 PM (Round 1)", "02:00 PM - 04:30 PM (Round 2)"],
+    venue: ["Round 1: R1, DCSE", "Round 2: R1, DCSE"],
     category: "Non-Tech",
     prizePool: "Rs.1000/-",
     participation: "Team of 2–3",
@@ -237,8 +244,8 @@ const day2Events: Event[] = [
     description:
       "A memory-based IQ competition testing logic, recall, and teamwork through puzzles and mini-games.",
     date: "October 26, 2025",
-    time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 04:30 PM (Round 2)",
-    venue: "Round 1: R2, DCSE | Round 2: R2, DCSE",
+    time: ["09:30 AM - 12:30 PM (Round 1)", "02:00 PM - 04:30 PM (Round 2)"],
+    venue: ["Round 1: R2, DCSE", "Round 2: R2, DCSE"],
     category: "Non-Tech",
     prizePool: "Rs.1000/-",
     participation: "Team of 2–3",
@@ -261,8 +268,8 @@ const day2Events: Event[] = [
     description:
       "Hands-on cybersecurity event where teams find and exploit web vulnerabilities in OWASP Juice Shop, simulating real-world ethical hacking.",
     date: "October 26, 2025",
-    time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 04:30 PM (Round 2)",
-    venue: "Round 1: GFL, DCSE | Round 2: GFL, DCSE",
+    time: ["09:30 AM - 12:30 PM (Round 1)", "02:00 PM - 04:30 PM (Round 2)"],
+    venue: ["Round 1: GFL, DCSE","Round 2: GFL, DCSE"],
     category: "Tech",
     prizePool: "Rs.2000/-",
     participation: "Solo or Team of 2",
@@ -284,8 +291,8 @@ const day2Events: Event[] = [
     description:
       "A two-round coding and problem-solving contest for sharp minds.",
     date: "October 26, 2025",
-    time: "09:30 AM - 12:30 PM (Round 2)",
-    venue: "Round 2: TFL, DCSE",
+    time: ["09:30 AM - 12:30 PM (Round 2)"],
+    venue: ["Round 2: TFL, DCSE"],
     category: "Tech",
     prizePool: "Rs.2500/-",
     participation: "Solo or Team of 2",
@@ -307,8 +314,8 @@ const day2Events: Event[] = [
     description:
       "An exclusive coding relay challenge celebrating women in tech.",
     date: "October 26, 2025",
-    time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 04:30 PM (Round 2)",
-    venue: "Round 1: TFL, DCSE | Round 2: TFL, DCSE",
+    time: ["09:30 AM - 12:30 PM (Round 1)", "02:00 PM - 04:30 PM (Round 2)"],
+    venue: ["Round 1: TFL, DCSE","Round 2: TFL, DCSE"],
     category: "Tech",
     prizePool: "Rs.2000/-",
     participation: "Team of 2 (Girls Only)",
@@ -331,8 +338,8 @@ const day2Events: Event[] = [
     description:
       "A fun coding communication challenge pairing coders with non-coders.",
     date: "October 26, 2025",
-    time: "09:30 AM - 12:30 PM (Round 1), 02:00 PM - 04:30 PM (Round 2)",
-    venue: "Round 1: SFL, DCSE | Round 2: SFL, DCSE",
+    time: ["09:30 AM - 12:30 PM (Round 1)", "02:00 PM - 04:30 PM (Round 2)"],
+    venue: ["Round 1: SFL, DCSE ","Round 2: SFL, DCSE"],
     category: "Tech",
     prizePool: "Rs.2000/-",
     participation: "Team of 2",
