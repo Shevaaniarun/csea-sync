@@ -195,7 +195,7 @@ const day1Events: Event[] = [
     prizePool: "E-Certificates for all active participants",
     participation: "Open to all students",
     contacts: [
-      { name: "Sanjay", phone: "8448358787" },
+      { name: "Sanjay", phone: "8148358787" },
       { name: "Deepak", phone: "6380156548" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
