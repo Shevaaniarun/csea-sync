@@ -99,8 +99,8 @@ const day1Events: Event[] = [
     prizePool: "Rs.2000/-",
     participation: "Solo or Team of 2",
     contacts: [
-      { name: "Sahana", phone: "7418247031" },
-      { name: "Pradeep", phone: "7904137572" },
+      { name: "Akshaya", phone: "9342583181" },
+      { name: "Sharukesh", phone: "6381086085" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1551033406-611cf9a28f67",
     rules: [
@@ -171,8 +171,8 @@ const day1Events: Event[] = [
     prizePool: "Rs.1000/-",
     participation: "Team of 2",
     contacts: [
-      { name: "Sarvesh", phone: "8939733220" },
-      { name: "Renjitha", phone: "7907854731" },
+      { name: "Jaison", phone: "9025601119" },
+      { name: "Visvam", phone: "6385050355" },
     ],
     imageUrl: "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4",
     rules: [
